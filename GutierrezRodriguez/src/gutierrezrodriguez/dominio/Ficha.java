@@ -1,15 +1,14 @@
 package gutierrezrodriguez.dominio;
-import java.util.*;
 
 public class Ficha {
     private String nombre;
     private String direccion;
-    private ArrayList<String> horarios; //falta getter y setter
+    String[] horarios; 
     
     Ficha(){
         this.nombre = "";
         this.direccion = "";
-        this.horarios = new ArrayList<String>();
+        this.horarios = new String[7];
     }
 
     public String getNombre() {
