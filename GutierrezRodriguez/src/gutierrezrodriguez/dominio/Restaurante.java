@@ -6,7 +6,7 @@ public class Restaurante {
     private final ArrayList<Evaluacion> evaluacionesSorteables;
     private Ficha ficha;
 
-    Restaurante(){
+    public Restaurante(){
         this.evaluaciones = new ArrayList<Evaluacion>();
         this.evaluacionesSorteables = new ArrayList<Evaluacion>();
         this.ficha = new Ficha();

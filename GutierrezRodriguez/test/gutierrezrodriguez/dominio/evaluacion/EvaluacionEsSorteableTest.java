@@ -46,21 +46,21 @@ public class EvaluacionEsSorteableTest {
     
     @Test
     public void testEsSorteable1(){
-        System.out.print("Test esSorteable 1:   ");
+        System.out.print("Test Evaluacion.esSorteable 1:   ");
         instancia = new Evaluacion(3, "Reseña", "Nombre");
         printResults(true, instancia.esSorteable());
     }
     
     @Test
     public void testEsSorteable2(){
-        System.out.print("Test esSorteable 2:   ");
+        System.out.print("Test Evaluacion.esSorteable 2:   ");
         instancia = new Evaluacion(3, "", "");
         printResults(false, instancia.esSorteable());
     }
 
     @Test
     public void testEsSorteable3(){
-        System.out.print("Test esSorteable 3:   ");
+        System.out.print("Test Evaluacion.esSorteable 3:   ");
         instancia = new Evaluacion(8, "Reseña", "Nombre");
         printResults(false, instancia.esSorteable());
     }
