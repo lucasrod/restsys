@@ -8,13 +8,7 @@ public class Ficha {
     //PRE: -
     //POS: Retorna true sii el día está entre 1 y 7
     private boolean esDia(int dia){
-        boolean esDia;
-        try{
-            esDia = (dia>=1 && dia <=7);
-        }catch(Exception e){
-            esDia = false;
-        }
-        return esDia;
+        return (dia>=1 && dia <=7);
     }
     
     public Ficha(){
