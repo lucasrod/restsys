@@ -8,6 +8,7 @@ public class Evaluacion {
     public Evaluacion(){
         this.estrellas = 0;
         this.resena = "";
+        this.nombre = "";
     }
     
     public Evaluacion(int estrellas, String resena){
@@ -36,5 +37,13 @@ public class Evaluacion {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+    
+    public boolean esSorteable(){
+        return !this.nombre.isEmpty() && !this.resena.isEmpty();
+    }
+    
+    public boolean esValida(){
+        return this.estrellas != 0;
     }
 }

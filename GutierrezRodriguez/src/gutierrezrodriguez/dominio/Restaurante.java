@@ -1,9 +1,9 @@
 package gutierrezrodriguez.dominio;
-import java.util.*;
+import java.util.ArrayList;
 
 public class Restaurante {
-    private ArrayList<Evaluacion> evaluaciones; //falta getter y setter
-    private ArrayList<Evaluacion> evaluacionesSorteables; //falta getter y setter
+    private final ArrayList<Evaluacion> evaluaciones; //falta getter y setter
+    private final ArrayList<Evaluacion> evaluacionesSorteables; //falta getter y setter
     private Ficha ficha;
 
     Restaurante(){
@@ -18,5 +18,18 @@ public class Restaurante {
 
     public void setFicha(Ficha ficha) {
         this.ficha = ficha;
+    }
+    
+    public ArrayList<Evaluacion> getEvaluacionesSorteables(){
+        return evaluacionesSorteables;
+    }
+    
+    public ArrayList<Evaluacion> getEvaluaciones(){
+        return evaluaciones;
+    }
+    
+    public void setEvaluacion(Evaluacion evaluacion){
+        evaluaciones.add(evaluacion);
+        if(evaluacion.esSorteable()) evaluacionesSorteables.add(evaluacion);
     }
 }
