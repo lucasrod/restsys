@@ -53,7 +53,7 @@ public class Evaluacion {
     }
     
     //PRE: -
-    //POS: Retorna true sii es sorteable
+    //POS: Retorna true sii (ni el nombre ni la reseña son vacíos) y es válida.
     public boolean esSorteable(){
         return !this.nombre.isEmpty() && !this.resena.isEmpty() && this.esValida();
     }
