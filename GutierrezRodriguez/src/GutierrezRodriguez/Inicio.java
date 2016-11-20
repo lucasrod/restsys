@@ -3,12 +3,13 @@
  * and open the template in the editor.
  */
 
+package GutierrezRodriguez;
 
 /**
  *
- * @author user
+ * @author User
  */
-public class Main {
+public class Inicio {
 
     /**
      * @param args the command line arguments
