@@ -48,7 +48,7 @@ public class SorteoRealizarSorteo {
     
     @Test
     public void testRealizarSorteo1(){
-        System.out.print("Test Sorteo.realizarSorteo 1:   ");
+        System.out.print("Test Sorteo.realizarSorteo 1:    ");
         Restaurante restaurante = new Restaurante();
         Evaluacion evaluacion1 = new Evaluacion(1, "Reseña1", "Nombre1");
         Evaluacion evaluacion2 = new Evaluacion(2, "Reseña2", "Nombre2");
@@ -58,4 +58,37 @@ public class SorteoRealizarSorteo {
         ArrayList<Evaluacion> resultadoSorteo = instancia.realizarSorteo();
         printResults(true, resultadoSorteo.size()==2);
     }
+    
+    @Test
+    public void testRealizarSorteo2(){
+        System.out.print("Test Sorteo.realizarSorteo 2:    ");
+        Restaurante restaurante = new Restaurante();
+        for(int i = 1; i < 11; i++){
+            Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
+            restaurante.setEvaluacion(evaluacion);
+        }
+        instancia = new Sorteo(10, "Ganaste!", restaurante);
+        ArrayList<Evaluacion> resultadoSorteo = instancia.realizarSorteo();
+        printResults(true, resultadoSorteo.size()==10);
+    }
+    
+    @Test
+    public void testRealizarSorteo3(){
+        System.out.print("Test Sorteo.realizarSorteo 3:    ");
+        Restaurante restaurante = new Restaurante();
+        for(int i = 1; i < 11; i++){
+            Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
+            restaurante.setEvaluacion(evaluacion);
+        }
+        instancia = new Sorteo(10, "Ganaste!", restaurante);
+        boolean esperado = true;
+        ArrayList<Evaluacion> resultadoSorteo = instancia.realizarSorteo();
+        ArrayList<Evaluacion> recorridos = new ArrayList<Evaluacion>();
+        for(int i=0; i<resultadoSorteo.size(); i++){
+            esperado &= !recorridos.contains(resultadoSorteo.get(i));
+            recorridos.add(resultadoSorteo.get(i));
+        }
+        printResults(true, esperado);
+    }
+    
 }

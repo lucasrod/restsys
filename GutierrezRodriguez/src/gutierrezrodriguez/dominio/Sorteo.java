@@ -50,7 +50,7 @@ public final class Sorteo {
         for(int i = 0; i < numeroDeGanadores; i++){
           do{
             Random random = new Random();
-            int randomNum = random.nextInt((sorteables.size() - 1) + 1);
+            int randomNum = random.nextInt(sorteables.size());
             numeroSorteado = randomNum;
           }while(elegidos.contains(numeroSorteado));
           retorno.add(sorteables.get(numeroSorteado));
