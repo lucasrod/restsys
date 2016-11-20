@@ -4,7 +4,7 @@ public class Ficha {
     private String nombre;
     private String direccion;
     String[] horarios; 
-    
+       
     //PRE: -
     //POS: Retorna true sii el día está entre 1 y 7
     private boolean esDia(int dia){

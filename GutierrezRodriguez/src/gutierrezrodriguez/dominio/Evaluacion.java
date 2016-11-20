@@ -8,7 +8,7 @@ public class Evaluacion {
     //PRE: -
     //POS: Retorna true sii la puntuación es un int entre 1 y 5
     private boolean esPuntuacionValida(int estrellas){
-            return (estrellas >=1 && estrellas <=5);
+        return (estrellas >=1 && estrellas <=5);
     }
     
     public Evaluacion(){
@@ -18,7 +18,8 @@ public class Evaluacion {
     }
     
     public Evaluacion(int estrellas, String resena, String nombre){
-        this.estrellas = estrellas;
+        if(esPuntuacionValida(estrellas))   this.estrellas = estrellas;
+        else                                this.estrellas = 0;
         this.resena = resena;
         this.nombre = nombre;
     }
