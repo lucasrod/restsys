@@ -55,7 +55,7 @@ public class Evaluacion {
     //PRE: -
     //POS: Retorna true sii es sorteable
     public boolean esSorteable(){
-        return !this.nombre.isEmpty() && !this.resena.isEmpty();
+        return !this.nombre.isEmpty() && !this.resena.isEmpty() && this.esValida();
     }
     
     //PRE: -
