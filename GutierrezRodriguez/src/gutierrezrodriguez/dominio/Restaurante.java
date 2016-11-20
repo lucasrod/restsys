@@ -2,8 +2,8 @@ package gutierrezrodriguez.dominio;
 import java.util.ArrayList;
 
 public class Restaurante {
-    private final ArrayList<Evaluacion> evaluaciones; //falta getter y setter
-    private final ArrayList<Evaluacion> evaluacionesSorteables; //falta getter y setter
+    private final ArrayList<Evaluacion> evaluaciones;
+    private final ArrayList<Evaluacion> evaluacionesSorteables;
     private Ficha ficha;
 
     Restaurante(){
@@ -28,8 +28,13 @@ public class Restaurante {
         return evaluaciones;
     }
     
-    public void setEvaluacion(Evaluacion evaluacion){
-        evaluaciones.add(evaluacion);
-        if(evaluacion.esSorteable()) evaluacionesSorteables.add(evaluacion);
+    //PRE:  -
+    //POS:  (Ingresa la evaluacion y retorna true) sii es valida
+    public boolean setEvaluacion(Evaluacion evaluacion){
+        if(evaluacion.esValida()){
+            evaluaciones.add(evaluacion);
+            if(evaluacion.esSorteable()) evaluacionesSorteables.add(evaluacion);
+        }
+        return evaluacion.esValida();
     }
 }
