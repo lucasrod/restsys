@@ -1,14 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gutierrezrodriguez.dominio;
+import java.util.*;
 
-/**
- *
- * @author Matías
- */
 public class Restaurante {
+    private ArrayList<Evaluacion> evaluaciones; //falta getter y setter
+    private ArrayList<Evaluacion> evaluacionesSorteables; //falta getter y setter
+    private Ficha ficha; //falta getter y setter
     
+    Restaurante(){
+        this.evaluaciones = new ArrayList<Evaluacion>();
+        this.evaluacionesSorteables = new ArrayList<Evaluacion>();
+        this.ficha = new Ficha();
+    }
 }
