@@ -41,19 +41,27 @@ public final class Sorteo {
     }
     
     public ArrayList<Evaluacion> realizarSorteo(){
-        
         ArrayList<Evaluacion> retorno = new ArrayList<Evaluacion>();
         ArrayList<Evaluacion> sorteables = restaurante.getEvaluacionesSorteables();
         ArrayList<Integer> elegidos = new ArrayList<Integer>();
         int numeroSorteado = 0;
+        
+        //Si el numero de ganadores supera el de las evaluaciones sorteables se iguala para hacerlo posible
         if(numeroDeGanadores > sorteables.size()) numeroDeGanadores = sorteables.size();
+        
+        //for que se utiliza para elegir la cantidad de ganadores correspondiente
         for(int i = 0; i < numeroDeGanadores; i++){
+
+          //Se busca un numero aleatorio hasata que sea diferente a los que salieron previamente
           do{
             Random random = new Random();
-            int randomNum = random.nextInt(sorteables.size());
-            numeroSorteado = randomNum;
+            numeroSorteado = random.nextInt(sorteables.size());;
           }while(elegidos.contains(numeroSorteado));
+          
+          //Se agrega el nuevo ganador al retorno
           retorno.add(sorteables.get(numeroSorteado));
+          
+          //Se agrega el numero ganador a la lista de los que ya salieron para evitar que se repita
           elegidos.add(numeroSorteado);
         }
         return retorno;

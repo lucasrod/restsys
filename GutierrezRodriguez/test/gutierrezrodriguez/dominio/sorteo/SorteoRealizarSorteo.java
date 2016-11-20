@@ -81,14 +81,59 @@ public class SorteoRealizarSorteo {
             restaurante.setEvaluacion(evaluacion);
         }
         instancia = new Sorteo(10, "Ganaste!", restaurante);
-        boolean esperado = true;
+        boolean resultado = true;
         ArrayList<Evaluacion> resultadoSorteo = instancia.realizarSorteo();
         ArrayList<Evaluacion> recorridos = new ArrayList<Evaluacion>();
         for(int i=0; i<resultadoSorteo.size(); i++){
-            esperado &= !recorridos.contains(resultadoSorteo.get(i));
+            resultado &= !recorridos.contains(resultadoSorteo.get(i));
             recorridos.add(resultadoSorteo.get(i));
         }
-        printResults(true, esperado);
+        printResults(true, resultado);
     }
     
+    @Test
+    public void testRealizarSorteo4(){
+        System.out.print("Test Sorteo.realizarSorteo 4:    ");
+        Restaurante restaurante = new Restaurante();
+        for(int i = 1; i < 11; i++){
+            Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
+            restaurante.setEvaluacion(evaluacion);
+        }
+        instancia = new Sorteo(10, "Ganaste!", restaurante);
+        boolean resultado = false;
+        ArrayList<Evaluacion> resultadoSorteo = instancia.realizarSorteo();
+        ArrayList<Evaluacion> evaluacionesSorteables = restaurante.getEvaluacionesSorteables();
+        for(int i=0; i<resultadoSorteo.size(); i++){
+            resultado |= !resultadoSorteo.get(i).equals(evaluacionesSorteables.get(i));
+        }
+        printResults(true, resultado);
+    }
+    
+    @Test
+    public void testRealizarSorteo5(){
+        System.out.print("Test Sorteo.realizarSorteo 5:    ");
+        Restaurante restaurante = new Restaurante();
+        for(int i = 1; i < 11; i++){
+            Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
+            restaurante.setEvaluacion(evaluacion);
+        }
+        instancia = new Sorteo(15, "Ganaste!", restaurante);
+        boolean resultado = false;
+        ArrayList<Evaluacion> resultadoSorteo = instancia.realizarSorteo();
+        printResults(true, resultadoSorteo.size() == 10);
+    }
+    
+    @Test
+    public void testRealizarSorteo6(){
+        System.out.print("Test Sorteo.realizarSorteo 6:    ");
+        Restaurante restaurante = new Restaurante();
+        for(int i = 1; i < 11; i++){
+            Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
+            restaurante.setEvaluacion(evaluacion);
+        }
+        instancia = new Sorteo(3, "Ganaste!", restaurante);
+        boolean resultado = false;
+        ArrayList<Evaluacion> resultadoSorteo = instancia.realizarSorteo();
+        printResults(true, resultadoSorteo.size() == 3);
+    }
 }
