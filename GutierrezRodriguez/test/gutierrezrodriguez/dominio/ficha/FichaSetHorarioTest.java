@@ -1,6 +1,5 @@
 package gutierrezrodriguez.dominio.ficha;
 
-import gutierrezrodriguez.dominio.Evaluacion;
 import gutierrezrodriguez.dominio.Ficha;
 import org.junit.After;
 import org.junit.AfterClass;

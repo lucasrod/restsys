@@ -55,7 +55,7 @@ public final class Sorteo {
           //Se busca un numero aleatorio hasata que sea diferente a los que salieron previamente
           do{
             Random random = new Random();
-            numeroSorteado = random.nextInt(sorteables.size());;
+            numeroSorteado = random.nextInt(sorteables.size());
           }while(elegidos.contains(numeroSorteado));
           
           //Se agrega el nuevo ganador al retorno
