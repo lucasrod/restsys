@@ -11,7 +11,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class SorteoRealizarSorteo {
+public class SorteoRealizarSorteoTest {
     private Sorteo instancia;
     
     //PRE: Recibe el resultado esperado y el resultado real de una prueba.
@@ -118,7 +118,6 @@ public class SorteoRealizarSorteo {
             restaurante.setEvaluacion(evaluacion);
         }
         instancia = new Sorteo(15, "Ganaste!", restaurante);
-        boolean resultado = false;
         ArrayList<Evaluacion> resultadoSorteo = instancia.realizarSorteo();
         printResults(true, resultadoSorteo.size() == 10);
     }
@@ -132,7 +131,6 @@ public class SorteoRealizarSorteo {
             restaurante.setEvaluacion(evaluacion);
         }
         instancia = new Sorteo(3, "Ganaste!", restaurante);
-        boolean resultado = false;
         ArrayList<Evaluacion> resultadoSorteo = instancia.realizarSorteo();
         printResults(true, resultadoSorteo.size() == 3);
     }

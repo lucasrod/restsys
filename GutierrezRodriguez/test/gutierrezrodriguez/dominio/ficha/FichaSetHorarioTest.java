@@ -1,16 +1,16 @@
-package gutierrezrodriguez.dominio.evaluacion;
+package gutierrezrodriguez.dominio.ficha;
 
 import gutierrezrodriguez.dominio.Evaluacion;
+import gutierrezrodriguez.dominio.Ficha;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
-public class EvaluacionEsValidaTest {
-    
-    private Evaluacion instancia;
+public class FichaSetHorarioTest {
+    private Ficha instancia;
     
     //PRE: Recibe el resultado esperado y el resultado real de una prueba.
     //POS: Para las sub-pruebas pinta de verde sii el resultado es correcto.    
@@ -37,31 +37,31 @@ public class EvaluacionEsValidaTest {
     
     @Before
     public void setUp() {
-        instancia = new Evaluacion();
+        instancia = new Ficha();
     }
     
     @After
     public void tearDown() {
     }
-
+    
     @Test
-    public void testEsValida1() {
-       System.out.print("Test Evaluacion.esValida 1:      ");
-       instancia = new Evaluacion();
-       printResults(false, instancia.esValida());
+    public void testSetHorario1(){
+       System.out.print("Test Ficha.setHorario 1:         ");
+       instancia = new Ficha();
+       printResults(false, instancia.setHorario(8, "Desde las 10hs hasta las 15hs"));
     }
     
     @Test
-    public void testEsValida2() {
-       System.out.print("Test Evaluacion.esValida 2:      ");
-       instancia = new Evaluacion(8, "Reseña", "Nombre");
-       printResults(false, instancia.esValida());
+    public void testSetHorario2(){
+       System.out.print("Test Ficha.setHorario 2:         ");
+       instancia = new Ficha();
+       printResults(true, instancia.setHorario(4, "Desde las 10hs hasta las 15hs"));
     }
     
     @Test
-    public void testEsValida3(){
-       System.out.print("Test Evaluacion.esValida 3:      ");
-       instancia = new Evaluacion(4, "Reseña", "Nombre");
-       printResults(true, instancia.esValida());
+    public void testSetHorario3(){
+       System.out.print("Test Ficha.setHorario 3:         ");
+       instancia = new Ficha();
+       printResults(false, instancia.setHorario(-85, "Desde las 10hs hasta las 15hs"));
     }
 }

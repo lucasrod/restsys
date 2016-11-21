@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import gutierrezrodriguez.dominio.evaluacion.*;
+import gutierrezrodriguez.dominio.ficha.*;
 import gutierrezrodriguez.dominio.restaurante.*;
 import gutierrezrodriguez.dominio.sorteo.*;
 
@@ -13,7 +14,8 @@ import gutierrezrodriguez.dominio.sorteo.*;
         EvaluacionEsSorteableTest.class,
         EvaluacionEsValidaTest.class,
         RestauranteSetEvaluacionTest.class,
-        SorteoRealizarSorteo.class
+        SorteoRealizarSorteoTest.class,
+        FichaSetHorarioTest.class
 })
 public class TestSuite {
 	

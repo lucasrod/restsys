@@ -16,6 +16,17 @@ public class Ficha {
         this.direccion = "";
         this.horarios = new String[8];
     }
+    
+    public Ficha(String nombre, String direccion){
+        this.nombre = nombre;
+        this.direccion = direccion;
+    }
+    
+    public Ficha(String nombre, String direccion, String[] horarios){
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.horarios = horarios;
+    }
 
     public String getNombre() {
         return nombre;
