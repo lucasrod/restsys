@@ -1,7 +1,6 @@
 package gutierrezrodriguez;
 import gutierrezrodriguez.dominio.*;
 import gutierrezrodriguez.interfaz.Frame;
-import java.util.ArrayList;
 
 public class Inicio {
 
