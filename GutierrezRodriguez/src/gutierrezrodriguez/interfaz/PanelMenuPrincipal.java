@@ -1,14 +1,16 @@
 package gutierrezrodriguez.interfaz;
+
 import gutierrezrodriguez.dominio.Sistema;
 
 public class PanelMenuPrincipal extends javax.swing.JPanel {
+
     Sistema sistema;
-    
+
     public PanelMenuPrincipal() {
         initComponents();
     }
-    
-    public PanelMenuPrincipal(Sistema sistema){
+
+    public PanelMenuPrincipal(Sistema sistema) {
         this.sistema = sistema;
         initComponents();
     }

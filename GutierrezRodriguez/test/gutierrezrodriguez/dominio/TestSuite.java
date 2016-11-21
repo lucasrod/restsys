@@ -9,13 +9,13 @@ import gutierrezrodriguez.dominio.sorteo.*;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        EvaluacionSetEstrellasTest.class,
-        EvaluacionEsSorteableTest.class,
-        EvaluacionEsValidaTest.class,
-        RestauranteSetEvaluacionTest.class,
-        SorteoRealizarSorteoTest.class,
-        FichaSetHorarioTest.class
+    EvaluacionSetEstrellasTest.class,
+    EvaluacionEsSorteableTest.class,
+    EvaluacionEsValidaTest.class,
+    RestauranteSetEvaluacionTest.class,
+    SorteoRealizarSorteoTest.class,
+    FichaSetHorarioTest.class
 })
 public class TestSuite {
-	
+
 }

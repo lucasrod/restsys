@@ -1,9 +1,11 @@
 package gutierrezrodriguez.interfaz;
+
 import gutierrezrodriguez.dominio.Sistema;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 
 public class Frame extends javax.swing.JFrame {
+
     GridBagLayout layout = new GridBagLayout();
     private PanelMenuPrincipal panelmenuprincipal;
     private Sistema sistema;
@@ -11,8 +13,8 @@ public class Frame extends javax.swing.JFrame {
     public Frame() {
         initComponents();
     }
-    
-    public Frame(Sistema sistema){
+
+    public Frame(Sistema sistema) {
         this.sistema = sistema;
         initComponents();
         panelmenuprincipal = new PanelMenuPrincipal(sistema);
@@ -20,7 +22,7 @@ public class Frame extends javax.swing.JFrame {
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
         c.gridy = 0;
-        panel.add(panelmenuprincipal,c);
+        panel.add(panelmenuprincipal, c);
     }
 
     @SuppressWarnings("unchecked")
@@ -67,7 +69,7 @@ public class Frame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public static void main(String[] args) {
-       
+
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel panel;

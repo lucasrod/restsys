@@ -12,42 +12,46 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class SorteoRealizarSorteoTest {
+
     private Sorteo instancia;
-    
+
     //PRE: Recibe el resultado esperado y el resultado real de una prueba.
     //POS: Para las sub-pruebas pinta de verde sii el resultado es correcto.    
-    private void printResults(boolean resultadoEsperado, boolean resultado){
+    private void printResults(boolean resultadoEsperado, boolean resultado) {
         String inicioDeString = "";
         String finDeString = "\u001B[0m";
         String ANSI_RED = "\u001B[31m";
         String ANSI_GREEN = "\u001B[32m";
-        if(resultadoEsperado == resultado)  inicioDeString = ANSI_GREEN;
-        else                                inicioDeString = ANSI_RED;
-        System.out.println(inicioDeString + 
-                "[Expected: " + resultadoEsperado + 
-                " - Recieved: " + resultado + "]" + finDeString);
+        if (resultadoEsperado == resultado) {
+            inicioDeString = ANSI_GREEN;
+        } else {
+            inicioDeString = ANSI_RED;
+        }
+        System.out.println(inicioDeString
+                + "[Expected: " + resultadoEsperado
+                + " - Recieved: " + resultado + "]" + finDeString);
         assertEquals(resultadoEsperado, resultado);
     }
-    
-   @BeforeClass
+
+    @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
         instancia = new Sorteo();
     }
-    
+
     @After
     public void tearDown() {
     }
-    
+
     @Test
-    public void testRealizarSorteo1(){
+    public void testRealizarSorteo1() {
         System.out.print("Test Sorteo.realizarSorteo 1:    ");
         Restaurante restaurante = new Restaurante();
         Evaluacion evaluacion1 = new Evaluacion(1, "Reseña1", "Nombre1");
@@ -56,27 +60,27 @@ public class SorteoRealizarSorteoTest {
         restaurante.setEvaluacion(evaluacion2);
         instancia = new Sorteo(2, "Ganaste!", restaurante);
         ArrayList<Evaluacion> resultadoSorteo = instancia.realizarSorteo();
-        printResults(true, resultadoSorteo.size()==2);
+        printResults(true, resultadoSorteo.size() == 2);
     }
-    
+
     @Test
-    public void testRealizarSorteo2(){
+    public void testRealizarSorteo2() {
         System.out.print("Test Sorteo.realizarSorteo 2:    ");
         Restaurante restaurante = new Restaurante();
-        for(int i = 1; i < 11; i++){
+        for (int i = 1; i < 11; i++) {
             Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
             restaurante.setEvaluacion(evaluacion);
         }
         instancia = new Sorteo(10, "Ganaste!", restaurante);
         ArrayList<Evaluacion> resultadoSorteo = instancia.realizarSorteo();
-        printResults(true, resultadoSorteo.size()==10);
+        printResults(true, resultadoSorteo.size() == 10);
     }
-    
+
     @Test
-    public void testRealizarSorteo3(){
+    public void testRealizarSorteo3() {
         System.out.print("Test Sorteo.realizarSorteo 3:    ");
         Restaurante restaurante = new Restaurante();
-        for(int i = 1; i < 11; i++){
+        for (int i = 1; i < 11; i++) {
             Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
             restaurante.setEvaluacion(evaluacion);
         }
@@ -84,18 +88,18 @@ public class SorteoRealizarSorteoTest {
         boolean resultado = true;
         ArrayList<Evaluacion> resultadoSorteo = instancia.realizarSorteo();
         ArrayList<Evaluacion> recorridos = new ArrayList<Evaluacion>();
-        for(int i=0; i<resultadoSorteo.size(); i++){
+        for (int i = 0; i < resultadoSorteo.size(); i++) {
             resultado &= !recorridos.contains(resultadoSorteo.get(i));
             recorridos.add(resultadoSorteo.get(i));
         }
         printResults(true, resultado);
     }
-    
+
     @Test
-    public void testRealizarSorteo4(){
+    public void testRealizarSorteo4() {
         System.out.print("Test Sorteo.realizarSorteo 4:    ");
         Restaurante restaurante = new Restaurante();
-        for(int i = 1; i < 11; i++){
+        for (int i = 1; i < 11; i++) {
             Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
             restaurante.setEvaluacion(evaluacion);
         }
@@ -103,17 +107,17 @@ public class SorteoRealizarSorteoTest {
         boolean resultado = false;
         ArrayList<Evaluacion> resultadoSorteo = instancia.realizarSorteo();
         ArrayList<Evaluacion> evaluacionesSorteables = restaurante.getEvaluacionesSorteables();
-        for(int i=0; i<resultadoSorteo.size(); i++){
+        for (int i = 0; i < resultadoSorteo.size(); i++) {
             resultado |= !resultadoSorteo.get(i).equals(evaluacionesSorteables.get(i));
         }
         printResults(true, resultado);
     }
-    
+
     @Test
-    public void testRealizarSorteo5(){
+    public void testRealizarSorteo5() {
         System.out.print("Test Sorteo.realizarSorteo 5:    ");
         Restaurante restaurante = new Restaurante();
-        for(int i = 1; i < 11; i++){
+        for (int i = 1; i < 11; i++) {
             Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
             restaurante.setEvaluacion(evaluacion);
         }
@@ -121,12 +125,12 @@ public class SorteoRealizarSorteoTest {
         ArrayList<Evaluacion> resultadoSorteo = instancia.realizarSorteo();
         printResults(true, resultadoSorteo.size() == 10);
     }
-    
+
     @Test
-    public void testRealizarSorteo6(){
+    public void testRealizarSorteo6() {
         System.out.print("Test Sorteo.realizarSorteo 6:    ");
         Restaurante restaurante = new Restaurante();
-        for(int i = 1; i < 11; i++){
+        for (int i = 1; i < 11; i++) {
             Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
             restaurante.setEvaluacion(evaluacion);
         }

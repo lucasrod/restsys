@@ -1,12 +1,13 @@
 package gutierrezrodriguez.dominio;
 
 public class Sistema {
+
     private Restaurante restaurante;
-    
-    public Sistema(){
+
+    public Sistema() {
         this.restaurante = new Restaurante();
     }
-    
+
     public Restaurante getRestaurante() {
         return restaurante;
     }
