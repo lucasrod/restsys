@@ -16,6 +16,7 @@ import gutierrezrodriguez.dominio.sorteo.*;
     SorteoRealizarSorteoTest.class,
     FichaSetHorarioTest.class
 })
+
 public class TestSuite {
 
 }
