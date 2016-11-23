@@ -48,21 +48,21 @@ public class FichaSetHorarioTest {
     }
 
     @Test
-    public void testSetHorario1() {
+    public void testSetHorarioSuperaRango() {
         System.out.print("Test Ficha.setHorarioSuperaRango:         ");
         instancia = new Ficha();
         printResults(false, instancia.setHorario(8, "Desde las 10hs hasta las 15hs"));
     }
 
     @Test
-    public void testSetHorario2() {
+    public void testSetHorarioCorrecto() {
         System.out.print("Test Ficha.setHorarioCorrecto:         ");
         instancia = new Ficha();
         printResults(true, instancia.setHorario(4, "Desde las 10hs hasta las 15hs"));
     }
 
     @Test
-    public void testSetHorario3() {
+    public void testSetHorarioInferiorARango() {
         System.out.print("Test Ficha.setHorarioInferiorARango:         ");
         instancia = new Ficha();
         printResults(false, instancia.setHorario(-85, "Desde las 10hs hasta las 15hs"));

@@ -2,7 +2,7 @@ package gutierrezrodriguez.dominio.restaurante;
 
 import gutierrezrodriguez.dominio.Evaluacion;
 import gutierrezrodriguez.dominio.Restaurante;
-import java.util.ArrayList;
+import gutierrezrodriguez.dominio.Sorteo;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -10,7 +10,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class RestauranteSetEvaluacionTest {
+public class RestauranteSetSorteoTest {
 
     private Restaurante instancia;
 
@@ -50,31 +50,31 @@ public class RestauranteSetEvaluacionTest {
     }
 
     @Test
-    public void testSetEvaluacionEvaluacionNoValidaNula() {
-        System.out.print("Test Restaurante.setEvaluacionNoValidaNula: ");
+    public void testSetSorteoPremioNulo() {
+        System.out.print("Test Restaurante.setSorteoPremioNulo: ");
         instancia = new Restaurante();
-        Evaluacion evaluacion = new Evaluacion();
-        printResults(false, instancia.setEvaluacion(evaluacion));
+        Sorteo sorteo = new Sorteo(1, "", instancia);
+        printResults(false, instancia.setSorteo(sorteo));
     }
-
+    
     @Test
-    public void testSetEvaluacionCorrecto() {
-        System.out.print("Test Restaurante.setEvaluacionCorrecto: ");
+    public void testSetSorteoCorrecto() {
+        System.out.print("Test Restaurante.setSorteoCorrecto: ");
         instancia = new Restaurante();
-        Evaluacion evaluacion = new Evaluacion(4, "", "");
-        instancia.setEvaluacion(evaluacion);
-        ArrayList<Evaluacion> evaluaciones = instancia.getEvaluaciones();
-        printResults(true, evaluaciones.contains(evaluacion));
+        Sorteo sorteo = new Sorteo(1, "TV Plasma", instancia);
+        printResults(true, instancia.setSorteo(sorteo));
     }
-
+    
     @Test
-    public void testSetEvaluacionNoSorteable() {
-        System.out.print("Test Restaurante.setEvaluacionNoSorteable: ");
+    public void testSetSorteoFueAgregado() {
+        System.out.print("Test Restaurante.setSorteoFueAgregado: ");
         instancia = new Restaurante();
-        Evaluacion evaluacion = new Evaluacion(4, "", "");
-        instancia.setEvaluacion(evaluacion);
-        ArrayList<Evaluacion> evaluaciones = instancia.getEvaluacionesSorteables();
-        printResults(false, evaluaciones.contains(evaluacion));
+        for (int i = 1; i < 11; i++) {
+            Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
+            instancia.setEvaluacion(evaluacion);
+        }
+        Sorteo sorteo = new Sorteo(1, "TV Plasma", instancia);
+        instancia.setSorteo(sorteo);
+        printResults(true, instancia.getSorteos().contains(sorteo));
     }
-
 }

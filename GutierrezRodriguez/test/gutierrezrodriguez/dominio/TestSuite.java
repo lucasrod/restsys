@@ -13,6 +13,7 @@ import gutierrezrodriguez.dominio.sorteo.*;
     EvaluacionEsSorteableTest.class,
     EvaluacionEsValidaTest.class,
     RestauranteSetEvaluacionTest.class,
+    RestauranteSetSorteoTest.class,
     SorteoRealizarSorteoTest.class,
     FichaSetHorarioTest.class
 })

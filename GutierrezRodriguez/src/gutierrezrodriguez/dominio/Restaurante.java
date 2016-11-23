@@ -6,11 +6,13 @@ public class Restaurante {
 
     private final ArrayList<Evaluacion> evaluaciones;
     private final ArrayList<Evaluacion> evaluacionesSorteables;
+    private ArrayList<Sorteo> sorteos;
     private Ficha ficha;
 
     public Restaurante() {
         this.evaluaciones = new ArrayList<Evaluacion>();
         this.evaluacionesSorteables = new ArrayList<Evaluacion>();
+        this.sorteos = new ArrayList<Sorteo>();
         this.ficha = new Ficha();
     }
 
@@ -28,6 +30,21 @@ public class Restaurante {
 
     public ArrayList<Evaluacion> getEvaluaciones() {
         return evaluaciones;
+    }
+    
+    public ArrayList<Sorteo> getSorteos(){
+        return this.sorteos;
+    }
+    
+    //PRE: El sorteo debe tener premio.
+    //POS: Retorna true sii el sorteo tiene premio y fue agregado a la lista de sorteos.
+    public boolean setSorteo(Sorteo sorteo){
+        boolean retorno = false;
+        if(!sorteo.getPremio().isEmpty()){
+            this.sorteos.add(sorteo);
+            retorno = true;
+        }
+        return retorno;
     }
 
     //PRE:  -
