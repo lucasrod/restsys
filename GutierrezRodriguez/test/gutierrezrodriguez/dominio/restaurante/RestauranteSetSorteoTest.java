@@ -3,6 +3,7 @@ package gutierrezrodriguez.dominio.restaurante;
 import gutierrezrodriguez.dominio.Evaluacion;
 import gutierrezrodriguez.dominio.Restaurante;
 import gutierrezrodriguez.dominio.Sorteo;
+import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -76,5 +77,21 @@ public class RestauranteSetSorteoTest {
         Sorteo sorteo = new Sorteo(1, "TV Plasma", instancia);
         instancia.setSorteo(sorteo);
         printResults(true, instancia.getSorteos().contains(sorteo));
+    }
+    
+    @Test
+    public void testSetSorteoCongruenciaDeSorteables(){
+        System.out.print("Test Restaurante.setSorteoFueAgregado: ");
+        instancia = new Restaurante();
+        for (int i = 1; i < 11; i++) {
+            Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
+            instancia.setEvaluacion(evaluacion);
+        }
+        Sorteo sorteo = new Sorteo(11, "TV Plasma", instancia);
+        instancia.setSorteo(sorteo);
+        Evaluacion evaluacion = new Evaluacion(1, "Reseña11", "Nombre11");
+        instancia.setEvaluacion(evaluacion);
+        ArrayList<Evaluacion> todasLasEvaluaciones = instancia.getSorteos().get(0).realizarSorteo();
+        printResults(true, todasLasEvaluaciones.contains(sorteo));
     }
 }
