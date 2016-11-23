@@ -81,7 +81,7 @@ public class RestauranteSetSorteoTest {
     
     @Test
     public void testSetSorteoCongruenciaDeSorteables(){
-        System.out.print("Test Restaurante.setSorteoFueAgregado: ");
+        System.out.print("Test Restaurante.setSorteoCongruenciaDeSorteables: ");
         instancia = new Restaurante();
         for (int i = 1; i < 11; i++) {
             Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
@@ -92,6 +92,6 @@ public class RestauranteSetSorteoTest {
         Evaluacion evaluacion = new Evaluacion(1, "Reseña11", "Nombre11");
         instancia.setEvaluacion(evaluacion);
         ArrayList<Evaluacion> todasLasEvaluaciones = instancia.getSorteos().get(0).realizarSorteo();
-        printResults(true, todasLasEvaluaciones.contains(sorteo));
+        printResults(true, todasLasEvaluaciones.contains(evaluacion));
     }
 }
