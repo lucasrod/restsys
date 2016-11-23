@@ -47,7 +47,19 @@ public final class Sorteo {
     public void setPremio(String premio) {
         this.premio = premio;
     }
+    
+    //PRE: -
+    //POS: Retorna true sii el sorteo fue realizado.
+    public boolean sorteoFueRealizado(){
+        return this.realizado;
+    }
 
+    //PRE: El sorteo fue realizado 
+    //POS: Retorna un ArrayList<Evaluaciones> que representan los ganadores del sorteo
+    public ArrayList<Evaluacion> getGanadores(){
+        return this.ganadores;
+    }
+    
     public ArrayList<Evaluacion> realizarSorteo() {
         ArrayList<Evaluacion> retorno = new ArrayList<Evaluacion>();
         ArrayList<Evaluacion> sorteables = restaurante.getEvaluacionesSorteables();

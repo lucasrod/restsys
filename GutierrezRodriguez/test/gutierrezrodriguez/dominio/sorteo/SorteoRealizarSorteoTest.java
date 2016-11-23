@@ -115,7 +115,7 @@ public class SorteoRealizarSorteoTest {
 
     @Test
     public void testRealizarSorteoMasGanadoresQueEvaluaciones() {
-        System.out.print("Test Sorteo.realizarSorteo 5:    ");
+        System.out.print("Test Sorteo.realizarSorteoMasGanadoresQueEvaluaciones:    ");
         Restaurante restaurante = new Restaurante();
         for (int i = 1; i < 11; i++) {
             Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
@@ -128,7 +128,7 @@ public class SorteoRealizarSorteoTest {
 
     @Test
     public void testRealizarSorteoMenosGanadoresQueEvaluaciones() {
-        System.out.print("Test Sorteo.realizarSorteo 6:    ");
+        System.out.print("Test Sorteo.realizarSorteoMenosGanadoresQueEvaluaciones:    ");
         Restaurante restaurante = new Restaurante();
         for (int i = 1; i < 11; i++) {
             Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
@@ -145,6 +145,6 @@ public class SorteoRealizarSorteoTest {
         Restaurante restaurante = new Restaurante();
         instancia = new Sorteo(3, "Ganaste!", restaurante);
         ArrayList<Evaluacion> resultadoSorteo = instancia.realizarSorteo();
-        printResults(true, resultadoSorteo.size() == 0);
+        printResults(true, resultadoSorteo.isEmpty());
     }
 }
