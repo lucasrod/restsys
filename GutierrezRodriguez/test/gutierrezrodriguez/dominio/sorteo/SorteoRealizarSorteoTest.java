@@ -52,7 +52,7 @@ public class SorteoRealizarSorteoTest {
 
     @Test
     public void testRealizarSorteoDosIngresadosDosGanadores() {
-        System.out.print("Test Sorteo.realizarSorteo 1:    ");
+        System.out.print("Test Sorteo.realizarSorteoDosIngresadosDosGanadores:    ");
         Restaurante restaurante = new Restaurante();
         Evaluacion evaluacion1 = new Evaluacion(1, "Reseña1", "Nombre1");
         Evaluacion evaluacion2 = new Evaluacion(2, "Reseña2", "Nombre2");
@@ -65,7 +65,7 @@ public class SorteoRealizarSorteoTest {
 
     @Test
     public void testRealizarSorteoDiezIngresadosDiezGanadores() {
-        System.out.print("Test Sorteo.realizarSorteo 2:    ");
+        System.out.print("Test Sorteo.realizarSorteoDiezIngresadosDiezGanadores:    ");
         Restaurante restaurante = new Restaurante();
         for (int i = 1; i < 11; i++) {
             Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
@@ -78,7 +78,7 @@ public class SorteoRealizarSorteoTest {
 
     @Test
     public void testRealizarSorteoAusenciaDeRepetidos() {
-        System.out.print("Test Sorteo.realizarSorteo 3:    ");
+        System.out.print("Test Sorteo.realizarSorteoAusenciaDeRepetido:    ");
         Restaurante restaurante = new Restaurante();
         for (int i = 1; i < 11; i++) {
             Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
@@ -97,7 +97,7 @@ public class SorteoRealizarSorteoTest {
 
     @Test
     public void testRealizarSorteoCambioDeOrden() {
-        System.out.print("Test Sorteo.realizarSorteo 4:    ");
+        System.out.print("Test Sorteo.realizarSorteoCambioDeOrden:    ");
         Restaurante restaurante = new Restaurante();
         for (int i = 1; i < 11; i++) {
             Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
@@ -114,7 +114,7 @@ public class SorteoRealizarSorteoTest {
     }
 
     @Test
-    public void testRealizarSorteo5() {
+    public void testRealizarSorteoMasGanadoresQueEvaluaciones() {
         System.out.print("Test Sorteo.realizarSorteo 5:    ");
         Restaurante restaurante = new Restaurante();
         for (int i = 1; i < 11; i++) {
@@ -127,7 +127,7 @@ public class SorteoRealizarSorteoTest {
     }
 
     @Test
-    public void testRealizarSorteo6() {
+    public void testRealizarSorteoMenosGanadoresQueEvaluaciones() {
         System.out.print("Test Sorteo.realizarSorteo 6:    ");
         Restaurante restaurante = new Restaurante();
         for (int i = 1; i < 11; i++) {
@@ -138,12 +138,13 @@ public class SorteoRealizarSorteoTest {
         ArrayList<Evaluacion> resultadoSorteo = instancia.realizarSorteo();
         printResults(true, resultadoSorteo.size() == 3);
     }
-   /* 
+    
     @Test
     public void testRealizarSorteoNoExistenEvaluaciones(){
-        System.out.println("Test Sorteo.realizarSorteoNoExistenEvaluaciones:    ");
+        System.out.print("Test Sorteo.realizarSorteoNoExistenEvaluaciones:    ");
         Restaurante restaurante = new Restaurante();
         instancia = new Sorteo(3, "Ganaste!", restaurante);
-        ArrayList
-    }*/
+        ArrayList<Evaluacion> resultadoSorteo = instancia.realizarSorteo();
+        printResults(true, resultadoSorteo.size() == 0);
+    }
 }
