@@ -9,12 +9,12 @@ package gutierrezrodriguez.interfaz;
  *
  * @author lucasrod
  */
-public class panelRegistrarSorteo extends javax.swing.JPanel {
+public class PanelRegistrarSorteo extends javax.swing.JPanel {
 
     /**
      * Creates new form panelRegistrarSorteo
      */
-    public panelRegistrarSorteo() {
+    public PanelRegistrarSorteo() {
         initComponents();
     }
 
@@ -27,12 +27,28 @@ public class panelRegistrarSorteo extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
+        labelRegistrarSorteo = new javax.swing.JLabel();
+        spinnerGanadores = new javax.swing.JSpinner();
+        labelCantidadGanadores = new javax.swing.JLabel();
+        labelPremio = new javax.swing.JLabel();
+        textFieldPremio = new javax.swing.JTextField();
+        botonRegistrar = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(500, 300));
 
-        jLabel2.setText("Registrar sorteo");
+        labelRegistrarSorteo.setText("Registrar sorteo");
+
+        spinnerGanadores.setModel(new javax.swing.SpinnerNumberModel(1, 1, 100, 1));
+
+        labelCantidadGanadores.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        labelCantidadGanadores.setText("Cantidad de ganadores");
+
+        labelPremio.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
+        labelPremio.setText("Premio");
+
+        textFieldPremio.setText("TV 55\"");
+
+        botonRegistrar.setText("Registrar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -40,27 +56,50 @@ public class panelRegistrarSorteo extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(labelPremio)
+                        .addGap(18, 18, 18)
+                        .addComponent(textFieldPremio))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(labelRegistrarSorteo)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(labelCantidadGanadores)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
+                        .addComponent(spinnerGanadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(196, 196, 196)
+                .addComponent(botonRegistrar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(278, Short.MAX_VALUE)
-                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(181, 181, 181))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
-                .addGap(31, 31, 31)
-                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(204, Short.MAX_VALUE))
+                .addComponent(labelRegistrarSorteo)
+                .addGap(58, 58, 58)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(spinnerGanadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelCantidadGanadores))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelPremio)
+                    .addComponent(textFieldPremio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addComponent(botonRegistrar)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JButton botonRegistrar;
+    private javax.swing.JLabel labelCantidadGanadores;
+    private javax.swing.JLabel labelPremio;
+    private javax.swing.JLabel labelRegistrarSorteo;
+    private javax.swing.JSpinner spinnerGanadores;
+    private javax.swing.JTextField textFieldPremio;
     // End of variables declaration//GEN-END:variables
 }
