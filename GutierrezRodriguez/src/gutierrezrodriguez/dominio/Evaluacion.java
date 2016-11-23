@@ -1,11 +1,11 @@
 package gutierrezrodriguez.dominio;
 
-public class Evaluacion {
+public final class Evaluacion {
 
     private int estrellas;
     private String resena;
-    private String nombre;
-
+    private Cliente cliente;
+    
     //PRE: -
     //POS: Retorna true sii la puntuación es un int entre 1 y 5
     private boolean esPuntuacionValida(int estrellas) {
@@ -15,9 +15,9 @@ public class Evaluacion {
     public Evaluacion() {
         this.estrellas = 0;
         this.resena = "";
-        this.nombre = "";
+        this.cliente = new Cliente();
     }
-
+    
     public Evaluacion(int estrellas, String resena, String nombre) {
         if (esPuntuacionValida(estrellas)) {
             this.estrellas = estrellas;
@@ -25,7 +25,18 @@ public class Evaluacion {
             this.estrellas = 0;
         }
         this.resena = resena;
-        this.nombre = nombre;
+        this.cliente = new Cliente();
+        this.setNombre(nombre);
+    }
+
+    public Evaluacion(int estrellas, String resena, String nombre, String mail) {
+        if (esPuntuacionValida(estrellas)) {
+            this.estrellas = estrellas;
+        } else {
+            this.estrellas = 0;
+        }
+        this.resena = resena;
+        this.cliente = new Cliente(nombre, mail);
     }
 
     public int getEstrellas() {
@@ -50,22 +61,46 @@ public class Evaluacion {
     }
 
     public String getNombre() {
-        return nombre;
+        return cliente.nombre;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.cliente.nombre = nombre;
     }
-
+    
+    public String getMail(){
+        return cliente.mail;
+    }
+    
+    public void setMail(String mail){
+        this.cliente.mail = mail;
+    }
+    
     //PRE: -
     //POS: Retorna true sii (ni el nombre ni la reseña son vacíos) y es válida.
     public boolean esSorteable() {
-        return !this.nombre.isEmpty() && !this.resena.isEmpty() && this.esValida();
+        return !this.cliente.nombre.isEmpty() && !this.resena.isEmpty() && this.esValida();
     }
 
     //PRE: -
     //POS: Retorna true sii se le asigno un valor a las estrellas
     public boolean esValida() {
         return this.estrellas != 0;
+    }
+    
+    private class Cliente{
+        
+        private String nombre;
+        private String mail;
+        
+        Cliente(){
+            this.nombre = "";
+            this.mail = "";
+        }
+        
+        Cliente(String nombre, String mail){
+            this.nombre = nombre;
+            this.mail = mail;
+        }
     }
 }
