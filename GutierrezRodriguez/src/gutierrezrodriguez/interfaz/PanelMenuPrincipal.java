@@ -19,29 +19,31 @@ public class PanelMenuPrincipal extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        botonRestaurante = new javax.swing.JButton();
+        labelRol = new javax.swing.JLabel();
+        botonCliente = new javax.swing.JButton();
 
-        jButton1.setText("Restaurante");
-        jButton1.setMaximumSize(new java.awt.Dimension(210, 50));
-        jButton1.setMinimumSize(new java.awt.Dimension(210, 50));
-        jButton1.setPreferredSize(new java.awt.Dimension(210, 50));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        setPreferredSize(new java.awt.Dimension(500, 300));
+
+        botonRestaurante.setText("Restaurante");
+        botonRestaurante.setMaximumSize(new java.awt.Dimension(210, 50));
+        botonRestaurante.setMinimumSize(new java.awt.Dimension(210, 50));
+        botonRestaurante.setPreferredSize(new java.awt.Dimension(210, 50));
+        botonRestaurante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botonRestauranteActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("Elija su rol");
+        labelRol.setText("Elija su rol");
 
-        jButton2.setText("Cliente");
-        jButton2.setMaximumSize(new java.awt.Dimension(210, 50));
-        jButton2.setMinimumSize(new java.awt.Dimension(210, 50));
-        jButton2.setPreferredSize(new java.awt.Dimension(210, 50));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        botonCliente.setText("Cliente");
+        botonCliente.setMaximumSize(new java.awt.Dimension(210, 50));
+        botonCliente.setMinimumSize(new java.awt.Dimension(210, 50));
+        botonCliente.setPreferredSize(new java.awt.Dimension(210, 50));
+        botonCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                botonClienteActionPerformed(evt);
             }
         });
 
@@ -53,39 +55,38 @@ public class PanelMenuPrincipal extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel2))
+                        .addComponent(labelRol))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(118, 118, 118)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(118, 118, 118)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(128, Short.MAX_VALUE))
+                        .addGap(143, 143, 143)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(botonRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botonCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(147, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
-                .addGap(49, 49, 49)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelRol)
+                .addGap(35, 35, 35)
+                .addComponent(botonRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addComponent(botonCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(89, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botonRestauranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRestauranteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botonRestauranteActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void botonClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonClienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_botonClienteActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton botonCliente;
+    private javax.swing.JButton botonRestaurante;
+    private javax.swing.JLabel labelRol;
     // End of variables declaration//GEN-END:variables
 }
