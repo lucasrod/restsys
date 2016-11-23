@@ -49,21 +49,21 @@ public class EvaluacionEsValidaTest {
 
     @Test
     public void testEsValida1() {
-        System.out.print("Test Evaluacion.esValida 1:      ");
+        System.out.print("Test Evaluacion.esValidaEvaluacionNula:      ");
         instancia = new Evaluacion();
         printResults(false, instancia.esValida());
     }
 
     @Test
     public void testEsValida2() {
-        System.out.print("Test Evaluacion.esValida 2:      ");
+        System.out.print("Test Evaluacion.esValidaEstrellasFueraDeRango:      ");
         instancia = new Evaluacion(8, "Reseña", "Nombre");
         printResults(false, instancia.esValida());
     }
 
     @Test
     public void testEsValida3() {
-        System.out.print("Test Evaluacion.esValida 3:      ");
+        System.out.print("Test Evaluacion.esValidaCorrecto:      ");
         instancia = new Evaluacion(4, "Reseña", "Nombre");
         printResults(true, instancia.esValida());
     }

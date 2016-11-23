@@ -61,46 +61,30 @@ public final class Evaluacion {
     }
 
     public String getNombre() {
-        return cliente.nombre;
+        return cliente.getNombre();
     }
 
     public void setNombre(String nombre) {
-        this.cliente.nombre = nombre;
+        this.cliente.setNombre(nombre);
     }
     
     public String getMail(){
-        return cliente.mail;
+        return cliente.getMail();
     }
     
     public void setMail(String mail){
-        this.cliente.mail = mail;
+        this.cliente.setMail(mail);
     }
     
     //PRE: -
     //POS: Retorna true sii (ni el nombre ni la reseña son vacíos) y es válida.
     public boolean esSorteable() {
-        return !this.cliente.nombre.isEmpty() && !this.resena.isEmpty() && this.esValida();
+        return !this.cliente.getNombre().isEmpty() && !this.resena.isEmpty() && this.esValida();
     }
 
     //PRE: -
     //POS: Retorna true sii se le asigno un valor a las estrellas
     public boolean esValida() {
         return this.estrellas != 0;
-    }
-    
-    private class Cliente{
-        
-        private String nombre;
-        private String mail;
-        
-        Cliente(){
-            this.nombre = "";
-            this.mail = "";
-        }
-        
-        Cliente(String nombre, String mail){
-            this.nombre = nombre;
-            this.mail = mail;
-        }
     }
 }

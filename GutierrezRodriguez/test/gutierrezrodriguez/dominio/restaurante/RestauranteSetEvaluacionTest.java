@@ -51,7 +51,7 @@ public class RestauranteSetEvaluacionTest {
 
     @Test
     public void testSetEvaluacion1() {
-        System.out.print("Test Restaurante.setEvaluacion 1: ");
+        System.out.print("Test Restaurante.setEvaluacionNoValidaNula: ");
         instancia = new Restaurante();
         Evaluacion evaluacion = new Evaluacion();
         printResults(false, instancia.setEvaluacion(evaluacion));
@@ -59,7 +59,7 @@ public class RestauranteSetEvaluacionTest {
 
     @Test
     public void testSetEvaluacion2() {
-        System.out.print("Test Restaurante.setEvaluacion 2: ");
+        System.out.print("Test Restaurante.setEvaluacionCorrecto: ");
         instancia = new Restaurante();
         Evaluacion evaluacion = new Evaluacion(4, "", "");
         instancia.setEvaluacion(evaluacion);
@@ -69,7 +69,7 @@ public class RestauranteSetEvaluacionTest {
 
     @Test
     public void testSetEvaluacion3() {
-        System.out.print("Test Restaurante.setEvaluacion 3: ");
+        System.out.print("Test Restaurante.setEvaluacionNoSorteable: ");
         instancia = new Restaurante();
         Evaluacion evaluacion = new Evaluacion(4, "", "");
         instancia.setEvaluacion(evaluacion);

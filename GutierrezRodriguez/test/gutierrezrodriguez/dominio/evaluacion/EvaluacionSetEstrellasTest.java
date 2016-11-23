@@ -49,21 +49,21 @@ public class EvaluacionSetEstrellasTest {
 
     @Test
     public void testSetEstrellas1() {
-        System.out.print("Test Evaluacion.setEstrellas 1:  ");
+        System.out.print("Test Evaluacion.setEstrellasCorrecto:  ");
         int estrellas = 3;
         printResults(true, instancia.setEstrellas(estrellas));
     }
 
     @Test
     public void testSetEstrellas2() {
-        System.out.print("Test Evaluacion.setEstrellas 2:  ");
+        System.out.print("Test Evaluacion.setEstrellasSuperaRango:  ");
         int estrellas = 8;
         printResults(false, instancia.setEstrellas(estrellas));
     }
 
     @Test
     public void testSetEstrellas3() {
-        System.out.print("Test Evaluacion.setEstrellas 3:  ");
+        System.out.print("Test Evaluacion.setEstrellasInferiorARango:  ");
         int estrellas = -5;
         printResults(false, instancia.setEstrellas(estrellas));
     }

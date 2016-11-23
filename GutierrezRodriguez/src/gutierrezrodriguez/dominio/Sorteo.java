@@ -9,17 +9,23 @@ public final class Sorteo {
     int numeroDeGanadores;
     String premio;
     Restaurante restaurante;
+    boolean realizado;
+    ArrayList<Evaluacion> ganadores;
 
     public Sorteo() {
         this.numeroDeGanadores = 1;
         this.premio = "";
         this.restaurante = new Restaurante();
+        this.realizado = false;
+        this.ganadores = new ArrayList<Evaluacion>();
     }
 
     public Sorteo(int numeroDeGanadores, String premio, Restaurante restaurante) {
         this.setNumeroDeGanadores(numeroDeGanadores);
         this.premio = premio;
         this.restaurante = restaurante;
+        this.realizado = false;
+        this.ganadores = new ArrayList<Evaluacion>();
     }
 
     public int getNumeroDeGanadores() {
@@ -68,6 +74,8 @@ public final class Sorteo {
             //Se agrega el numero ganador a la lista de los que ya salieron para evitar que se repita
             elegidos.add(numeroSorteado);
         }
+        this.realizado = true;
+        this.ganadores = retorno;
         return retorno;
     }
 }

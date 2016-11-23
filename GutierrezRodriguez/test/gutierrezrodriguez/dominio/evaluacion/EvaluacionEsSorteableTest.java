@@ -48,22 +48,22 @@ public class EvaluacionEsSorteableTest {
     }
 
     @Test
-    public void testEsSorteable1() {
-        System.out.print("Test Evaluacion.esSorteable 1:   ");
+    public void testEsSorteableCasoCorrecto() {
+        System.out.print("Test Evaluacion.esSorteableCasoCorrecto:   ");
         instancia = new Evaluacion(3, "Reseña", "Nombre");
         printResults(true, instancia.esSorteable());
     }
 
     @Test
-    public void testEsSorteable2() {
-        System.out.print("Test Evaluacion.esSorteable 2:   ");
+    public void testEsSorteableNombreNulo() {
+        System.out.print("Test Evaluacion.esSorteableNombreNulo:   ");
         instancia = new Evaluacion(3, "", "");
         printResults(false, instancia.esSorteable());
     }
 
     @Test
-    public void testEsSorteable3() {
-        System.out.print("Test Evaluacion.esSorteable 3:   ");
+    public void testEsSorteableEstrellasFueraDeRango() {
+        System.out.print("Test Evaluacion.esSorteableEstrellasFueraDeRango:   ");
         instancia = new Evaluacion(8, "Reseña", "Nombre");
         printResults(false, instancia.esSorteable());
     }
