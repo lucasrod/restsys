@@ -10,7 +10,7 @@
       <Dimension value="[898, 698]"/>
     </Property>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[898, 698]"/>
+      <Dimension value="[550, 350]"/>
     </Property>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
