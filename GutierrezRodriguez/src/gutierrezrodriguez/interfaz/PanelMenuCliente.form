@@ -169,7 +169,7 @@
             </Property>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value=""/>
           </AuxValues>
         </Component>
       </SubComponents>
@@ -203,6 +203,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="An&#xf3;nimo"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonAnonimoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="botonVerEvaluaciones">
       <Properties>

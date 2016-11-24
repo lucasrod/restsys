@@ -1,6 +1,7 @@
 
 package gutierrezrodriguez.interfaz;
 
+import gutierrezrodriguez.dominio.Cliente;
 import gutierrezrodriguez.dominio.Sistema;
 
 public class PanelRegistrarCliente extends javax.swing.JPanel {
@@ -47,10 +48,11 @@ public class PanelRegistrarCliente extends javax.swing.JPanel {
         labelEmail.setText("Email");
 
         botonRegistrarse.setText("Registrarse");
-
-        textFieldNombre.setText("jTextField1");
-
-        textFieldEmail.setText("jTextField2");
+        botonRegistrarse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRegistrarseActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -103,9 +105,16 @@ public class PanelRegistrarCliente extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
+        panelMenuCliente.actualizarListaClientes();
         this.setVisible(false);
         this.panelMenuCliente.setVisible(true);
     }//GEN-LAST:event_botonVolverActionPerformed
+
+    private void botonRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarseActionPerformed
+        Cliente cliente = new Cliente(textFieldNombre.getText(), textFieldEmail.getText());
+        sistema.setClientes(cliente);
+        botonVolver.doClick();
+    }//GEN-LAST:event_botonRegistrarseActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

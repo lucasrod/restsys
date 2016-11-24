@@ -25,6 +25,10 @@ public class PanelMenuCliente extends javax.swing.JPanel {
         this.panelMenuPrincipal = panelMenuPrincipal;
     }
     
+    public void actualizarListaClientes(){
+        listaClientes.setListData(sistema.getClientes().toArray());
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -36,7 +40,7 @@ public class PanelMenuCliente extends javax.swing.JPanel {
         botonVolver = new javax.swing.JButton();
         labelQuienSos = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        listaClientes = new javax.swing.JList<>();
+        listaClientes = new javax.swing.JList();
         botonRegistrarme = new javax.swing.JButton();
         botonPremio = new javax.swing.JButton();
         botonEvaluar = new javax.swing.JButton();
@@ -65,10 +69,10 @@ public class PanelMenuCliente extends javax.swing.JPanel {
 
         labelQuienSos.setText("¿Quién sos?");
 
-        listaClientes.setModel(new javax.swing.AbstractListModel<String>() {
+        listaClientes.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+            public Object getElementAt(int i) { return strings[i]; }
         });
         jScrollPane1.setViewportView(listaClientes);
 
@@ -95,6 +99,11 @@ public class PanelMenuCliente extends javax.swing.JPanel {
         });
 
         botonAnonimo.setText("Anónimo");
+        botonAnonimo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAnonimoActionPerformed(evt);
+            }
+        });
 
         botonVerEvaluaciones.setText("Ver evaluaciones");
         botonVerEvaluaciones.addActionListener(new java.awt.event.ActionListener() {
@@ -196,6 +205,11 @@ public class PanelMenuCliente extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_botonVerEvaluacionesActionPerformed
 
+    private void botonAnonimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAnonimoActionPerformed
+        listaClientes.clearSelection();
+        botonPremio.setEnabled(false);
+    }//GEN-LAST:event_botonAnonimoActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -211,6 +225,6 @@ public class PanelMenuCliente extends javax.swing.JPanel {
     private javax.swing.JLabel labelQuienSos;
     private javax.swing.JLabel labelSi;
     private javax.swing.JLabel labelYaSeRegistro;
-    private javax.swing.JList<String> listaClientes;
+    private javax.swing.JList listaClientes;
     // End of variables declaration//GEN-END:variables
 }

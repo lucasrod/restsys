@@ -88,11 +88,19 @@ public final class Sorteo {
 
             //Se agrega el numero ganador a la lista de los que ya salieron para evitar que se repita
             elegidos.add(numeroSorteado);
+            
         }
+        realizado = true;
         return retorno;
     }
     
     public static Predicate <Sorteo> fueRealizado(){
         return p -> p.isRealizado();
+    }
+
+    @Override
+    public String toString() {
+        int cantGanadores = getNumeroDeGanadores();
+        return (cantGanadores == 1 ? premio : cantGanadores + " " + premio);
     }
 }

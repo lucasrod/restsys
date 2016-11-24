@@ -1,11 +1,22 @@
 package gutierrezrodriguez.dominio;
 
+import java.util.ArrayList;
+
 public class Sistema {
 
+    /**
+     * @return the clientes
+     */
+    public ArrayList<Cliente> getClientes() {
+        return clientes;
+    }
+
     private Restaurante restaurante;
+    private ArrayList<Cliente> clientes;
 
     public Sistema() {
         this.restaurante = new Restaurante();
+        this.clientes = new ArrayList<>();
     }
 
     public Restaurante getRestaurante() {
@@ -27,5 +38,9 @@ public class Sistema {
         }
         Ficha ficha = new Ficha("Dakota", "21 de Setiembre esq. Luis de La Torre");
         restaurante.setFicha(ficha);
+    }
+
+    public void setClientes(Cliente cliente) {
+        clientes.add(cliente);
     }
 }
