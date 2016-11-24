@@ -17,7 +17,7 @@ public final class Sorteo {
         this.premio = "";
         this.restaurante = new Restaurante();
         this.realizado = false;
-        this.ganadores = new ArrayList<Evaluacion>();
+        this.ganadores = new ArrayList<>();
     }
 
     public Sorteo(int numeroDeGanadores, String premio, Restaurante restaurante) {
