@@ -5,14 +5,18 @@ import gutierrezrodriguez.dominio.Sistema;
 public class PanelMenuPrincipal extends javax.swing.JPanel {
 
     Sistema sistema;
+    PanelMenuCliente panelmenucliente;
+    PanelMenuRestaurante panelmenurestaurante;
 
     public PanelMenuPrincipal() {
         initComponents();
     }
 
-    public PanelMenuPrincipal(Sistema sistema) {
-        this.sistema = sistema;
+    public PanelMenuPrincipal(Sistema sistema, PanelMenuCliente panelmenucliente, PanelMenuRestaurante panelmenurestaurante) {
         initComponents();
+        this.sistema = sistema;
+        this.panelmenucliente = panelmenucliente;
+        this.panelmenurestaurante = panelmenurestaurante;
     }
 
     @SuppressWarnings("unchecked")
@@ -77,11 +81,13 @@ public class PanelMenuPrincipal extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonRestauranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRestauranteActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        this.panelmenurestaurante.setVisible(true);
     }//GEN-LAST:event_botonRestauranteActionPerformed
 
     private void botonClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonClienteActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        this.panelmenucliente.setVisible(true);
     }//GEN-LAST:event_botonClienteActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -24,7 +24,7 @@ public class Frame extends javax.swing.JFrame {
         initComponents();
         panelmenucliente = new PanelMenuCliente(panelmenuprincipal, sistema);
         panelmenurestaurante = new PanelMenuRestaurante(panelmenuprincipal, sistema);
-        panelmenuprincipal = new PanelMenuPrincipal(sistema);
+        panelmenuprincipal = new PanelMenuPrincipal(sistema, panelmenucliente, panelmenurestaurante);
         panelmenucliente.setPm(panelmenuprincipal);
         panelmenurestaurante.setPm(panelmenuprincipal);
         panelDinamico.setLayout(layout);

@@ -13,6 +13,7 @@ public class PanelMenuRestaurante extends javax.swing.JPanel {
     }
 
     public PanelMenuRestaurante(PanelMenuPrincipal panelmenuprincipal, Sistema sistema){
+        initComponents();
         this.panelmenuprincipal = panelmenuprincipal;
         this.sistema = sistema;
     }
