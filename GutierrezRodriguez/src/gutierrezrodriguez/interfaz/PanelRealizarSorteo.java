@@ -2,6 +2,8 @@
 package gutierrezrodriguez.interfaz;
 
 import gutierrezrodriguez.dominio.Sistema;
+import gutierrezrodriguez.dominio.Sorteo;
+import javax.swing.JOptionPane;
 
 public class PanelRealizarSorteo extends javax.swing.JPanel {
     
@@ -29,7 +31,7 @@ public class PanelRealizarSorteo extends javax.swing.JPanel {
         labelRealizarSorteo = new javax.swing.JLabel();
         labelElegirSorteo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        listaSorteos = new javax.swing.JList<>();
+        listaSorteos = new javax.swing.JList();
         botonRealizarSorteo = new javax.swing.JButton();
         botonVolver = new javax.swing.JButton();
 
@@ -37,10 +39,10 @@ public class PanelRealizarSorteo extends javax.swing.JPanel {
 
         labelElegirSorteo.setText("Elegir sorteo");
 
-        listaSorteos.setModel(new javax.swing.AbstractListModel<String>() {
+        listaSorteos.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+            public Object getElementAt(int i) { return strings[i]; }
         });
         jScrollPane1.setViewportView(listaSorteos);
 
@@ -75,7 +77,7 @@ public class PanelRealizarSorteo extends javax.swing.JPanel {
                         .addComponent(botonVolver)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(200, Short.MAX_VALUE)
+                .addContainerGap(176, Short.MAX_VALUE)
                 .addComponent(botonRealizarSorteo)
                 .addGap(195, 195, 195))
         );
@@ -90,14 +92,18 @@ public class PanelRealizarSorteo extends javax.swing.JPanel {
                 .addComponent(labelElegirSorteo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
                 .addComponent(botonRealizarSorteo)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonRealizarSorteoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRealizarSorteoActionPerformed
-        // TODO add your handling code here:
+        if(listaSorteos.isSelectionEmpty()){
+            JOptionPane.showMessageDialog(null, "Debe seleccionar el sorteo", "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+            Sorteo sorteo = (Sorteo) listaSorteos.getSelectedValue();
+        }
     }//GEN-LAST:event_botonRealizarSorteoActionPerformed
 
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
@@ -105,13 +111,12 @@ public class PanelRealizarSorteo extends javax.swing.JPanel {
         this.panelmenurestaurante.setVisible(true);
     }//GEN-LAST:event_botonVolverActionPerformed
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonRealizarSorteo;
     private javax.swing.JButton botonVolver;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelElegirSorteo;
     private javax.swing.JLabel labelRealizarSorteo;
-    private javax.swing.JList<String> listaSorteos;
+    private javax.swing.JList listaSorteos;
     // End of variables declaration//GEN-END:variables
 }

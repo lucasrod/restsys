@@ -2,6 +2,8 @@
 package gutierrezrodriguez.interfaz;
 
 import gutierrezrodriguez.dominio.Sistema;
+import gutierrezrodriguez.dominio.Sorteo;
+import javax.swing.JOptionPane;
 
 public class PanelRegistrarSorteo extends javax.swing.JPanel {
     
@@ -49,6 +51,11 @@ public class PanelRegistrarSorteo extends javax.swing.JPanel {
         textFieldPremio.setText("TV 55\"");
 
         botonRegistrar.setText("Registrar");
+        botonRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRegistrarActionPerformed(evt);
+            }
+        });
 
         botonVolver.setText("Volver");
         botonVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -103,10 +110,21 @@ public class PanelRegistrarSorteo extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarActionPerformed
+        Sorteo sorteo = new Sorteo((int) spinnerGanadores.getValue(), textFieldPremio.getText(), sistema.getRestaurante());
+        if(sistema.getRestaurante().setSorteo(sorteo)){
+            JOptionPane.showMessageDialog(null, "Sorteo registrado con éxito", "Éxito", JOptionPane.PLAIN_MESSAGE);
+            botonVolver.doClick();
+        }else{
+            JOptionPane.showMessageDialog(null, "Debe definir el premio", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_botonRegistrarActionPerformed
+
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
         this.setVisible(false);
         this.panelmenurestaurante.setVisible(true);
     }//GEN-LAST:event_botonVolverActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
