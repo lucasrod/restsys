@@ -16,7 +16,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return getNombre();
+        return nombre.isEmpty()? "[Anónimo]" : getNombre();
     }
 
     public Cliente(String nombre, String mail) {
@@ -41,16 +41,10 @@ public class Cliente {
         this.mail = mail;
     }
 
-    /**
-     * @return the sorteosGanados
-     */
     public ArrayList <Sorteo> getSorteosGanados() {
         return sorteosGanados;
     }
 
-    /**
-     * @param sorteosGanados the sorteosGanados to set
-     */
     public void setSorteosGanados(Sorteo sorteo) {
         this.sorteosGanados.add(sorteo);
     }

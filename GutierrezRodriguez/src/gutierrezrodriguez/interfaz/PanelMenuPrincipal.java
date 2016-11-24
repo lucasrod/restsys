@@ -4,9 +4,9 @@ import gutierrezrodriguez.dominio.Sistema;
 
 public class PanelMenuPrincipal extends javax.swing.JPanel {
 
-    Sistema sistema;
-    PanelMenuCliente panelmenucliente;
-    PanelMenuRestaurante panelmenurestaurante;
+    private Sistema sistema;
+    private PanelMenuCliente panelmenucliente;
+    private PanelMenuRestaurante panelmenurestaurante;
 
     public PanelMenuPrincipal() {
         initComponents();
