@@ -15,6 +15,7 @@ public class Frame extends javax.swing.JFrame {
     private PanelRegistrarSorteo panelRegistrarSorteo;
     private PanelEvaluar panelEvaluacion;
     private PanelEvaluaciones panelEvaluaciones;
+    private PanelFichaRestaurante panelFichaRestaurante;
     private Sistema sistema;
    
     public Frame() {
@@ -38,9 +39,11 @@ public class Frame extends javax.swing.JFrame {
         //Menu Restaurante
         panelRealizarSorteo = new PanelRealizarSorteo(sistema);
         panelRegistrarSorteo = new PanelRegistrarSorteo(sistema);
-        panelMenuRestaurante = new PanelMenuRestaurante(panelRealizarSorteo, panelRegistrarSorteo, panelEvaluaciones, sistema);
+        panelFichaRestaurante = new PanelFichaRestaurante(sistema);
+        panelMenuRestaurante = new PanelMenuRestaurante(panelRealizarSorteo, panelRegistrarSorteo, panelEvaluaciones, panelFichaRestaurante, sistema);
         panelRealizarSorteo.setPredecesor(panelMenuRestaurante);
         panelRegistrarSorteo.setPredecesor(panelMenuRestaurante);
+        panelFichaRestaurante.setPredecesor(panelMenuRestaurante);
         
         //Menu Principal
         panelMenuPrincipal = new PanelMenuPrincipal(sistema, panelMenuCliente, panelMenuRestaurante);
@@ -60,6 +63,7 @@ public class Frame extends javax.swing.JFrame {
         panelDinamico.add(panelRealizarSorteo, c);        
         panelDinamico.add(panelEvaluacion, c);
         panelDinamico.add(panelEvaluaciones, c);
+        panelDinamico.add(panelFichaRestaurante, c);
         
         panelMenuPrincipal.setVisible(true);
         panelMenuCliente.setVisible(false);
@@ -69,6 +73,7 @@ public class Frame extends javax.swing.JFrame {
         panelRegistrarSorteo.setVisible(false);
         panelRealizarSorteo.setVisible(false);
         panelEvaluaciones.setVisible(false);
+        panelFichaRestaurante.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")
