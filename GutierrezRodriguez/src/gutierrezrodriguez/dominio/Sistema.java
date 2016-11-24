@@ -61,6 +61,7 @@ public class Sistema {
         restaurante.setSorteo(sorteo2);
         
         Sorteo sorteo3 = new Sorteo(3, "Pasajes dobles para el caribe", restaurante);
+        restaurante.setSorteo(sorteo3);
         
         Ficha ficha = new Ficha("Dakota", "21 de Setiembre esq. Luis de La Torre");
         restaurante.setFicha(ficha);
