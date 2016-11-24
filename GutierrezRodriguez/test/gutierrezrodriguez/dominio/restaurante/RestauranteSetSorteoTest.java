@@ -52,7 +52,7 @@ public class RestauranteSetSorteoTest {
 
     @Test
     public void testSetSorteoPremioNulo() {
-        System.out.print("Test Restaurante.setSorteoPremioNulo: ");
+        System.out.print("Test Restaurante.setSorteoPremioNulo:                     ");
         instancia = new Restaurante();
         Sorteo sorteo = new Sorteo(1, "", instancia);
         printResults(false, instancia.setSorteo(sorteo));
@@ -60,7 +60,7 @@ public class RestauranteSetSorteoTest {
     
     @Test
     public void testSetSorteoCorrecto() {
-        System.out.print("Test Restaurante.setSorteoCorrecto: ");
+        System.out.print("Test Restaurante.setSorteoCorrecto:                       ");
         instancia = new Restaurante();
         Sorteo sorteo = new Sorteo(1, "TV Plasma", instancia);
         printResults(true, instancia.setSorteo(sorteo));
@@ -68,7 +68,7 @@ public class RestauranteSetSorteoTest {
     
     @Test
     public void testSetSorteoFueAgregado() {
-        System.out.print("Test Restaurante.setSorteoFueAgregado: ");
+        System.out.print("Test Restaurante.setSorteoFueAgregado:                    ");
         instancia = new Restaurante();
         for (int i = 1; i < 11; i++) {
             Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
@@ -81,7 +81,7 @@ public class RestauranteSetSorteoTest {
     
     @Test
     public void testSetSorteoCongruenciaDeSorteables(){
-        System.out.print("Test Restaurante.setSorteoCongruenciaDeSorteables: ");
+        System.out.print("Test Restaurante.setSorteoCongruenciaDeSorteables:        ");
         instancia = new Restaurante();
         for (int i = 1; i < 11; i++) {
             Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);

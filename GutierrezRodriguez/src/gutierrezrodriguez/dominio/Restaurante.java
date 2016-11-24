@@ -6,13 +6,13 @@ public class Restaurante {
 
     private final ArrayList<Evaluacion> evaluaciones;
     private final ArrayList<Evaluacion> evaluacionesSorteables;
-    private ArrayList<Sorteo> sorteos;
+    private final ArrayList<Sorteo> sorteos;
     private Ficha ficha;
 
     public Restaurante() {
-        this.evaluaciones = new ArrayList<Evaluacion>();
-        this.evaluacionesSorteables = new ArrayList<Evaluacion>();
-        this.sorteos = new ArrayList<Sorteo>();
+        this.evaluaciones = new ArrayList<>();
+        this.evaluacionesSorteables = new ArrayList<>();
+        this.sorteos = new ArrayList<>();
         this.ficha = new Ficha();
     }
 
