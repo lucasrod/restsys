@@ -10,7 +10,12 @@ public class Cliente {
         this.mail = "";
     }
 
-    Cliente(String nombre, String mail) {
+    @Override
+    public String toString() {
+        return getNombre();
+    }
+
+    public Cliente(String nombre, String mail) {
         this.nombre = nombre;
         this.mail = mail;
     }

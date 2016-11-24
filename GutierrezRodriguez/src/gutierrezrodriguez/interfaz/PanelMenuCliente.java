@@ -1,20 +1,21 @@
 
 package gutierrezrodriguez.interfaz;
 
+import gutierrezrodriguez.dominio.Cliente;
 import gutierrezrodriguez.dominio.Sistema;
 
 public class PanelMenuCliente extends javax.swing.JPanel {
     
     private PanelMenuPrincipal panelMenuPrincipal;
     private PanelRegistrarCliente panelRegistrarCliente;
-    private PanelEvaluacion panelEvaluacion;
+    private PanelEvaluar panelEvaluacion;
     private Sistema sistema;
 
     public PanelMenuCliente() {
         initComponents();
     }
 
-    public PanelMenuCliente(PanelRegistrarCliente panelRegistrarCliente, PanelEvaluacion panelEvaluacion, Sistema sistema){
+    public PanelMenuCliente(PanelRegistrarCliente panelRegistrarCliente, PanelEvaluar panelEvaluacion, Sistema sistema){
         initComponents();
         this.panelRegistrarCliente = panelRegistrarCliente;
         this.panelEvaluacion = panelEvaluacion;
@@ -24,6 +25,18 @@ public class PanelMenuCliente extends javax.swing.JPanel {
     public void setPredecesor(PanelMenuPrincipal panelMenuPrincipal) {
         this.panelMenuPrincipal = panelMenuPrincipal;
     }
+    
+    public void actualizarListaClientes(){
+        listaClientes.setListData(sistema.getClientes().toArray());
+    }
+    
+    public void seleccionarElUltimo(){
+        listaClientes.setSelectedIndex(listaClientes.getModel().getSize()-1);
+    }
+    
+    Cliente clienteSeleccionado() {
+        return (listaClientes.isSelectionEmpty() ? new Cliente("Anónimo", "") : (Cliente)listaClientes.getSelectedValue());
+    }    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -36,11 +49,12 @@ public class PanelMenuCliente extends javax.swing.JPanel {
         botonVolver = new javax.swing.JButton();
         labelQuienSos = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        listaClientes = new javax.swing.JList<>();
+        listaClientes = new javax.swing.JList();
         botonRegistrarme = new javax.swing.JButton();
         botonPremio = new javax.swing.JButton();
         botonEvaluar = new javax.swing.JButton();
         botonAnonimo = new javax.swing.JButton();
+        botonVerEvaluaciones = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(500, 300));
 
@@ -64,10 +78,15 @@ public class PanelMenuCliente extends javax.swing.JPanel {
 
         labelQuienSos.setText("¿Quién sos?");
 
-        listaClientes.setModel(new javax.swing.AbstractListModel<String>() {
+        listaClientes.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        listaClientes.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listaClientesValueChanged(evt);
+            }
         });
         jScrollPane1.setViewportView(listaClientes);
 
@@ -94,6 +113,18 @@ public class PanelMenuCliente extends javax.swing.JPanel {
         });
 
         botonAnonimo.setText("Anónimo");
+        botonAnonimo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAnonimoActionPerformed(evt);
+            }
+        });
+
+        botonVerEvaluaciones.setText("Ver evaluaciones");
+        botonVerEvaluaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonVerEvaluacionesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -127,7 +158,8 @@ public class PanelMenuCliente extends javax.swing.JPanel {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addComponent(labelYaSeRegistro)
                                         .addGap(97, 97, 97)
-                                        .addComponent(botonVolver)))))))
+                                        .addComponent(botonVolver))))
+                            .addComponent(botonVerEvaluaciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -153,10 +185,14 @@ public class PanelMenuCliente extends javax.swing.JPanel {
                         .addComponent(botonPremio)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botonEvaluar)
-                        .addGap(0, 39, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(7, 7, 7)
-                .addComponent(botonAnonimo))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonVerEvaluaciones)
+                        .addGap(0, 20, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonAnonimo)))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -179,6 +215,21 @@ public class PanelMenuCliente extends javax.swing.JPanel {
         panelEvaluacion.setVisible(true);
     }//GEN-LAST:event_botonEvaluarActionPerformed
 
+    private void botonVerEvaluacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVerEvaluacionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonVerEvaluacionesActionPerformed
+
+    private void botonAnonimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAnonimoActionPerformed
+        listaClientes.clearSelection();
+    }//GEN-LAST:event_botonAnonimoActionPerformed
+
+    private void listaClientesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaClientesValueChanged
+        if(listaClientes.isSelectionEmpty())
+            botonPremio.setEnabled(false);
+        else
+            botonPremio.setEnabled(true);
+    }//GEN-LAST:event_listaClientesValueChanged
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -186,6 +237,7 @@ public class PanelMenuCliente extends javax.swing.JPanel {
     private javax.swing.JButton botonEvaluar;
     private javax.swing.JButton botonPremio;
     private javax.swing.JButton botonRegistrarme;
+    private javax.swing.JButton botonVerEvaluaciones;
     private javax.swing.JButton botonVolver;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelCliente;
@@ -193,6 +245,7 @@ public class PanelMenuCliente extends javax.swing.JPanel {
     private javax.swing.JLabel labelQuienSos;
     private javax.swing.JLabel labelSi;
     private javax.swing.JLabel labelYaSeRegistro;
-    private javax.swing.JList<String> listaClientes;
+    private javax.swing.JList listaClientes;
     // End of variables declaration//GEN-END:variables
+
 }

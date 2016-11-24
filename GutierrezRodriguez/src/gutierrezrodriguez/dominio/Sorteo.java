@@ -3,14 +3,15 @@ package gutierrezrodriguez.dominio;
 import java.util.Random;
 
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 public final class Sorteo {
 
     int numeroDeGanadores;
     String premio;
     Restaurante restaurante;
-    boolean realizado;
-    ArrayList<Evaluacion> ganadores;
+    private boolean realizado;
+    ArrayList<Cliente> ganadores;
 
     public Sorteo() {
         this.numeroDeGanadores = 1;
@@ -25,7 +26,7 @@ public final class Sorteo {
         this.premio = premio;
         this.restaurante = restaurante;
         this.realizado = false;
-        this.ganadores = new ArrayList<Evaluacion>();
+        this.ganadores = new ArrayList<Cliente>();
     }
 
     public int getNumeroDeGanadores() {
@@ -50,46 +51,56 @@ public final class Sorteo {
 
     //PRE: -
     //POS: Retorna true sii el sorteo fue realizado.
-    public boolean sorteoFueRealizado() {
+
+    public boolean isRealizado(){
         return this.realizado;
     }
 
     //PRE: El sorteo fue realizado 
     //POS: Retorna un ArrayList<Evaluaciones> que representan los ganadores del sorteo
-    public ArrayList<Evaluacion> getGanadores() {
+
+    public ArrayList<Cliente> getGanadores(){
         return this.ganadores;
     }
+    
+    public ArrayList<Cliente> realizarSorteo() {
+        ArrayList<Cliente> retorno = new ArrayList<Cliente>();
+        ArrayList<Evaluacion> sorteables = restaurante.getEvaluacionesSorteables();
+        ArrayList<Integer> elegidos = new ArrayList<Integer>();
+        int numeroSorteado = 0;
 
-    public ArrayList<Evaluacion> realizarSorteo() {
-        ArrayList<Evaluacion> retorno = new ArrayList<Evaluacion>();
-        if (!this.realizado) {
-            ArrayList<Evaluacion> sorteables = restaurante.getEvaluacionesSorteables();
-            ArrayList<Integer> elegidos = new ArrayList<Integer>();
-            int numeroSorteado = 0;
-
-            //Si el numero de ganadores supera el de las evaluaciones sorteables se iguala para hacerlo posible
-            if (numeroDeGanadores > sorteables.size()) {
-                numeroDeGanadores = sorteables.size();
-            }
-
-            //for que se utiliza para elegir la cantidad de ganadores correspondiente
-            for (int i = 0; i < numeroDeGanadores; i++) {
-
-                //Se busca un numero aleatorio hasata que sea diferente a los que salieron previamente
-                do {
-                    Random random = new Random();
-                    numeroSorteado = random.nextInt(sorteables.size());
-                } while (elegidos.contains(numeroSorteado));
-
-                //Se agrega el nuevo ganador al retorno
-                retorno.add(sorteables.get(numeroSorteado));
-
-                //Se agrega el numero ganador a la lista de los que ya salieron para evitar que se repita
-                elegidos.add(numeroSorteado);
-            }
-            this.realizado = true;
-            this.ganadores = retorno;
+        //Si el numero de ganadores supera el de las evaluaciones sorteables se iguala para hacerlo posible
+        if (numeroDeGanadores > sorteables.size()) {
+            numeroDeGanadores = sorteables.size();
         }
+
+        //for que se utiliza para elegir la cantidad de ganadores correspondiente
+        for (int i = 0; i < numeroDeGanadores; i++) {
+
+            //Se busca un numero aleatorio hasata que sea diferente a los que salieron previamente
+            do {
+                Random random = new Random();
+                numeroSorteado = random.nextInt(sorteables.size());
+            } while (elegidos.contains(numeroSorteado));
+
+            //Se agrega el nuevo ganador al retorno
+            retorno.add(sorteables.get(numeroSorteado).getCliente());
+
+            //Se agrega el numero ganador a la lista de los que ya salieron para evitar que se repita
+            elegidos.add(numeroSorteado);
+            
+        }
+        realizado = true;
         return retorno;
+    }
+    
+    public static Predicate <Sorteo> fueRealizado(){
+        return p -> p.isRealizado();
+    }
+
+    @Override
+    public String toString() {
+        int cantGanadores = getNumeroDeGanadores();
+        return (cantGanadores == 1 ? premio : cantGanadores + " " + premio);
     }
 }

@@ -1,18 +1,20 @@
 
 package gutierrezrodriguez.interfaz;
 
+import gutierrezrodriguez.dominio.Evaluacion;
 import gutierrezrodriguez.dominio.Sistema;
+import javax.swing.JOptionPane;
 
-public class PanelEvaluacion extends javax.swing.JPanel {
+public class PanelEvaluar extends javax.swing.JPanel {
     
     private Sistema sistema;
     private PanelMenuCliente panelMenuCliente;
     
-    public PanelEvaluacion() {
+    public PanelEvaluar() {
         initComponents();
     }
     
-    public PanelEvaluacion(Sistema sistema){
+    public PanelEvaluar(Sistema sistema){
         initComponents();
         this.sistema = sistema;
     }
@@ -55,6 +57,11 @@ public class PanelEvaluacion extends javax.swing.JPanel {
         jScrollPane1.setViewportView(textAreaResena);
 
         botonEvaluar.setText("Evaluar");
+        botonEvaluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEvaluarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -65,7 +72,7 @@ public class PanelEvaluacion extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(labelEvaluar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 239, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botonVolver))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -114,6 +121,13 @@ public class PanelEvaluacion extends javax.swing.JPanel {
         this.setVisible(false);
         this.panelMenuCliente.setVisible(true);
     }//GEN-LAST:event_botonVolverActionPerformed
+
+    private void botonEvaluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEvaluarActionPerformed
+        Evaluacion evaluacion = new Evaluacion(sliderPuntuacion.getValue(), textAreaResena.getText(), panelMenuCliente.clienteSeleccionado());
+        sistema.getRestaurante().setEvaluacion(evaluacion);
+        JOptionPane.showMessageDialog(null, "Se ha evaluado con éxito", "Éxito", JOptionPane.PLAIN_MESSAGE);
+        botonVolver.doClick();
+    }//GEN-LAST:event_botonEvaluarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

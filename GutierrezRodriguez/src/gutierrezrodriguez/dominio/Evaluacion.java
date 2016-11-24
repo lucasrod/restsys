@@ -4,7 +4,7 @@ public final class Evaluacion {
 
     private int estrellas;
     private String resena;
-    private final Cliente cliente;
+    private Cliente cliente;
     
     //PRE: -
     //POS: Retorna true sii la puntuación es un int entre 1 y 5
@@ -18,15 +18,14 @@ public final class Evaluacion {
         this.cliente = new Cliente();
     }
     
-    public Evaluacion(int estrellas, String resena, String nombre) {
+    public Evaluacion(int estrellas, String resena, Cliente cliente) {
         if (esPuntuacionValida(estrellas)) {
             this.estrellas = estrellas;
         } else {
             this.estrellas = 0;
         }
         this.resena = resena;
-        this.cliente = new Cliente();
-        this.setNombre(nombre);
+        this.setCliente(cliente);
     }
 
     public Evaluacion(int estrellas, String resena, String nombre, String mail) {
@@ -59,22 +58,6 @@ public final class Evaluacion {
     public void setResena(String resena) {
         this.resena = resena;
     }
-
-    public String getNombre() {
-        return cliente.getNombre();
-    }
-
-    public void setNombre(String nombre) {
-        this.cliente.setNombre(nombre);
-    }
-    
-    public String getMail(){
-        return cliente.getMail();
-    }
-    
-    public void setMail(String mail){
-        this.cliente.setMail(mail);
-    }
     
     //PRE: -
     //POS: Retorna true sii (ni el nombre ni la reseña son vacíos) y es válida.
@@ -86,5 +69,19 @@ public final class Evaluacion {
     //POS: Retorna true sii se le asigno un valor a las estrellas
     public boolean esValida() {
         return this.estrellas != 0;
+    }
+
+    /**
+     * @return the cliente
+     */
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    /**
+     * @param cliente the cliente to set
+     */
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 }

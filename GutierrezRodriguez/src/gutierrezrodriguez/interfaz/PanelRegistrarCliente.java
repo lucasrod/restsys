@@ -1,7 +1,9 @@
 
 package gutierrezrodriguez.interfaz;
 
+import gutierrezrodriguez.dominio.Cliente;
 import gutierrezrodriguez.dominio.Sistema;
+import javax.swing.JOptionPane;
 
 public class PanelRegistrarCliente extends javax.swing.JPanel {
 
@@ -47,10 +49,11 @@ public class PanelRegistrarCliente extends javax.swing.JPanel {
         labelEmail.setText("Email");
 
         botonRegistrarse.setText("Registrarse");
-
-        textFieldNombre.setText("jTextField1");
-
-        textFieldEmail.setText("jTextField2");
+        botonRegistrarse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRegistrarseActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -103,9 +106,29 @@ public class PanelRegistrarCliente extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
+        panelMenuCliente.actualizarListaClientes();
         this.setVisible(false);
         this.panelMenuCliente.setVisible(true);
     }//GEN-LAST:event_botonVolverActionPerformed
+
+    private void botonRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarseActionPerformed
+        if(textFieldNombre.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Debe ingresar su nombre", "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+            int continuar = JOptionPane.YES_OPTION;
+            if(textFieldEmail.getText().isEmpty()){
+                continuar = JOptionPane.showConfirmDialog(null,"Recuerde que para participar de los sorteos necesita ingresar su email\nDesea continuar de todas maneras?", "No ingreso email", JOptionPane.YES_NO_OPTION);
+            }
+            if(continuar == JOptionPane.YES_OPTION){
+                Cliente cliente = new Cliente(textFieldNombre.getText(), textFieldEmail.getText());
+                sistema.setClientes(cliente);
+                JOptionPane.showMessageDialog(null, "Se ha registrado con éxito", "Éxito", JOptionPane.PLAIN_MESSAGE);
+                botonVolver.doClick();
+                panelMenuCliente.seleccionarElUltimo();
+            }
+
+        }
+    }//GEN-LAST:event_botonRegistrarseActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

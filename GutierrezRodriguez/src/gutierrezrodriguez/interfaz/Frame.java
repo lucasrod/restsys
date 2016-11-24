@@ -13,7 +13,7 @@ public class Frame extends javax.swing.JFrame {
     private PanelRealizarSorteo panelRealizarSorteo;
     private PanelRegistrarCliente panelRegistrarCliente;
     private PanelRegistrarSorteo panelRegistrarSorteo;
-    private PanelEvaluacion panelEvaluacion;
+    private PanelEvaluar panelEvaluacion;
     private Sistema sistema;
    
     public Frame() {
@@ -26,7 +26,7 @@ public class Frame extends javax.swing.JFrame {
         
         //Menu Cliente
         panelRegistrarCliente = new PanelRegistrarCliente(sistema);
-        panelEvaluacion = new PanelEvaluacion(sistema);
+        panelEvaluacion = new PanelEvaluar(sistema);
         panelMenuCliente = new PanelMenuCliente(panelRegistrarCliente, panelEvaluacion, sistema);
         panelRegistrarCliente.setPredecesor(panelMenuCliente);
         panelEvaluacion.setPredecesor(panelMenuCliente);

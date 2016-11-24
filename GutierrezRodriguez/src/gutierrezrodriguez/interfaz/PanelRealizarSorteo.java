@@ -1,8 +1,10 @@
 
 package gutierrezrodriguez.interfaz;
 
+import gutierrezrodriguez.dominio.Cliente;
 import gutierrezrodriguez.dominio.Sistema;
 import gutierrezrodriguez.dominio.Sorteo;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class PanelRealizarSorteo extends javax.swing.JPanel {
@@ -21,6 +23,12 @@ public class PanelRealizarSorteo extends javax.swing.JPanel {
     
     public void setPredecesor(PanelMenuRestaurante panelMenuRestaurante){
         this.panelMenuRestaurante = panelMenuRestaurante;    
+    }
+    
+    public void actualizarListaSorteos(){
+        ArrayList <Sorteo> sorteos= sistema.getRestaurante().getSorteos();
+        sorteos.removeIf(Sorteo.fueRealizado());
+        listaSorteos.setListData(sorteos.toArray());
     }
     
     @SuppressWarnings("unchecked")
@@ -102,6 +110,14 @@ public class PanelRealizarSorteo extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Debe seleccionar el sorteo", "Error", JOptionPane.ERROR_MESSAGE);
         }else{
             Sorteo sorteo = (Sorteo) listaSorteos.getSelectedValue();
+            ArrayList<Cliente> ganadores = sorteo.realizarSorteo();
+            String strGanadores = "";
+            for(int i=0; i<ganadores.size(); i++){
+                strGanadores += "\t- " + ganadores.get(i).toString() + '\n';
+            }
+            String mensaje = "Sorteo realizado con éxito\nLos ganadores son:\n" + strGanadores +"Todos fueron notificados por email";
+            JOptionPane.showMessageDialog(null, mensaje, "Éxito", JOptionPane.PLAIN_MESSAGE);
+            botonVolver.doClick();
         }
     }//GEN-LAST:event_botonRealizarSorteoActionPerformed
 
