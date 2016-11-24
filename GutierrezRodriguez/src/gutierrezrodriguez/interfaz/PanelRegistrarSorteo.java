@@ -33,6 +33,7 @@ public class PanelRegistrarSorteo extends javax.swing.JPanel {
         labelPremio = new javax.swing.JLabel();
         textFieldPremio = new javax.swing.JTextField();
         botonRegistrar = new javax.swing.JButton();
+        botonVolver = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(500, 300));
 
@@ -50,6 +51,8 @@ public class PanelRegistrarSorteo extends javax.swing.JPanel {
 
         botonRegistrar.setText("Registrar");
 
+        botonVolver.setText("Volver");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -63,7 +66,8 @@ public class PanelRegistrarSorteo extends javax.swing.JPanel {
                         .addComponent(textFieldPremio))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(labelRegistrarSorteo)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonVolver))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(labelCantidadGanadores)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
@@ -78,8 +82,10 @@ public class PanelRegistrarSorteo extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(labelRegistrarSorteo)
-                .addGap(58, 58, 58)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelRegistrarSorteo)
+                    .addComponent(botonVolver))
+                .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(spinnerGanadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(labelCantidadGanadores))
@@ -96,6 +102,7 @@ public class PanelRegistrarSorteo extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonRegistrar;
+    private javax.swing.JButton botonVolver;
     private javax.swing.JLabel labelCantidadGanadores;
     private javax.swing.JLabel labelPremio;
     private javax.swing.JLabel labelRegistrarSorteo;
