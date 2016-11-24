@@ -40,7 +40,7 @@ public class PanelMenuCliente extends javax.swing.JPanel {
     }
     
     Cliente clienteSeleccionado() {
-        return (listaClientes.isSelectionEmpty() ? new Cliente("Anónimo", "") : (Cliente)listaClientes.getSelectedValue());
+        return (listaClientes.isSelectionEmpty() ? new Cliente() : (Cliente)listaClientes.getSelectedValue());
     }    
     
     @SuppressWarnings("unchecked")

@@ -5,21 +5,23 @@ import gutierrezrodriguez.dominio.Sistema;
 
 public class PanelMenuRestaurante extends javax.swing.JPanel {
     
-    PanelMenuPrincipal panelMenuPrincipal;
-    PanelRealizarSorteo panelRealizarSorteo;
-    PanelRegistrarSorteo panelRegistrarSorteo;
+    private PanelMenuPrincipal panelMenuPrincipal;
+    private PanelRealizarSorteo panelRealizarSorteo;
+    private PanelRegistrarSorteo panelRegistrarSorteo;
     private PanelEvaluaciones panelEvaluaciones;
-    Sistema sistema;
+    private PanelFichaRestaurante panelFichaRestaurante;
+    private Sistema sistema;
 
     public PanelMenuRestaurante() {
         initComponents();
     }
 
-    public PanelMenuRestaurante(PanelRealizarSorteo panelRealizarSorteo, PanelRegistrarSorteo panelRegistrarSorteo, PanelEvaluaciones panelEvaluaciones, Sistema sistema){
+    public PanelMenuRestaurante(PanelRealizarSorteo panelRealizarSorteo, PanelRegistrarSorteo panelRegistrarSorteo, PanelEvaluaciones panelEvaluaciones, PanelFichaRestaurante panelFichaRestaurante, Sistema sistema){
         initComponents();
         this.panelRealizarSorteo = panelRealizarSorteo;
         this.panelRegistrarSorteo = panelRegistrarSorteo;
         this.panelEvaluaciones = panelEvaluaciones;
+        this.panelFichaRestaurante = panelFichaRestaurante;
         this.sistema = sistema;
     }
     
@@ -31,11 +33,23 @@ public class PanelMenuRestaurante extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        botonVerEvaluaciones1 = new javax.swing.JButton();
         labelRestaurante = new javax.swing.JLabel();
         botonRegistrarSorteo = new javax.swing.JButton();
         botonRealizarSorteo = new javax.swing.JButton();
         botonVolver = new javax.swing.JButton();
         botonVerEvaluaciones = new javax.swing.JButton();
+        botonEditarFicha = new javax.swing.JButton();
+
+        botonVerEvaluaciones1.setText("Ver evaluaciones");
+        botonVerEvaluaciones1.setMaximumSize(new java.awt.Dimension(210, 50));
+        botonVerEvaluaciones1.setMinimumSize(new java.awt.Dimension(210, 50));
+        botonVerEvaluaciones1.setPreferredSize(new java.awt.Dimension(210, 50));
+        botonVerEvaluaciones1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonVerEvaluaciones1ActionPerformed(evt);
+            }
+        });
 
         setPreferredSize(new java.awt.Dimension(500, 300));
 
@@ -78,24 +92,33 @@ public class PanelMenuRestaurante extends javax.swing.JPanel {
             }
         });
 
+        botonEditarFicha.setText("Editar Ficha");
+        botonEditarFicha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEditarFichaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(labelRestaurante)
+                    .addComponent(botonEditarFicha))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(labelRestaurante)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botonVolver))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(142, 142, 142)
+                        .addGap(50, 50, 50)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(botonRegistrarSorteo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(botonRealizarSorteo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(botonVerEvaluaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 136, Short.MAX_VALUE)))
+                        .addGap(0, 131, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -108,7 +131,9 @@ public class PanelMenuRestaurante extends javax.swing.JPanel {
                 .addGap(22, 22, 22)
                 .addComponent(botonRegistrarSorteo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(botonRealizarSorteo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonRealizarSorteo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonEditarFicha))
                 .addGap(18, 18, 18)
                 .addComponent(botonVerEvaluaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -138,11 +163,22 @@ public class PanelMenuRestaurante extends javax.swing.JPanel {
         panelEvaluaciones.setVisible(true);
     }//GEN-LAST:event_botonVerEvaluacionesActionPerformed
 
+    private void botonVerEvaluaciones1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVerEvaluaciones1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonVerEvaluaciones1ActionPerformed
+
+    private void botonEditarFichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEditarFichaActionPerformed
+        this.setVisible(false);
+        panelFichaRestaurante.setVisible(true);
+    }//GEN-LAST:event_botonEditarFichaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonEditarFicha;
     private javax.swing.JButton botonRealizarSorteo;
     private javax.swing.JButton botonRegistrarSorteo;
     private javax.swing.JButton botonVerEvaluaciones;
+    private javax.swing.JButton botonVerEvaluaciones1;
     private javax.swing.JButton botonVolver;
     private javax.swing.JLabel labelRestaurante;
     // End of variables declaration//GEN-END:variables

@@ -5,10 +5,10 @@ import gutierrezrodriguez.dominio.Sistema;
 
 public class PanelEvaluaciones extends javax.swing.JPanel {
     
-    Sistema sistema;
-    PanelMenuCliente panelmenucliente;
-    PanelMenuRestaurante panelmenurestaurante;
-    boolean predecesorEsRestaurante;
+    private Sistema sistema;
+    private PanelMenuCliente panelmenucliente;
+    private PanelMenuRestaurante panelmenurestaurante;
+    private boolean predecesorEsRestaurante;
 
     public PanelEvaluaciones() {
         initComponents();
