@@ -5,11 +5,17 @@
  */
 package gutierrezrodriguez.interfaz;
 
+import gutierrezrodriguez.dominio.Sistema;
+import gutierrezrodriguez.dominio.Sorteo;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author lucasrod
  */
 public class PanelRegistrarSorteo extends javax.swing.JPanel {
+    
+    Sistema sis = new Sistema();
 
     /**
      * Creates new form panelRegistrarSorteo
@@ -50,6 +56,11 @@ public class PanelRegistrarSorteo extends javax.swing.JPanel {
         textFieldPremio.setText("TV 55\"");
 
         botonRegistrar.setText("Registrar");
+        botonRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRegistrarActionPerformed(evt);
+            }
+        });
 
         botonVolver.setText("Volver");
 
@@ -98,6 +109,16 @@ public class PanelRegistrarSorteo extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarActionPerformed
+        Sorteo sorteo = new Sorteo((int) spinnerGanadores.getValue(), textFieldPremio.getText(), sis.getRestaurante());
+        if(sis.getRestaurante().setSorteo(sorteo)){
+            JOptionPane.showMessageDialog(null, "Sorteo registrado con éxito", "Éxito", JOptionPane.PLAIN_MESSAGE);
+            //volver pa' tra'
+        }else{
+            JOptionPane.showMessageDialog(null, "Debe definir el premio", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_botonRegistrarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

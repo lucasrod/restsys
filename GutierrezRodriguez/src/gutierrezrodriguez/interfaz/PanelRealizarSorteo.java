@@ -5,6 +5,9 @@
  */
 package gutierrezrodriguez.interfaz;
 
+import gutierrezrodriguez.dominio.Sorteo;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Matías
@@ -30,7 +33,7 @@ public class PanelRealizarSorteo extends javax.swing.JPanel {
         labelRealizarSorteo = new javax.swing.JLabel();
         labelElegirSorteo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        listaSorteos = new javax.swing.JList<>();
+        listaSorteos = new javax.swing.JList();
         botonRealizarSorteo = new javax.swing.JButton();
         botonVolver = new javax.swing.JButton();
 
@@ -38,10 +41,10 @@ public class PanelRealizarSorteo extends javax.swing.JPanel {
 
         labelElegirSorteo.setText("Elegir sorteo");
 
-        listaSorteos.setModel(new javax.swing.AbstractListModel<String>() {
+        listaSorteos.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+            public Object getElementAt(int i) { return strings[i]; }
         });
         jScrollPane1.setViewportView(listaSorteos);
 
@@ -93,7 +96,11 @@ public class PanelRealizarSorteo extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonRealizarSorteoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRealizarSorteoActionPerformed
-        // TODO add your handling code here:
+        if(listaSorteos.isSelectionEmpty()){
+            JOptionPane.showMessageDialog(null, "Debe seleccionar el sorteo", "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+            Sorteo sorteo = (Sorteo) listaSorteos.getSelectedValue();
+        }
     }//GEN-LAST:event_botonRealizarSorteoActionPerformed
 
 
@@ -103,6 +110,6 @@ public class PanelRealizarSorteo extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelElegirSorteo;
     private javax.swing.JLabel labelRealizarSorteo;
-    private javax.swing.JList<String> listaSorteos;
+    private javax.swing.JList listaSorteos;
     // End of variables declaration//GEN-END:variables
 }
