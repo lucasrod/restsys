@@ -21,5 +21,11 @@ public class Sistema {
             Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
             restaurante.setEvaluacion(evaluacion);
         }
+        for(int i=1; i<=50; i++){
+            Sorteo sorteo = new Sorteo(i, "Premio"+i, restaurante);
+            restaurante.setSorteo(sorteo);
+        }
+        Ficha ficha = new Ficha("Dakota", "21 de Setiembre esq. Luis de La Torre");
+        restaurante.setFicha(ficha);
     }
 }

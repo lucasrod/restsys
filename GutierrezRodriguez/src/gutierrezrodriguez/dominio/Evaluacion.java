@@ -4,7 +4,7 @@ public final class Evaluacion {
 
     private int estrellas;
     private String resena;
-    private Cliente cliente;
+    private final Cliente cliente;
     
     //PRE: -
     //POS: Retorna true sii la puntuación es un int entre 1 y 5
