@@ -1,4 +1,3 @@
-
 package gutierrezrodriguez.interfaz;
 
 import gutierrezrodriguez.dominio.Cliente;
@@ -9,20 +8,20 @@ public class PanelRegistrarCliente extends javax.swing.JPanel {
 
     private PanelMenuCliente panelMenuCliente;
     private Sistema sistema;
-    
+
     public PanelRegistrarCliente() {
         initComponents();
     }
-    
-    public PanelRegistrarCliente(Sistema sistema){
+
+    public PanelRegistrarCliente(Sistema sistema) {
         initComponents();
         this.sistema = sistema;
     }
-    
+
     public void setPredecesor(PanelMenuCliente panelMenuCliente) {
         this.panelMenuCliente = panelMenuCliente;
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -112,21 +111,14 @@ public class PanelRegistrarCliente extends javax.swing.JPanel {
     }//GEN-LAST:event_botonVolverActionPerformed
 
     private void botonRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarseActionPerformed
-        if(textFieldNombre.getText().isEmpty()){
+        if (textFieldNombre.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Debe ingresar su nombre", "Error", JOptionPane.ERROR_MESSAGE);
-        }else{
-            int continuar = JOptionPane.YES_OPTION;
-            if(textFieldEmail.getText().isEmpty()){
-                continuar = JOptionPane.showConfirmDialog(null,"Recuerde que para participar de los sorteos necesita ingresar su email\nDesea continuar de todas maneras?", "No ingreso email", JOptionPane.YES_NO_OPTION);
-            }
-            if(continuar == JOptionPane.YES_OPTION){
-                Cliente cliente = new Cliente(textFieldNombre.getText(), textFieldEmail.getText());
-                sistema.setClientes(cliente);
-                JOptionPane.showMessageDialog(null, "Se ha registrado con éxito", "Éxito", JOptionPane.PLAIN_MESSAGE);
-                botonVolver.doClick();
-                panelMenuCliente.seleccionarElUltimo();
-            }
-
+        } else {
+            Cliente cliente = new Cliente(textFieldNombre.getText(), textFieldEmail.getText());
+            sistema.setClientes(cliente);
+            JOptionPane.showMessageDialog(null, "Se ha registrado con éxito", "Éxito", JOptionPane.PLAIN_MESSAGE);
+            botonVolver.doClick();
+            panelMenuCliente.seleccionarElUltimo();
         }
     }//GEN-LAST:event_botonRegistrarseActionPerformed
 

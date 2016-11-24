@@ -144,11 +144,10 @@ public class PanelMenuCliente extends javax.swing.JPanel {
                                 .addComponent(labelCliente)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(28, 28, 28)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(botonAnonimo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(60, 60, 60)
+                                .addGap(88, 88, 88)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(botonPremio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(botonRegistrarme, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -227,7 +226,7 @@ public class PanelMenuCliente extends javax.swing.JPanel {
             for(int i=0; i<sorteosGanados.size(); i++){
                 mensaje += sorteosGanados.get(i).getPremio() + (i+1 == sorteosGanados.size() ? "" : ", ");
             }
-            JOptionPane.showMessageDialog(null, mensaje, "Ganaste", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, mensaje, "Ganaste", JOptionPane.PLAIN_MESSAGE);
         }
     }//GEN-LAST:event_botonPremioActionPerformed
 
