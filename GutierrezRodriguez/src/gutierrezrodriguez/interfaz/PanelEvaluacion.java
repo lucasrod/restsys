@@ -5,19 +5,23 @@ import gutierrezrodriguez.dominio.Sistema;
 
 public class PanelEvaluacion extends javax.swing.JPanel {
     
-    private PanelMenuPrincipal panelmenuprincipal;
     private Sistema sistema;
+    private PanelMenuCliente panelmenucliente;
     
     public PanelEvaluacion() {
         initComponents();
     }
-
-    public PanelEvaluacion(PanelMenuPrincipal panelmenuprincipal, Sistema sistema){
+    
+    public PanelEvaluacion(PanelMenuCliente panelmenucliente, Sistema sistema){
         initComponents();
-        this.panelmenuprincipal = panelmenuprincipal;
+        this.panelmenucliente = panelmenucliente;
         this.sistema = sistema;
     }
-
+    
+    public void setPredecesor(PanelMenuCliente panelmenucliente) {
+        this.panelmenucliente = panelmenucliente;
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -34,6 +38,11 @@ public class PanelEvaluacion extends javax.swing.JPanel {
         labelEvaluar.setText("Evaluar el restaurante");
 
         botonVolver.setText("Volver");
+        botonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonVolverActionPerformed(evt);
+            }
+        });
 
         sliderPuntuacion.setMaximum(5);
         sliderPuntuacion.setMinimum(1);
@@ -101,6 +110,11 @@ public class PanelEvaluacion extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
+        this.setVisible(false);
+        this.panelmenucliente.setVisible(true);
+    }//GEN-LAST:event_botonVolverActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
