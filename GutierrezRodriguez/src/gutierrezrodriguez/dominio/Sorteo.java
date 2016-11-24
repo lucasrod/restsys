@@ -48,15 +48,17 @@ public final class Sorteo {
     public void setPremio(String premio) {
         this.premio = premio;
     }
-    
+
     //PRE: -
     //POS: Retorna true sii el sorteo fue realizado.
+
     public boolean isRealizado(){
         return this.realizado;
     }
 
     //PRE: El sorteo fue realizado 
     //POS: Retorna un ArrayList<Evaluaciones> que representan los ganadores del sorteo
+
     public ArrayList<Cliente> getGanadores(){
         return this.ganadores;
     }
@@ -87,8 +89,6 @@ public final class Sorteo {
             //Se agrega el numero ganador a la lista de los que ya salieron para evitar que se repita
             elegidos.add(numeroSorteado);
         }
-        this.realizado = true;
-        this.ganadores = retorno;
         return retorno;
     }
     

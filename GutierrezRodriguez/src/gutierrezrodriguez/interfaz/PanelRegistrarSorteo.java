@@ -7,21 +7,20 @@ import javax.swing.JOptionPane;
 
 public class PanelRegistrarSorteo extends javax.swing.JPanel {
     
-    private PanelMenuRestaurante panelmenurestaurante;
+    private PanelMenuRestaurante panelMenuRestaurante;
     private Sistema sistema;
 
     public PanelRegistrarSorteo() {
         initComponents();
     }
     
-    public PanelRegistrarSorteo(PanelMenuRestaurante panelmenurestaurante, Sistema sistema){
+    public PanelRegistrarSorteo(Sistema sistema){
         initComponents();
-        this.panelmenurestaurante = panelmenurestaurante;
         this.sistema = sistema;
     }
     
-    public void setPredecesor(PanelMenuRestaurante panelmenurestaurante){
-        this.panelmenurestaurante = panelmenurestaurante;    
+    public void setPredecesor(PanelMenuRestaurante panelMenuRestaurante){
+        this.panelMenuRestaurante = panelMenuRestaurante;    
     }
     
     @SuppressWarnings("unchecked")
@@ -122,7 +121,7 @@ public class PanelRegistrarSorteo extends javax.swing.JPanel {
 
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
         this.setVisible(false);
-        this.panelmenurestaurante.setVisible(true);
+        this.panelMenuRestaurante.setVisible(true);
     }//GEN-LAST:event_botonVolverActionPerformed
 
 

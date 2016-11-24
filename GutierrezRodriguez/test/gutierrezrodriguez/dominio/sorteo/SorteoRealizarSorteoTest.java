@@ -147,4 +147,32 @@ public class SorteoRealizarSorteoTest {
         ArrayList<Evaluacion> resultadoSorteo = instancia.realizarSorteo();
         printResults(true, resultadoSorteo.isEmpty());
     }
+    
+    @Test
+    public void testRealizarSorteoPreviamenteRealizado(){
+        System.out.print("Test Sorteo.realizarSorteoPreviamenteRealizado:           ");
+        Restaurante restaurante = new Restaurante();
+        for (int i = 1; i < 11; i++) {
+            Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
+            restaurante.setEvaluacion(evaluacion);
+        }
+        instancia = new Sorteo(3, "Ganaste!", restaurante);
+        instancia.realizarSorteo();
+        printResults(true, instancia.sorteoFueRealizado());        
+    }
+    
+    @Test
+    public void testRealizarSorteoPreviamenteRealizadoRetorno(){
+        System.out.print("Test Sorteo.realizarSorteoPreviamenteRealizadoRetorno:    ");
+        Restaurante restaurante = new Restaurante();
+        for (int i = 1; i < 11; i++) {
+            Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
+            restaurante.setEvaluacion(evaluacion);
+        }
+        instancia = new Sorteo(3, "Ganaste!", restaurante);
+        instancia.realizarSorteo();
+        ArrayList<Evaluacion> ganadoresPrueba = instancia.realizarSorteo();
+        printResults(true, ganadoresPrueba.isEmpty());        
+    }
+    
 }

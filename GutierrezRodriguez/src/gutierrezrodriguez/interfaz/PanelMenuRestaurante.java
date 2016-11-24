@@ -5,25 +5,24 @@ import gutierrezrodriguez.dominio.Sistema;
 
 public class PanelMenuRestaurante extends javax.swing.JPanel {
     
-    PanelMenuPrincipal panelmenuprincipal;
-    PanelRealizarSorteo panelrealizarsorteo;
-    PanelRegistrarSorteo panelregistrarsorteo;
+    PanelMenuPrincipal panelMenuPrincipal;
+    PanelRealizarSorteo panelRealizarSorteo;
+    PanelRegistrarSorteo panelRegistrarSorteo;
     Sistema sistema;
 
     public PanelMenuRestaurante() {
         initComponents();
     }
 
-    public PanelMenuRestaurante(PanelMenuPrincipal panelmenuprincipal, PanelRealizarSorteo panelrealizarsorteo, PanelRegistrarSorteo panelregistrarsorteo, Sistema sistema){
+    public PanelMenuRestaurante(PanelRealizarSorteo panelRealizarSorteo, PanelRegistrarSorteo panelRegistrarSorteo, Sistema sistema){
         initComponents();
-        this.panelmenuprincipal = panelmenuprincipal;
-        this.panelrealizarsorteo = panelrealizarsorteo;
-        this.panelregistrarsorteo = panelregistrarsorteo;
+        this.panelRealizarSorteo = panelRealizarSorteo;
+        this.panelRegistrarSorteo = panelRegistrarSorteo;
         this.sistema = sistema;
     }
     
-    public void setPredecesor(PanelMenuPrincipal panelmenuprincipal) {
-        this.panelmenuprincipal = panelmenuprincipal;
+    public void setPredecesor(PanelMenuPrincipal panelMenuPrincipal) {
+        this.panelMenuPrincipal = panelMenuPrincipal;
     }
     
     @SuppressWarnings("unchecked")
@@ -102,18 +101,18 @@ public class PanelMenuRestaurante extends javax.swing.JPanel {
 
     private void botonRegistrarSorteoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarSorteoActionPerformed
         this.setVisible(false);
-        this.panelregistrarsorteo.setVisible(true);
+        this.panelRegistrarSorteo.setVisible(true);
     }//GEN-LAST:event_botonRegistrarSorteoActionPerformed
 
     private void botonRealizarSorteoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRealizarSorteoActionPerformed
         panelrealizarsorteo.actualizarListaSorteos();
         this.setVisible(false);
-        this.panelrealizarsorteo.setVisible(true);
+        this.panelRealizarSorteo.setVisible(true);
     }//GEN-LAST:event_botonRealizarSorteoActionPerformed
 
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
         this.setVisible(false);
-        panelmenuprincipal.setVisible(true);
+        panelMenuPrincipal.setVisible(true);
     }//GEN-LAST:event_botonVolverActionPerformed
 
 
