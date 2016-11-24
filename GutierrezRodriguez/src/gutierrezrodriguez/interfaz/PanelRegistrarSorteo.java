@@ -123,9 +123,6 @@ public class PanelRegistrarSorteo extends javax.swing.JPanel {
         this.setVisible(false);
         this.panelMenuRestaurante.setVisible(true);
     }//GEN-LAST:event_botonVolverActionPerformed
-
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonRegistrar;
     private javax.swing.JButton botonVolver;
