@@ -28,7 +28,9 @@ public class PanelMenuPrincipal extends javax.swing.JPanel {
         botonCliente = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(500, 300));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        botonRestaurante.setBackground(new java.awt.Color(255, 255, 255));
         botonRestaurante.setText("Restaurante");
         botonRestaurante.setMaximumSize(new java.awt.Dimension(210, 50));
         botonRestaurante.setMinimumSize(new java.awt.Dimension(210, 50));
@@ -38,9 +40,12 @@ public class PanelMenuPrincipal extends javax.swing.JPanel {
                 botonRestauranteActionPerformed(evt);
             }
         });
+        add(botonRestaurante, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 81, -1, -1));
 
         labelRol.setText("Elija su rol");
+        add(labelRol, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, -1, -1));
 
+        botonCliente.setBackground(new java.awt.Color(255, 255, 255));
         botonCliente.setText("Cliente");
         botonCliente.setMaximumSize(new java.awt.Dimension(210, 50));
         botonCliente.setMinimumSize(new java.awt.Dimension(210, 50));
@@ -50,34 +55,7 @@ public class PanelMenuPrincipal extends javax.swing.JPanel {
                 botonClienteActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(labelRol))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(143, 143, 143)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(botonRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botonCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(147, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(labelRol)
-                .addGap(35, 35, 35)
-                .addComponent(botonRestaurante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(botonCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(89, Short.MAX_VALUE))
-        );
+        add(botonCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 174, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonRestauranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRestauranteActionPerformed

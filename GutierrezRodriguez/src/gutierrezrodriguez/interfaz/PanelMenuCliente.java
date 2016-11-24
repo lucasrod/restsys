@@ -61,27 +61,37 @@ public class PanelMenuCliente extends javax.swing.JPanel {
         botonAnonimo = new javax.swing.JButton();
         botonVerEvaluaciones = new javax.swing.JButton();
 
+        setMinimumSize(new java.awt.Dimension(500, 300));
+        setName(""); // NOI18N
         setPreferredSize(new java.awt.Dimension(500, 300));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         labelYaSeRegistro.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
-        labelYaSeRegistro.setText("Ya se registro?");
+        labelYaSeRegistro.setText("¿Ya se registró?");
+        add(labelYaSeRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(171, 12, -1, -1));
 
         labelSi.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         labelSi.setText("Si");
+        add(labelSi, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 51, -1, -1));
 
         labelNo.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         labelNo.setText("No");
+        add(labelNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 51, -1, -1));
 
         labelCliente.setText("Rol: Cliente");
+        add(labelCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, -1, -1));
 
+        botonVolver.setBackground(new java.awt.Color(255, 255, 255));
         botonVolver.setText("Volver");
         botonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonVolverActionPerformed(evt);
             }
         });
+        add(botonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, -1));
 
         labelQuienSos.setText("¿Quién sos?");
+        add(labelQuienSos, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 85, -1, -1));
 
         listaClientes.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -95,13 +105,18 @@ public class PanelMenuCliente extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(listaClientes);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 118, 124, 131));
+
+        botonRegistrarme.setBackground(new java.awt.Color(255, 255, 255));
         botonRegistrarme.setText("Registrarme");
         botonRegistrarme.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonRegistrarmeActionPerformed(evt);
             }
         });
+        add(botonRegistrarme, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 118, 264, -1));
 
+        botonPremio.setBackground(new java.awt.Color(255, 255, 255));
         botonPremio.setText("Consultar premio");
         botonPremio.setEnabled(false);
         botonPremio.addActionListener(new java.awt.event.ActionListener() {
@@ -109,101 +124,34 @@ public class PanelMenuCliente extends javax.swing.JPanel {
                 botonPremioActionPerformed(evt);
             }
         });
+        add(botonPremio, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 163, 264, -1));
 
+        botonEvaluar.setBackground(new java.awt.Color(255, 255, 255));
         botonEvaluar.setText("Evaluar el restaurante");
         botonEvaluar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonEvaluarActionPerformed(evt);
             }
         });
+        add(botonEvaluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 208, 264, -1));
 
+        botonAnonimo.setBackground(new java.awt.Color(255, 255, 255));
         botonAnonimo.setText("Anónimo");
         botonAnonimo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAnonimoActionPerformed(evt);
             }
         });
+        add(botonAnonimo, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 255, 124, -1));
 
+        botonVerEvaluaciones.setBackground(new java.awt.Color(255, 255, 255));
         botonVerEvaluaciones.setText("Ver evaluaciones");
         botonVerEvaluaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonVerEvaluacionesActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(labelCliente)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(botonAnonimo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(88, 88, 88)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(botonPremio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(botonRegistrarme, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(botonEvaluar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(botonVerEvaluaciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(labelQuienSos)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(labelSi)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(labelNo)
-                                        .addGap(49, 49, 49))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(labelYaSeRegistro)
-                                        .addGap(97, 97, 97)
-                                        .addComponent(botonVolver))))))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelCliente)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(labelYaSeRegistro)
-                        .addComponent(botonVolver)))
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelSi)
-                    .addComponent(labelNo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelQuienSos)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botonAnonimo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(botonRegistrarme)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(botonPremio)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botonEvaluar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(botonVerEvaluaciones)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
+        add(botonVerEvaluaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 253, 264, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed

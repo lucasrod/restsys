@@ -15,6 +15,7 @@ public class PanelRegistrarSorteo extends javax.swing.JPanel {
     }
     
     public PanelRegistrarSorteo(Sistema sistema){
+        this.setLayout(null);
         initComponents();
         this.sistema = sistema;
     }
@@ -35,6 +36,7 @@ public class PanelRegistrarSorteo extends javax.swing.JPanel {
         botonRegistrar = new javax.swing.JButton();
         botonVolver = new javax.swing.JButton();
 
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setPreferredSize(new java.awt.Dimension(500, 300));
 
         labelRegistrarSorteo.setText("Registrar sorteo");

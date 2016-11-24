@@ -28,7 +28,6 @@ public class PanelFichaRestaurante extends javax.swing.JPanel {
         botonVolver = new javax.swing.JButton();
 
         botonVolver.setText("Volver");
-        botonVolver.setActionCommand("Volver");
         botonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonVolverActionPerformed(evt);
@@ -40,7 +39,7 @@ public class PanelFichaRestaurante extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(327, Short.MAX_VALUE)
+                .addGap(327, 327, 327)
                 .addComponent(botonVolver)
                 .addContainerGap())
         );
@@ -49,7 +48,7 @@ public class PanelFichaRestaurante extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(botonVolver)
-                .addContainerGap(266, Short.MAX_VALUE))
+                .addGap(266, 266, 266))
         );
     }// </editor-fold>//GEN-END:initComponents
 

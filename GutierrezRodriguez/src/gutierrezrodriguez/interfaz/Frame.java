@@ -83,7 +83,7 @@ public class Frame extends javax.swing.JFrame {
         panelDinamico = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(524, 324));
+        setBounds(new java.awt.Rectangle(0, 0, 524, 324));
         setResizable(false);
 
         panelDinamico.setPreferredSize(new java.awt.Dimension(500, 300));
