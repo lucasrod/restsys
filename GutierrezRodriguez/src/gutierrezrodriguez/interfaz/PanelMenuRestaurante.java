@@ -6,19 +6,23 @@ import gutierrezrodriguez.dominio.Sistema;
 public class PanelMenuRestaurante extends javax.swing.JPanel {
     
     PanelMenuPrincipal panelmenuprincipal;
+    PanelRealizarSorteo panelrealizarsorteo;
+    PanelRegistrarSorteo panelregistrarsorteo;
     Sistema sistema;
 
     public PanelMenuRestaurante() {
         initComponents();
     }
 
-    public PanelMenuRestaurante(PanelMenuPrincipal panelmenuprincipal, Sistema sistema){
+    public PanelMenuRestaurante(PanelMenuPrincipal panelmenuprincipal, PanelRealizarSorteo panelrealizarsorteo, PanelRegistrarSorteo panelregistrarsorteo, Sistema sistema){
         initComponents();
         this.panelmenuprincipal = panelmenuprincipal;
+        this.panelrealizarsorteo = panelrealizarsorteo;
+        this.panelregistrarsorteo = panelregistrarsorteo;
         this.sistema = sistema;
     }
     
-    public void setPm(PanelMenuPrincipal panelmenuprincipal) {
+    public void setPredecesor(PanelMenuPrincipal panelmenuprincipal) {
         this.panelmenuprincipal = panelmenuprincipal;
     }
     
@@ -97,11 +101,13 @@ public class PanelMenuRestaurante extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonRegistrarSorteoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarSorteoActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        this.panelregistrarsorteo.setVisible(true);
     }//GEN-LAST:event_botonRegistrarSorteoActionPerformed
 
     private void botonRealizarSorteoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRealizarSorteoActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        this.panelrealizarsorteo.setVisible(true);
     }//GEN-LAST:event_botonRealizarSorteoActionPerformed
 
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed

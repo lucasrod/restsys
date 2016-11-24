@@ -13,6 +13,7 @@ public class Frame extends javax.swing.JFrame {
     private PanelRealizarSorteo panelrealizarsorteo;
     private PanelRegistrarCliente panelregistrarcliente;
     private PanelRegistrarSorteo panelregistrarsorteo;
+    private PanelEvaluacion panelevaluacion;
     private Sistema sistema;
    
     public Frame() {
@@ -22,11 +23,23 @@ public class Frame extends javax.swing.JFrame {
     public Frame(Sistema sistema) {
         this.sistema = sistema;
         initComponents();
-        panelmenucliente = new PanelMenuCliente(panelmenuprincipal, sistema);
-        panelmenurestaurante = new PanelMenuRestaurante(panelmenuprincipal, sistema);
+        
+        panelregistrarcliente = new PanelRegistrarCliente(panelmenucliente, sistema);
+        panelevaluacion = new PanelEvaluacion(panelmenucliente, sistema);
+        panelmenucliente = new PanelMenuCliente(panelmenuprincipal, panelregistrarcliente, panelevaluacion, sistema);
+        panelregistrarcliente.setPredecesor(panelmenucliente);
+        panelevaluacion.setPredecesor(panelmenucliente);
+        
+        panelrealizarsorteo = new PanelRealizarSorteo(panelmenurestaurante, sistema);
+        panelregistrarsorteo = new PanelRegistrarSorteo(panelmenurestaurante, sistema);
+        panelmenurestaurante = new PanelMenuRestaurante(panelmenuprincipal, panelrealizarsorteo, panelregistrarsorteo, sistema);
+        panelrealizarsorteo.setPredecesor(panelmenurestaurante);
+        panelregistrarsorteo.setPredecesor(panelmenurestaurante);
+        
         panelmenuprincipal = new PanelMenuPrincipal(sistema, panelmenucliente, panelmenurestaurante);
-        panelmenucliente.setPm(panelmenuprincipal);
-        panelmenurestaurante.setPm(panelmenuprincipal);
+        panelmenucliente.setPredecesor(panelmenuprincipal);
+        panelmenurestaurante.setPredecesor(panelmenuprincipal);
+        
         panelDinamico.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
@@ -38,9 +51,26 @@ public class Frame extends javax.swing.JFrame {
         c.gridx = 0;
         c.gridy = 0;
         panelDinamico.add(panelmenurestaurante, c);
+        c.gridx = 0;
+        c.gridy = 0;
+        panelDinamico.add(panelregistrarcliente, c);
+        c.gridx = 0;
+        c.gridy = 0;
+        panelDinamico.add(panelregistrarsorteo, c);
+        c.gridx = 0;
+        c.gridy = 0;
+        panelDinamico.add(panelrealizarsorteo, c);
+        c.gridx = 0;
+        c.gridy = 0;
+        
+        panelDinamico.add(panelevaluacion, c);
         panelmenuprincipal.setVisible(true);
         panelmenucliente.setVisible(false);
         panelmenurestaurante.setVisible(false);
+        panelregistrarcliente.setVisible(false);
+        panelevaluacion.setVisible(false);
+        panelregistrarsorteo.setVisible(false);
+        panelrealizarsorteo.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")

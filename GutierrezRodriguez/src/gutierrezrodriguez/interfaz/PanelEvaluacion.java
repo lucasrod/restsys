@@ -6,9 +6,20 @@ import gutierrezrodriguez.dominio.Sistema;
 public class PanelEvaluacion extends javax.swing.JPanel {
     
     private Sistema sistema;
+    private PanelMenuCliente panelmenucliente;
     
     public PanelEvaluacion() {
         initComponents();
+    }
+    
+    public PanelEvaluacion(PanelMenuCliente panelmenucliente, Sistema sistema){
+        initComponents();
+        this.panelmenucliente = panelmenucliente;
+        this.sistema = sistema;
+    }
+    
+    public void setPredecesor(PanelMenuCliente panelmenucliente) {
+        this.panelmenucliente = panelmenucliente;
     }
     
     @SuppressWarnings("unchecked")
@@ -101,7 +112,8 @@ public class PanelEvaluacion extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
-       
+        this.setVisible(false);
+        this.panelmenucliente.setVisible(true);
     }//GEN-LAST:event_botonVolverActionPerformed
 
 
