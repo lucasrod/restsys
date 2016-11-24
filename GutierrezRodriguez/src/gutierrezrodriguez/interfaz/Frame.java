@@ -11,7 +11,7 @@ public class Frame extends javax.swing.JFrame {
     private PanelMenuCliente panelmenucliente;
     private PanelMenuRestaurante panelmenurestaurante;
     private PanelRealizarSorteo panelrealizarsorteo;
-    private PanelRegistrarCliente panelregistrarcliente;
+    private PanelRegistrarCliente panelRegistrarCliente;
     private PanelRegistrarSorteo panelregistrarsorteo;
     private PanelEvaluacion panelevaluacion;
     private Sistema sistema;
@@ -24,10 +24,10 @@ public class Frame extends javax.swing.JFrame {
         this.sistema = sistema;
         initComponents();
         
-        panelregistrarcliente = new PanelRegistrarCliente(panelmenucliente, sistema);
+        panelRegistrarCliente = new PanelRegistrarCliente(panelmenucliente, sistema);
         panelevaluacion = new PanelEvaluacion(panelmenucliente, sistema);
-        panelmenucliente = new PanelMenuCliente(panelmenuprincipal, panelregistrarcliente, panelevaluacion, sistema);
-        panelregistrarcliente.setPredecesor(panelmenucliente);
+        panelmenucliente = new PanelMenuCliente(panelmenuprincipal, panelRegistrarCliente, panelevaluacion, sistema);
+        panelRegistrarCliente.setPredecesor(panelmenucliente);
         panelevaluacion.setPredecesor(panelmenucliente);
         
         panelrealizarsorteo = new PanelRealizarSorteo(panelmenurestaurante, sistema);
@@ -53,7 +53,7 @@ public class Frame extends javax.swing.JFrame {
         panelDinamico.add(panelmenurestaurante, c);
         c.gridx = 0;
         c.gridy = 0;
-        panelDinamico.add(panelregistrarcliente, c);
+        panelDinamico.add(panelRegistrarCliente, c);
         c.gridx = 0;
         c.gridy = 0;
         panelDinamico.add(panelregistrarsorteo, c);
@@ -67,7 +67,7 @@ public class Frame extends javax.swing.JFrame {
         panelmenuprincipal.setVisible(true);
         panelmenucliente.setVisible(false);
         panelmenurestaurante.setVisible(false);
-        panelregistrarcliente.setVisible(false);
+        panelRegistrarCliente.setVisible(false);
         panelevaluacion.setVisible(false);
         panelregistrarsorteo.setVisible(false);
         panelrealizarsorteo.setVisible(false);
