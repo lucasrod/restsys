@@ -8,7 +8,9 @@ public class Frame extends javax.swing.JFrame {
 
     GridBagLayout layout = new GridBagLayout();
     private PanelMenuPrincipal panelmenuprincipal;
+    private PanelEvaluacion panelevaluacion;
     private Sistema sistema;
+    
 
     public Frame() {
         initComponents();
@@ -18,6 +20,7 @@ public class Frame extends javax.swing.JFrame {
         this.sistema = sistema;
         initComponents();
         panelmenuprincipal = new PanelMenuPrincipal(sistema);
+        panelevaluacion = new PanelEvaluacion(panelmenuprincipal, sistema);
         panelDinamico.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
