@@ -24,18 +24,21 @@ public class Frame extends javax.swing.JFrame {
         this.sistema = sistema;
         initComponents();
         
+        //Menu Cliente
         panelRegistrarCliente = new PanelRegistrarCliente(sistema);
         panelEvaluacion = new PanelEvaluacion(sistema);
         panelMenuCliente = new PanelMenuCliente(panelRegistrarCliente, panelEvaluacion, sistema);
         panelRegistrarCliente.setPredecesor(panelMenuCliente);
         panelEvaluacion.setPredecesor(panelMenuCliente);
         
+        //Menu Restaurante
         panelRealizarSorteo = new PanelRealizarSorteo(sistema);
         panelRegistrarSorteo = new PanelRegistrarSorteo(sistema);
         panelMenuRestaurante = new PanelMenuRestaurante(panelRealizarSorteo, panelRegistrarSorteo, sistema);
         panelRealizarSorteo.setPredecesor(panelMenuRestaurante);
         panelRegistrarSorteo.setPredecesor(panelMenuRestaurante);
         
+        //Menu Principal
         panelMenuPrincipal = new PanelMenuPrincipal(sistema, panelMenuCliente, panelMenuRestaurante);
         panelMenuCliente.setPredecesor(panelMenuPrincipal);
         panelMenuRestaurante.setPredecesor(panelMenuPrincipal);
@@ -45,25 +48,13 @@ public class Frame extends javax.swing.JFrame {
         c.gridx = 0;
         c.gridy = 0;
         panelDinamico.add(panelMenuPrincipal, c);
-        c.gridx = 0;
-        c.gridy = 0;
         panelDinamico.add(panelMenuCliente, c);
-        c.gridx = 0;
-        c.gridy = 0;
         panelDinamico.add(panelMenuRestaurante, c);
-        c.gridx = 0;
-        c.gridy = 0;
         panelDinamico.add(panelRegistrarCliente, c);
-        c.gridx = 0;
-        c.gridy = 0;
         panelDinamico.add(panelRegistrarSorteo, c);
-        c.gridx = 0;
-        c.gridy = 0;
-        panelDinamico.add(panelRealizarSorteo, c);
-        c.gridx = 0;
-        c.gridy = 0;
-        
+        panelDinamico.add(panelRealizarSorteo, c);        
         panelDinamico.add(panelEvaluacion, c);
+        
         panelMenuPrincipal.setVisible(true);
         panelMenuCliente.setVisible(false);
         panelMenuRestaurante.setVisible(false);
@@ -120,6 +111,7 @@ public class Frame extends javax.swing.JFrame {
     public static void main(String[] args) {
 
     }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel panelDinamico;
     // End of variables declaration//GEN-END:variables
