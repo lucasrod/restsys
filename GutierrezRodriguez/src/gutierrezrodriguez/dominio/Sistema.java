@@ -18,7 +18,7 @@ public class Sistema {
     
     public void cargarDatosDePrueba(){
         for (int i = 1; i <= 50; i++) {
-            Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
+            Evaluacion evaluacion = new Evaluacion(1, "Reseña " + i, new Cliente("Juan Pedro " + i, "jotape_" + i + "@gmail.com"));
             restaurante.setEvaluacion(evaluacion);
         }
         for(int i=1; i<=50; i++){

@@ -7,14 +7,14 @@ public class PanelMenuCliente extends javax.swing.JPanel {
     
     private PanelMenuPrincipal panelMenuPrincipal;
     private PanelRegistrarCliente panelRegistrarCliente;
-    private PanelEvaluacion panelEvaluacion;
+    private PanelEvaluar panelEvaluacion;
     private Sistema sistema;
 
     public PanelMenuCliente() {
         initComponents();
     }
 
-    public PanelMenuCliente(PanelRegistrarCliente panelRegistrarCliente, PanelEvaluacion panelEvaluacion, Sistema sistema){
+    public PanelMenuCliente(PanelRegistrarCliente panelRegistrarCliente, PanelEvaluar panelEvaluacion, Sistema sistema){
         initComponents();
         this.panelRegistrarCliente = panelRegistrarCliente;
         this.panelEvaluacion = panelEvaluacion;
@@ -41,6 +41,7 @@ public class PanelMenuCliente extends javax.swing.JPanel {
         botonPremio = new javax.swing.JButton();
         botonEvaluar = new javax.swing.JButton();
         botonAnonimo = new javax.swing.JButton();
+        botonVerEvaluaciones = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(500, 300));
 
@@ -95,6 +96,13 @@ public class PanelMenuCliente extends javax.swing.JPanel {
 
         botonAnonimo.setText("Anónimo");
 
+        botonVerEvaluaciones.setText("Ver evaluaciones");
+        botonVerEvaluaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonVerEvaluacionesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -127,7 +135,8 @@ public class PanelMenuCliente extends javax.swing.JPanel {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addComponent(labelYaSeRegistro)
                                         .addGap(97, 97, 97)
-                                        .addComponent(botonVolver)))))))
+                                        .addComponent(botonVolver))))
+                            .addComponent(botonVerEvaluaciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -153,10 +162,14 @@ public class PanelMenuCliente extends javax.swing.JPanel {
                         .addComponent(botonPremio)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botonEvaluar)
-                        .addGap(0, 39, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(7, 7, 7)
-                .addComponent(botonAnonimo))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonVerEvaluaciones)
+                        .addGap(0, 20, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(botonAnonimo)))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -179,6 +192,10 @@ public class PanelMenuCliente extends javax.swing.JPanel {
         panelEvaluacion.setVisible(true);
     }//GEN-LAST:event_botonEvaluarActionPerformed
 
+    private void botonVerEvaluacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVerEvaluacionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonVerEvaluacionesActionPerformed
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -186,6 +203,7 @@ public class PanelMenuCliente extends javax.swing.JPanel {
     private javax.swing.JButton botonEvaluar;
     private javax.swing.JButton botonPremio;
     private javax.swing.JButton botonRegistrarme;
+    private javax.swing.JButton botonVerEvaluaciones;
     private javax.swing.JButton botonVolver;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelCliente;

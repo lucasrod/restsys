@@ -3,16 +3,16 @@ package gutierrezrodriguez.interfaz;
 
 import gutierrezrodriguez.dominio.Sistema;
 
-public class PanelEvaluacion extends javax.swing.JPanel {
+public class PanelEvaluar extends javax.swing.JPanel {
     
     private Sistema sistema;
     private PanelMenuCliente panelMenuCliente;
     
-    public PanelEvaluacion() {
+    public PanelEvaluar() {
         initComponents();
     }
     
-    public PanelEvaluacion(Sistema sistema){
+    public PanelEvaluar(Sistema sistema){
         initComponents();
         this.sistema = sistema;
     }
@@ -65,7 +65,7 @@ public class PanelEvaluacion extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(labelEvaluar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 239, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botonVolver))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
