@@ -58,7 +58,7 @@
                           <Component id="botonRealizarSorteo" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="botonVerEvaluaciones" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="131" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="85" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -74,15 +74,15 @@
                   <Component id="botonVolver" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-              <Component id="botonRegistrarSorteo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="botonRegistrarSorteo" min="-2" pref="40" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="botonRealizarSorteo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="botonEditarFicha" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="botonRealizarSorteo" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="botonVerEvaluaciones" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <Component id="botonVerEvaluaciones" min="-2" pref="41" max="-2" attributes="0"/>
+              <EmptySpace pref="70" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
