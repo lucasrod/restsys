@@ -8,10 +8,13 @@ public class Frame extends javax.swing.JFrame {
 
     GridBagLayout layout = new GridBagLayout();
     private PanelMenuPrincipal panelmenuprincipal;
-    private PanelEvaluacion panelevaluacion;
+    private PanelMenuCliente panelmenucliente;
+    private PanelMenuRestaurante panelmenurestaurante;
+    private PanelRealizarSorteo panelrealizarsorteo;
+    private PanelRegistrarCliente panelregistrarcliente;
+    private PanelRegistrarSorteo panelregistrarsorteo;
     private Sistema sistema;
-    
-
+   
     public Frame() {
         initComponents();
     }
@@ -19,13 +22,25 @@ public class Frame extends javax.swing.JFrame {
     public Frame(Sistema sistema) {
         this.sistema = sistema;
         initComponents();
+        panelmenucliente = new PanelMenuCliente(panelmenuprincipal, sistema);
+        panelmenurestaurante = new PanelMenuRestaurante(panelmenuprincipal, sistema);
         panelmenuprincipal = new PanelMenuPrincipal(sistema);
-        panelevaluacion = new PanelEvaluacion(panelmenuprincipal, sistema);
+        panelmenucliente.setPm(panelmenuprincipal);
+        panelmenurestaurante.setPm(panelmenuprincipal);
         panelDinamico.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
         c.gridy = 0;
         panelDinamico.add(panelmenuprincipal, c);
+        c.gridx = 0;
+        c.gridy = 0;
+        panelDinamico.add(panelmenucliente, c);
+        c.gridx = 0;
+        c.gridy = 0;
+        panelDinamico.add(panelmenurestaurante, c);
+        panelmenuprincipal.setVisible(true);
+        panelmenucliente.setVisible(false);
+        panelmenurestaurante.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")

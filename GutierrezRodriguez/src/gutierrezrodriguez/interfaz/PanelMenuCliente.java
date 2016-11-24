@@ -18,6 +18,10 @@ public class PanelMenuCliente extends javax.swing.JPanel {
         this.sistema = sistema;
     }
     
+    public void setPm(PanelMenuPrincipal panelmenuprincipal) {
+        this.panelmenuprincipal = panelmenuprincipal;
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -42,6 +46,11 @@ public class PanelMenuCliente extends javax.swing.JPanel {
         jLabel1.setText("Rol: Cliente");
 
         botonVolver.setText("Volver");
+        botonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonVolverActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -85,6 +94,11 @@ public class PanelMenuCliente extends javax.swing.JPanel {
                 .addContainerGap(199, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
+        this.setVisible(false);
+        panelmenuprincipal.setVisible(true);
+    }//GEN-LAST:event_botonVolverActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

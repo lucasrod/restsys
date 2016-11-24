@@ -5,19 +5,12 @@ import gutierrezrodriguez.dominio.Sistema;
 
 public class PanelEvaluacion extends javax.swing.JPanel {
     
-    private PanelMenuPrincipal panelmenuprincipal;
     private Sistema sistema;
     
     public PanelEvaluacion() {
         initComponents();
     }
-
-    public PanelEvaluacion(PanelMenuPrincipal panelmenuprincipal, Sistema sistema){
-        initComponents();
-        this.panelmenuprincipal = panelmenuprincipal;
-        this.sistema = sistema;
-    }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -28,6 +21,11 @@ public class PanelEvaluacion extends javax.swing.JPanel {
         jLabel1.setText("Evaluar el restaurante");
 
         botonVolver.setText("Volver");
+        botonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonVolverActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -50,6 +48,10 @@ public class PanelEvaluacion extends javax.swing.JPanel {
                 .addContainerGap(255, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
+       
+    }//GEN-LAST:event_botonVolverActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
