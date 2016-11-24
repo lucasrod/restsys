@@ -3,6 +3,7 @@ package gutierrezrodriguez.interfaz;
 
 import gutierrezrodriguez.dominio.Sistema;
 import gutierrezrodriguez.dominio.Sorteo;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class PanelRealizarSorteo extends javax.swing.JPanel {
@@ -25,7 +26,9 @@ public class PanelRealizarSorteo extends javax.swing.JPanel {
     }
     
     public void actualizarListaSorteos(){
-        listaSorteos.setListData(sistema.getRestaurante().getSorteos().toArray());
+        ArrayList <Sorteo> sorteos= sistema.getRestaurante().getSorteos();
+        sorteos.removeIf(Sorteo.fueRealizado());
+        listaSorteos.setListData(sorteos.toArray());
     }
     
     @SuppressWarnings("unchecked")

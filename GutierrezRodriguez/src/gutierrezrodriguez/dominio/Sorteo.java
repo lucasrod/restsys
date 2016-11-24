@@ -3,21 +3,22 @@ package gutierrezrodriguez.dominio;
 import java.util.Random;
 
 import java.util.ArrayList;
+import java.util.function.Predicate;
 
 public final class Sorteo {
 
     int numeroDeGanadores;
     String premio;
     Restaurante restaurante;
-    boolean realizado;
-    ArrayList<Evaluacion> ganadores;
+    private boolean realizado;
+    ArrayList<Cliente> ganadores;
 
     public Sorteo() {
         this.numeroDeGanadores = 1;
         this.premio = "";
         this.restaurante = new Restaurante();
         this.realizado = false;
-        this.ganadores = new ArrayList<Evaluacion>();
+        this.ganadores = new ArrayList<Cliente>();
     }
 
     public Sorteo(int numeroDeGanadores, String premio, Restaurante restaurante) {
@@ -25,7 +26,7 @@ public final class Sorteo {
         this.premio = premio;
         this.restaurante = restaurante;
         this.realizado = false;
-        this.ganadores = new ArrayList<Evaluacion>();
+        this.ganadores = new ArrayList<Cliente>();
     }
 
     public int getNumeroDeGanadores() {
@@ -50,18 +51,18 @@ public final class Sorteo {
     
     //PRE: -
     //POS: Retorna true sii el sorteo fue realizado.
-    public boolean sorteoFueRealizado(){
+    public boolean isRealizado(){
         return this.realizado;
     }
 
     //PRE: El sorteo fue realizado 
     //POS: Retorna un ArrayList<Evaluaciones> que representan los ganadores del sorteo
-    public ArrayList<Evaluacion> getGanadores(){
+    public ArrayList<Cliente> getGanadores(){
         return this.ganadores;
     }
     
-    public ArrayList<Evaluacion> realizarSorteo() {
-        ArrayList<Evaluacion> retorno = new ArrayList<Evaluacion>();
+    public ArrayList<Cliente> realizarSorteo() {
+        ArrayList<Cliente> retorno = new ArrayList<Cliente>();
         ArrayList<Evaluacion> sorteables = restaurante.getEvaluacionesSorteables();
         ArrayList<Integer> elegidos = new ArrayList<Integer>();
         int numeroSorteado = 0;
@@ -81,7 +82,7 @@ public final class Sorteo {
             } while (elegidos.contains(numeroSorteado));
 
             //Se agrega el nuevo ganador al retorno
-            retorno.add(sorteables.get(numeroSorteado));
+            retorno.add(sorteables.get(numeroSorteado).getCliente());
 
             //Se agrega el numero ganador a la lista de los que ya salieron para evitar que se repita
             elegidos.add(numeroSorteado);
@@ -89,5 +90,9 @@ public final class Sorteo {
         this.realizado = true;
         this.ganadores = retorno;
         return retorno;
+    }
+    
+    public static Predicate <Sorteo> fueRealizado(){
+        return p -> p.isRealizado();
     }
 }
