@@ -24,6 +24,10 @@ public class PanelRealizarSorteo extends javax.swing.JPanel {
         this.panelmenurestaurante = panelmenurestaurante;    
     }
     
+    public void actualizarListaSorteos(){
+        listaSorteos.setListData(sistema.getRestaurante().getSorteos().toArray());
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -103,6 +107,7 @@ public class PanelRealizarSorteo extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Debe seleccionar el sorteo", "Error", JOptionPane.ERROR_MESSAGE);
         }else{
             Sorteo sorteo = (Sorteo) listaSorteos.getSelectedValue();
+            sorteo.realizarSorteo();
         }
     }//GEN-LAST:event_botonRealizarSorteoActionPerformed
 
