@@ -7,13 +7,13 @@ import java.awt.GridBagLayout;
 public class Frame extends javax.swing.JFrame {
 
     GridBagLayout layout = new GridBagLayout();
-    private PanelMenuPrincipal panelmenuprincipal;
-    private PanelMenuCliente panelmenucliente;
-    private PanelMenuRestaurante panelmenurestaurante;
-    private PanelRealizarSorteo panelrealizarsorteo;
+    private PanelMenuPrincipal panelMenuPrincipal;
+    private PanelMenuCliente panelMenuCliente;
+    private PanelMenuRestaurante panelMenuRestaurante;
+    private PanelRealizarSorteo panelRealizarSorteo;
     private PanelRegistrarCliente panelRegistrarCliente;
-    private PanelRegistrarSorteo panelregistrarsorteo;
-    private PanelEvaluacion panelevaluacion;
+    private PanelRegistrarSorteo panelRegistrarSorteo;
+    private PanelEvaluacion panelEvaluacion;
     private Sistema sistema;
    
     public Frame() {
@@ -24,53 +24,53 @@ public class Frame extends javax.swing.JFrame {
         this.sistema = sistema;
         initComponents();
         
-        panelRegistrarCliente = new PanelRegistrarCliente(panelmenucliente, sistema);
-        panelevaluacion = new PanelEvaluacion(panelmenucliente, sistema);
-        panelmenucliente = new PanelMenuCliente(panelmenuprincipal, panelRegistrarCliente, panelevaluacion, sistema);
-        panelRegistrarCliente.setPredecesor(panelmenucliente);
-        panelevaluacion.setPredecesor(panelmenucliente);
+        panelRegistrarCliente = new PanelRegistrarCliente(panelMenuCliente, sistema);
+        panelEvaluacion = new PanelEvaluacion(panelMenuCliente, sistema);
+        panelMenuCliente = new PanelMenuCliente(panelMenuPrincipal, panelRegistrarCliente, panelEvaluacion, sistema);
+        panelRegistrarCliente.setPredecesor(panelMenuCliente);
+        panelEvaluacion.setPredecesor(panelMenuCliente);
         
-        panelrealizarsorteo = new PanelRealizarSorteo(panelmenurestaurante, sistema);
-        panelregistrarsorteo = new PanelRegistrarSorteo(panelmenurestaurante, sistema);
-        panelmenurestaurante = new PanelMenuRestaurante(panelmenuprincipal, panelrealizarsorteo, panelregistrarsorteo, sistema);
-        panelrealizarsorteo.setPredecesor(panelmenurestaurante);
-        panelregistrarsorteo.setPredecesor(panelmenurestaurante);
+        panelRealizarSorteo = new PanelRealizarSorteo(panelMenuRestaurante, sistema);
+        panelRegistrarSorteo = new PanelRegistrarSorteo(panelMenuRestaurante, sistema);
+        panelMenuRestaurante = new PanelMenuRestaurante(panelMenuPrincipal, panelRealizarSorteo, panelRegistrarSorteo, sistema);
+        panelRealizarSorteo.setPredecesor(panelMenuRestaurante);
+        panelRegistrarSorteo.setPredecesor(panelMenuRestaurante);
         
-        panelmenuprincipal = new PanelMenuPrincipal(sistema, panelmenucliente, panelmenurestaurante);
-        panelmenucliente.setPredecesor(panelmenuprincipal);
-        panelmenurestaurante.setPredecesor(panelmenuprincipal);
+        panelMenuPrincipal = new PanelMenuPrincipal(sistema, panelMenuCliente, panelMenuRestaurante);
+        panelMenuCliente.setPredecesor(panelMenuPrincipal);
+        panelMenuRestaurante.setPredecesor(panelMenuPrincipal);
         
         panelDinamico.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
         c.gridy = 0;
-        panelDinamico.add(panelmenuprincipal, c);
+        panelDinamico.add(panelMenuPrincipal, c);
         c.gridx = 0;
         c.gridy = 0;
-        panelDinamico.add(panelmenucliente, c);
+        panelDinamico.add(panelMenuCliente, c);
         c.gridx = 0;
         c.gridy = 0;
-        panelDinamico.add(panelmenurestaurante, c);
+        panelDinamico.add(panelMenuRestaurante, c);
         c.gridx = 0;
         c.gridy = 0;
         panelDinamico.add(panelRegistrarCliente, c);
         c.gridx = 0;
         c.gridy = 0;
-        panelDinamico.add(panelregistrarsorteo, c);
+        panelDinamico.add(panelRegistrarSorteo, c);
         c.gridx = 0;
         c.gridy = 0;
-        panelDinamico.add(panelrealizarsorteo, c);
+        panelDinamico.add(panelRealizarSorteo, c);
         c.gridx = 0;
         c.gridy = 0;
         
-        panelDinamico.add(panelevaluacion, c);
-        panelmenuprincipal.setVisible(true);
-        panelmenucliente.setVisible(false);
-        panelmenurestaurante.setVisible(false);
+        panelDinamico.add(panelEvaluacion, c);
+        panelMenuPrincipal.setVisible(true);
+        panelMenuCliente.setVisible(false);
+        panelMenuRestaurante.setVisible(false);
         panelRegistrarCliente.setVisible(false);
-        panelevaluacion.setVisible(false);
-        panelregistrarsorteo.setVisible(false);
-        panelrealizarsorteo.setVisible(false);
+        panelEvaluacion.setVisible(false);
+        panelRegistrarSorteo.setVisible(false);
+        panelRealizarSorteo.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")

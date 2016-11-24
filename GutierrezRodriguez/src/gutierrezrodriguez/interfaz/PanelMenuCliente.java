@@ -5,25 +5,25 @@ import gutierrezrodriguez.dominio.Sistema;
 
 public class PanelMenuCliente extends javax.swing.JPanel {
     
-    private PanelMenuPrincipal panelmenuprincipal;
-    private PanelRegistrarCliente panelregistrarcliente;
-    private PanelEvaluacion panelevaluacion;
+    private PanelMenuPrincipal panelMenuPrincipal;
+    private PanelRegistrarCliente panelRegistrarCliente;
+    private PanelEvaluacion panelEvaluacion;
     private Sistema sistema;
 
     public PanelMenuCliente() {
         initComponents();
     }
 
-    public PanelMenuCliente(PanelMenuPrincipal panelmenuprincipal, PanelRegistrarCliente panelregistrarcliente, PanelEvaluacion panelevaluacion, Sistema sistema){
+    public PanelMenuCliente(PanelMenuPrincipal panelMenuPrincipal, PanelRegistrarCliente panelRegistrarCliente, PanelEvaluacion panelEvaluacion, Sistema sistema){
         initComponents();
-        this.panelmenuprincipal = panelmenuprincipal;
-        this.panelregistrarcliente = panelregistrarcliente;
-        this.panelevaluacion = panelevaluacion;
+        this.panelMenuPrincipal = panelMenuPrincipal;
+        this.panelRegistrarCliente = panelRegistrarCliente;
+        this.panelEvaluacion = panelEvaluacion;
         this.sistema = sistema;
     }
     
-    public void setPredecesor(PanelMenuPrincipal panelmenuprincipal) {
-        this.panelmenuprincipal = panelmenuprincipal;
+    public void setPredecesor(PanelMenuPrincipal panelMenuPrincipal) {
+        this.panelMenuPrincipal = panelMenuPrincipal;
     }
     
     @SuppressWarnings("unchecked")
@@ -163,12 +163,12 @@ public class PanelMenuCliente extends javax.swing.JPanel {
 
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
         this.setVisible(false);
-        panelmenuprincipal.setVisible(true);
+        panelMenuPrincipal.setVisible(true);
     }//GEN-LAST:event_botonVolverActionPerformed
 
     private void botonRegistrarmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarmeActionPerformed
         this.setVisible(false);
-        panelregistrarcliente.setVisible(true);
+        panelRegistrarCliente.setVisible(true);
     }//GEN-LAST:event_botonRegistrarmeActionPerformed
 
     private void botonPremioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPremioActionPerformed
@@ -177,7 +177,7 @@ public class PanelMenuCliente extends javax.swing.JPanel {
 
     private void botonEvaluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEvaluarActionPerformed
         this.setVisible(false);
-        panelevaluacion.setVisible(true);
+        panelEvaluacion.setVisible(true);
     }//GEN-LAST:event_botonEvaluarActionPerformed
 
 
