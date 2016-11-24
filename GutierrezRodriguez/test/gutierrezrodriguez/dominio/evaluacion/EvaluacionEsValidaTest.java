@@ -1,5 +1,6 @@
 package gutierrezrodriguez.dominio.evaluacion;
 
+import gutierrezrodriguez.dominio.Cliente;
 import gutierrezrodriguez.dominio.Evaluacion;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -57,14 +58,16 @@ public class EvaluacionEsValidaTest {
     @Test
     public void testEsValidaEstrellasFueraDeRango() {
         System.out.print("Test Evaluacion.esValidaEstrellasFueraDeRango:            ");
-        instancia = new Evaluacion(8, "Reseña", "Nombre");
+        Cliente cliente = new Cliente("Dato", "Dato");
+        instancia = new Evaluacion(8, "Reseña", cliente);
         printResults(false, instancia.esValida());
     }
 
     @Test
     public void testEsValidaCorrecto() {
         System.out.print("Test Evaluacion.esValidaCorrecto:                         ");
-        instancia = new Evaluacion(4, "Reseña", "Nombre");
+        Cliente cliente = new Cliente("Dato", "Dato");
+        instancia = new Evaluacion(4, "Reseña", cliente);
         printResults(true, instancia.esValida());
     }
 }

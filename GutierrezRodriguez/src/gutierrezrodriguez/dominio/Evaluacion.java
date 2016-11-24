@@ -71,16 +71,10 @@ public final class Evaluacion {
         return this.estrellas != 0;
     }
 
-    /**
-     * @return the cliente
-     */
     public Cliente getCliente() {
         return cliente;
     }
 
-    /**
-     * @param cliente the cliente to set
-     */
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }

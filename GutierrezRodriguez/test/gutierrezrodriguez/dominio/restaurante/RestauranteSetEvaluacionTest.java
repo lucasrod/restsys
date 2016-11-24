@@ -1,5 +1,6 @@
 package gutierrezrodriguez.dominio.restaurante;
 
+import gutierrezrodriguez.dominio.Cliente;
 import gutierrezrodriguez.dominio.Evaluacion;
 import gutierrezrodriguez.dominio.Restaurante;
 import java.util.ArrayList;
@@ -61,7 +62,8 @@ public class RestauranteSetEvaluacionTest {
     public void testSetEvaluacionCorrecto() {
         System.out.print("Test Restaurante.setEvaluacionCorrecto:                   ");
         instancia = new Restaurante();
-        Evaluacion evaluacion = new Evaluacion(4, "", "");
+        Cliente cliente = new Cliente();
+        Evaluacion evaluacion = new Evaluacion(4, "", cliente);
         instancia.setEvaluacion(evaluacion);
         ArrayList<Evaluacion> evaluaciones = instancia.getEvaluaciones();
         printResults(true, evaluaciones.contains(evaluacion));
@@ -71,7 +73,8 @@ public class RestauranteSetEvaluacionTest {
     public void testSetEvaluacionNoSorteable() {
         System.out.print("Test Restaurante.setEvaluacionNoSorteable:                ");
         instancia = new Restaurante();
-        Evaluacion evaluacion = new Evaluacion(4, "", "");
+        Cliente cliente = new Cliente();
+        Evaluacion evaluacion = new Evaluacion(4, "", cliente);
         instancia.setEvaluacion(evaluacion);
         ArrayList<Evaluacion> evaluaciones = instancia.getEvaluacionesSorteables();
         printResults(false, evaluaciones.contains(evaluacion));

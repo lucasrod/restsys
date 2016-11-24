@@ -4,9 +4,6 @@ import java.util.ArrayList;
 
 public class Sistema {
 
-    /**
-     * @return the clientes
-     */
     public ArrayList<Cliente> getClientes() {
         return clientes;
     }
@@ -28,11 +25,11 @@ public class Sistema {
     }
     
     public void cargarDatosDePrueba(){
-        for (int i = 1; i <= 50; i++) {
+        for (int i = 1; i <= 15; i++) {
             Evaluacion evaluacion = new Evaluacion(1, "Reseña " + i, new Cliente("Juan Pedro " + i, "jotape_" + i + "@gmail.com"));
             restaurante.setEvaluacion(evaluacion);
         }
-        for(int i=1; i<=50; i++){
+        for(int i=1; i<=15; i++){
             Sorteo sorteo = new Sorteo(i, "Premio"+i, restaurante);
             restaurante.setSorteo(sorteo);
         }

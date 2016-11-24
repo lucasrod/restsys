@@ -1,5 +1,6 @@
 package gutierrezrodriguez.dominio.evaluacion;
 
+import gutierrezrodriguez.dominio.Cliente;
 import gutierrezrodriguez.dominio.Evaluacion;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -50,21 +51,24 @@ public class EvaluacionEsSorteableTest {
     @Test
     public void testEsSorteableCasoCorrecto() {
         System.out.print("Test Evaluacion.esSorteableCasoCorrecto:                  ");
-        instancia = new Evaluacion(3, "Reseña", "Nombre");
+        Cliente cliente = new Cliente("Dato", "Dato");
+        instancia = new Evaluacion(3, "Reseña", cliente);
         printResults(true, instancia.esSorteable());
     }
 
     @Test
     public void testEsSorteableNombreNulo() {
         System.out.print("Test Evaluacion.esSorteableNombreNulo:                    ");
-        instancia = new Evaluacion(3, "", "");
+        Cliente cliente = new Cliente();
+        instancia = new Evaluacion(3, "", cliente);
         printResults(false, instancia.esSorteable());
     }
 
     @Test
     public void testEsSorteableEstrellasFueraDeRango() {
         System.out.print("Test Evaluacion.esSorteableEstrellasFueraDeRango:         ");
-        instancia = new Evaluacion(8, "Reseña", "Nombre");
+        Cliente cliente = new Cliente("Dato", "Dato");
+        instancia = new Evaluacion(8, "Reseña", cliente);
         printResults(false, instancia.esSorteable());
     }
 }

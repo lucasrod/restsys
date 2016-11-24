@@ -1,5 +1,6 @@
 package gutierrezrodriguez.dominio.restaurante;
 
+import gutierrezrodriguez.dominio.Cliente;
 import gutierrezrodriguez.dominio.Evaluacion;
 import gutierrezrodriguez.dominio.Restaurante;
 import gutierrezrodriguez.dominio.Sorteo;
@@ -71,7 +72,8 @@ public class RestauranteSetSorteoTest {
         System.out.print("Test Restaurante.setSorteoFueAgregado:                    ");
         instancia = new Restaurante();
         for (int i = 1; i < 11; i++) {
-            Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
+            Cliente cliente = new Cliente("Dato"+i, "Dato"+i);
+            Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, cliente);
             instancia.setEvaluacion(evaluacion);
         }
         Sorteo sorteo = new Sorteo(1, "TV Plasma", instancia);
@@ -84,14 +86,16 @@ public class RestauranteSetSorteoTest {
         System.out.print("Test Restaurante.setSorteoCongruenciaDeSorteables:        ");
         instancia = new Restaurante();
         for (int i = 1; i < 11; i++) {
-            Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, "Nombre" + i);
+            Cliente cliente = new Cliente("Dato"+i, "Dato"+i);
+            Evaluacion evaluacion = new Evaluacion(1, "Reseña" + i, cliente);
             instancia.setEvaluacion(evaluacion);
         }
         Sorteo sorteo = new Sorteo(11, "TV Plasma", instancia);
         instancia.setSorteo(sorteo);
-        Evaluacion evaluacion = new Evaluacion(1, "Reseña11", "Nombre11");
+        Cliente cliente = new Cliente("Dato11", "Dato11");
+        Evaluacion evaluacion = new Evaluacion(1, "Reseña11", cliente);
         instancia.setEvaluacion(evaluacion);
-        ArrayList<Evaluacion> todasLasEvaluaciones = instancia.getSorteos().get(0).realizarSorteo();
-        printResults(true, todasLasEvaluaciones.contains(evaluacion));
+        ArrayList<Cliente> todosLosClientes = instancia.getSorteos().get(0).realizarSorteo();
+        printResults(true, todosLosClientes.contains(cliente));
     }
 }
