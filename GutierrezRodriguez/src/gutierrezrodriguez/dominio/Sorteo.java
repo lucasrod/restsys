@@ -81,10 +81,14 @@ public final class Sorteo {
                     Random random = new Random();
                     numeroSorteado = random.nextInt(sorteables.size());
                 } while (elegidos.contains(numeroSorteado));
-
+                
+                Cliente ganador = sorteables.get(numeroSorteado).getCliente();
+                
+                ganador.setSorteosGanados(this);
                 //Se agrega el nuevo ganador al retorno
-                retorno.add(sorteables.get(numeroSorteado).getCliente());
-
+                retorno.add(ganador);
+                
+                
                 //Se agrega el numero ganador a la lista de los que ya salieron para evitar que se repita
                 elegidos.add(numeroSorteado);
 

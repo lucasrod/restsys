@@ -3,6 +3,9 @@ package gutierrezrodriguez.interfaz;
 
 import gutierrezrodriguez.dominio.Cliente;
 import gutierrezrodriguez.dominio.Sistema;
+import gutierrezrodriguez.dominio.Sorteo;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class PanelMenuCliente extends javax.swing.JPanel {
     
@@ -207,7 +210,17 @@ public class PanelMenuCliente extends javax.swing.JPanel {
     }//GEN-LAST:event_botonRegistrarmeActionPerformed
 
     private void botonPremioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPremioActionPerformed
-        // TODO add your handling code here:
+        Cliente cliente = (Cliente) listaClientes.getSelectedValue();
+        ArrayList <Sorteo> sorteosGanados = cliente.getSorteosGanados();
+        if(sorteosGanados.isEmpty()){
+            JOptionPane.showMessageDialog(null, "No ganaste nada", "La próxima sale", JOptionPane.ERROR_MESSAGE);
+        }else{
+            String mensaje = "Ganaste ";
+            for(int i=0; i<sorteosGanados.size(); i++){
+                mensaje += sorteosGanados.get(i).getPremio() + (i+1 == sorteosGanados.size() ? "" : ", ");
+            }
+            JOptionPane.showMessageDialog(null, mensaje, "Ganaste", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_botonPremioActionPerformed
 
     private void botonEvaluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEvaluarActionPerformed
