@@ -24,15 +24,15 @@ public class Frame extends javax.swing.JFrame {
         this.sistema = sistema;
         initComponents();
         
-        panelRegistrarCliente = new PanelRegistrarCliente(panelMenuCliente, sistema);
-        panelEvaluacion = new PanelEvaluacion(panelMenuCliente, sistema);
-        panelMenuCliente = new PanelMenuCliente(panelMenuPrincipal, panelRegistrarCliente, panelEvaluacion, sistema);
+        panelRegistrarCliente = new PanelRegistrarCliente(sistema);
+        panelEvaluacion = new PanelEvaluacion(sistema);
+        panelMenuCliente = new PanelMenuCliente(panelRegistrarCliente, panelEvaluacion, sistema);
         panelRegistrarCliente.setPredecesor(panelMenuCliente);
         panelEvaluacion.setPredecesor(panelMenuCliente);
         
-        panelRealizarSorteo = new PanelRealizarSorteo(panelMenuRestaurante, sistema);
-        panelRegistrarSorteo = new PanelRegistrarSorteo(panelMenuRestaurante, sistema);
-        panelMenuRestaurante = new PanelMenuRestaurante(panelMenuPrincipal, panelRealizarSorteo, panelRegistrarSorteo, sistema);
+        panelRealizarSorteo = new PanelRealizarSorteo(sistema);
+        panelRegistrarSorteo = new PanelRegistrarSorteo(sistema);
+        panelMenuRestaurante = new PanelMenuRestaurante(panelRealizarSorteo, panelRegistrarSorteo, sistema);
         panelRealizarSorteo.setPredecesor(panelMenuRestaurante);
         panelRegistrarSorteo.setPredecesor(panelMenuRestaurante);
         

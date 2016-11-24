@@ -12,9 +12,8 @@ public class PanelEvaluacion extends javax.swing.JPanel {
         initComponents();
     }
     
-    public PanelEvaluacion(PanelMenuCliente panelMenuCliente, Sistema sistema){
+    public PanelEvaluacion(Sistema sistema){
         initComponents();
-        this.panelMenuCliente = panelMenuCliente;
         this.sistema = sistema;
     }
     

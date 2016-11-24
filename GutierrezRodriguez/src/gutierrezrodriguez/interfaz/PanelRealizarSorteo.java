@@ -14,9 +14,8 @@ public class PanelRealizarSorteo extends javax.swing.JPanel {
         initComponents();
     }
     
-    public PanelRealizarSorteo(PanelMenuRestaurante panelMenuRestaurante, Sistema sistema){
+    public PanelRealizarSorteo(Sistema sistema){
         initComponents();
-        this.panelMenuRestaurante = panelMenuRestaurante;
         this.sistema = sistema;
     }
     

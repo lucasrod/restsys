@@ -12,9 +12,8 @@ public class PanelRegistrarCliente extends javax.swing.JPanel {
         initComponents();
     }
     
-    public PanelRegistrarCliente(PanelMenuCliente panelMenuCliente, Sistema sistema){
+    public PanelRegistrarCliente(Sistema sistema){
         initComponents();
-        this.panelMenuCliente = panelMenuCliente;
         this.sistema = sistema;
     }
     

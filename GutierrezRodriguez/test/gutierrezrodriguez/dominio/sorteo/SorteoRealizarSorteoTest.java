@@ -170,7 +170,7 @@ public class SorteoRealizarSorteoTest {
             restaurante.setEvaluacion(evaluacion);
         }
         instancia = new Sorteo(3, "Ganaste!", restaurante);
-        ArrayList<Evaluacion> ganadores = instancia.realizarSorteo();
+        instancia.realizarSorteo();
         ArrayList<Evaluacion> ganadoresPrueba = instancia.realizarSorteo();
         printResults(true, ganadoresPrueba.isEmpty());        
     }
