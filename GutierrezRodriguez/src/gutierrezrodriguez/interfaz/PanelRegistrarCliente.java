@@ -130,7 +130,6 @@ public class PanelRegistrarCliente extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_botonRegistrarseActionPerformed
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonRegistrarse;
     private javax.swing.JButton botonVolver;

@@ -5,6 +5,7 @@
         <group>
             <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/src/gutierrezrodriguez/interfaz/PanelEvaluar.java</file>
             <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/src/gutierrezrodriguez/interfaz/PanelMenuPrincipal.java</file>
+            <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/test/gutierrezrodriguez/dominio/restaurante/RestauranteSetEvaluacionTest.java</file>
             <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/src/gutierrezrodriguez/interfaz/PanelMenuCliente.java</file>
             <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/src/gutierrezrodriguez/dominio/Evaluacion.java</file>
             <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/src/gutierrezrodriguez/dominio/Cliente.java</file>
@@ -13,6 +14,8 @@
             <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/src/gutierrezrodriguez/dominio/Sorteo.java</file>
             <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/src/gutierrezrodriguez/interfaz/Frame.java</file>
             <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/src/gutierrezrodriguez/interfaz/PanelRegistrarSorteo.java</file>
+            <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/test/gutierrezrodriguez/dominio/evaluacion/EvaluacionEsSorteableTest.java</file>
+            <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/src/gutierrezrodriguez/dominio/Sistema.java</file>
             <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/src/gutierrezrodriguez/interfaz/PanelEvaluaciones.java</file>
             <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/src/gutierrezrodriguez/interfaz/PanelFichaRestaurante.java</file>
             <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/src/gutierrezrodriguez/dominio/Ficha.java</file>
