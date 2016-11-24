@@ -119,7 +119,7 @@ public class PanelMenuRestaurante extends javax.swing.JPanel {
     }//GEN-LAST:event_botonRegistrarSorteoActionPerformed
 
     private void botonRealizarSorteoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRealizarSorteoActionPerformed
-        panelRealizarSorteo.actualizarListaSorteos();
+        this.panelRealizarSorteo.actualizarListaSorteos();
         this.setVisible(false);
         this.panelRealizarSorteo.setVisible(true);
     }//GEN-LAST:event_botonRealizarSorteoActionPerformed

@@ -86,6 +86,7 @@ public class PanelMenuPrincipal extends javax.swing.JPanel {
     }//GEN-LAST:event_botonRestauranteActionPerformed
 
     private void botonClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonClienteActionPerformed
+        this.panelmenucliente.actualizarListaClientes();
         this.setVisible(false);
         this.panelmenucliente.setVisible(true);
     }//GEN-LAST:event_botonClienteActionPerformed

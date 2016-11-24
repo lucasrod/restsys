@@ -3,6 +3,7 @@ package gutierrezrodriguez.interfaz;
 
 import gutierrezrodriguez.dominio.Cliente;
 import gutierrezrodriguez.dominio.Sistema;
+import javax.swing.JOptionPane;
 
 public class PanelRegistrarCliente extends javax.swing.JPanel {
 
@@ -111,9 +112,22 @@ public class PanelRegistrarCliente extends javax.swing.JPanel {
     }//GEN-LAST:event_botonVolverActionPerformed
 
     private void botonRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarseActionPerformed
-        Cliente cliente = new Cliente(textFieldNombre.getText(), textFieldEmail.getText());
-        sistema.setClientes(cliente);
-        botonVolver.doClick();
+        if(textFieldNombre.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Debe ingresar su nombre", "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+            int continuar = JOptionPane.YES_OPTION;
+            if(textFieldEmail.getText().isEmpty()){
+                continuar = JOptionPane.showConfirmDialog(null,"Recuerde que para participar de los sorteos necesita ingresar su email\nDesea continuar de todas maneras?", "No ingreso email", JOptionPane.YES_NO_OPTION);
+            }
+            if(continuar == JOptionPane.YES_OPTION){
+                Cliente cliente = new Cliente(textFieldNombre.getText(), textFieldEmail.getText());
+                sistema.setClientes(cliente);
+                JOptionPane.showMessageDialog(null, "Se ha registrado con éxito", "Éxito", JOptionPane.PLAIN_MESSAGE);
+                botonVolver.doClick();
+                panelMenuCliente.seleccionarElUltimo();
+            }
+
+        }
     }//GEN-LAST:event_botonRegistrarseActionPerformed
 
 

@@ -1,7 +1,9 @@
 
 package gutierrezrodriguez.interfaz;
 
+import gutierrezrodriguez.dominio.Evaluacion;
 import gutierrezrodriguez.dominio.Sistema;
+import javax.swing.JOptionPane;
 
 public class PanelEvaluar extends javax.swing.JPanel {
     
@@ -55,6 +57,11 @@ public class PanelEvaluar extends javax.swing.JPanel {
         jScrollPane1.setViewportView(textAreaResena);
 
         botonEvaluar.setText("Evaluar");
+        botonEvaluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEvaluarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -114,6 +121,13 @@ public class PanelEvaluar extends javax.swing.JPanel {
         this.setVisible(false);
         this.panelMenuCliente.setVisible(true);
     }//GEN-LAST:event_botonVolverActionPerformed
+
+    private void botonEvaluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEvaluarActionPerformed
+        Evaluacion evaluacion = new Evaluacion(sliderPuntuacion.getValue(), textAreaResena.getText(), panelMenuCliente.clienteSeleccionado());
+        sistema.getRestaurante().setEvaluacion(evaluacion);
+        JOptionPane.showMessageDialog(null, "Se ha evaluado con éxito", "Éxito", JOptionPane.PLAIN_MESSAGE);
+        botonVolver.doClick();
+    }//GEN-LAST:event_botonEvaluarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

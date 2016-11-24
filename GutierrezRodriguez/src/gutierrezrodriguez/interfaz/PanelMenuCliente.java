@@ -1,6 +1,7 @@
 
 package gutierrezrodriguez.interfaz;
 
+import gutierrezrodriguez.dominio.Cliente;
 import gutierrezrodriguez.dominio.Sistema;
 
 public class PanelMenuCliente extends javax.swing.JPanel {
@@ -28,6 +29,14 @@ public class PanelMenuCliente extends javax.swing.JPanel {
     public void actualizarListaClientes(){
         listaClientes.setListData(sistema.getClientes().toArray());
     }
+    
+    public void seleccionarElUltimo(){
+        listaClientes.setSelectedIndex(listaClientes.getModel().getSize()-1);
+    }
+    
+    Cliente clienteSeleccionado() {
+        return (listaClientes.isSelectionEmpty() ? new Cliente("Anónimo", "") : (Cliente)listaClientes.getSelectedValue());
+    }    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -73,6 +82,11 @@ public class PanelMenuCliente extends javax.swing.JPanel {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
+        });
+        listaClientes.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listaClientesValueChanged(evt);
+            }
         });
         jScrollPane1.setViewportView(listaClientes);
 
@@ -207,8 +221,14 @@ public class PanelMenuCliente extends javax.swing.JPanel {
 
     private void botonAnonimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAnonimoActionPerformed
         listaClientes.clearSelection();
-        botonPremio.setEnabled(false);
     }//GEN-LAST:event_botonAnonimoActionPerformed
+
+    private void listaClientesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaClientesValueChanged
+        if(listaClientes.isSelectionEmpty())
+            botonPremio.setEnabled(false);
+        else
+            botonPremio.setEnabled(true);
+    }//GEN-LAST:event_listaClientesValueChanged
 
 
 
@@ -227,4 +247,5 @@ public class PanelMenuCliente extends javax.swing.JPanel {
     private javax.swing.JLabel labelYaSeRegistro;
     private javax.swing.JList listaClientes;
     // End of variables declaration//GEN-END:variables
+
 }
