@@ -27,28 +27,28 @@ public class PanelRealizarSorteo extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        labelRealizarSorteo = new javax.swing.JLabel();
+        labelElegirSorteo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-        jButton1 = new javax.swing.JButton();
+        listaSorteos = new javax.swing.JList<>();
+        botonRealizarSorteo = new javax.swing.JButton();
         botonVolver = new javax.swing.JButton();
 
-        jLabel1.setText("Realizar sorteo");
+        labelRealizarSorteo.setText("Realizar sorteo");
 
-        jLabel2.setText("Elegir sorteo");
+        labelElegirSorteo.setText("Elegir sorteo");
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        listaSorteos.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(listaSorteos);
 
-        jButton1.setText("Realizar sorteo");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botonRealizarSorteo.setText("Realizar sorteo");
+        botonRealizarSorteo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botonRealizarSorteoActionPerformed(evt);
             }
         });
 
@@ -63,16 +63,16 @@ public class PanelRealizarSorteo extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(labelElegirSorteo)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(labelRealizarSorteo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(botonVolver)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(200, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(botonRealizarSorteo)
                 .addGap(195, 195, 195))
         );
         layout.setVerticalGroup(
@@ -80,29 +80,29 @@ public class PanelRealizarSorteo extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
+                    .addComponent(labelRealizarSorteo)
                     .addComponent(botonVolver))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addComponent(labelElegirSorteo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(botonRealizarSorteo)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botonRealizarSorteoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRealizarSorteoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botonRealizarSorteoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonRealizarSorteo;
     private javax.swing.JButton botonVolver;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labelElegirSorteo;
+    private javax.swing.JLabel labelRealizarSorteo;
+    private javax.swing.JList<String> listaSorteos;
     // End of variables declaration//GEN-END:variables
 }
