@@ -14,6 +14,7 @@ public class Frame extends javax.swing.JFrame {
     private PanelRegistrarCliente panelRegistrarCliente;
     private PanelRegistrarSorteo panelRegistrarSorteo;
     private PanelEvaluar panelEvaluacion;
+    private PanelEvaluaciones panelEvaluaciones;
     private Sistema sistema;
    
     public Frame() {
@@ -24,17 +25,20 @@ public class Frame extends javax.swing.JFrame {
         this.sistema = sistema;
         initComponents();
         
+        //Ambos menues lo comparten
+        panelEvaluaciones = new PanelEvaluaciones(sistema);
+        
         //Menu Cliente
         panelRegistrarCliente = new PanelRegistrarCliente(sistema);
         panelEvaluacion = new PanelEvaluar(sistema);
-        panelMenuCliente = new PanelMenuCliente(panelRegistrarCliente, panelEvaluacion, sistema);
+        panelMenuCliente = new PanelMenuCliente(panelRegistrarCliente, panelEvaluacion, panelEvaluaciones, sistema);
         panelRegistrarCliente.setPredecesor(panelMenuCliente);
         panelEvaluacion.setPredecesor(panelMenuCliente);
         
         //Menu Restaurante
         panelRealizarSorteo = new PanelRealizarSorteo(sistema);
         panelRegistrarSorteo = new PanelRegistrarSorteo(sistema);
-        panelMenuRestaurante = new PanelMenuRestaurante(panelRealizarSorteo, panelRegistrarSorteo, sistema);
+        panelMenuRestaurante = new PanelMenuRestaurante(panelRealizarSorteo, panelRegistrarSorteo, panelEvaluaciones, sistema);
         panelRealizarSorteo.setPredecesor(panelMenuRestaurante);
         panelRegistrarSorteo.setPredecesor(panelMenuRestaurante);
         
@@ -43,6 +47,7 @@ public class Frame extends javax.swing.JFrame {
         panelMenuCliente.setPredecesor(panelMenuPrincipal);
         panelMenuRestaurante.setPredecesor(panelMenuPrincipal);
         
+        //Se agregan los paneles al frame
         panelDinamico.setLayout(layout);
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
@@ -54,6 +59,7 @@ public class Frame extends javax.swing.JFrame {
         panelDinamico.add(panelRegistrarSorteo, c);
         panelDinamico.add(panelRealizarSorteo, c);        
         panelDinamico.add(panelEvaluacion, c);
+        panelDinamico.add(panelEvaluaciones, c);
         
         panelMenuPrincipal.setVisible(true);
         panelMenuCliente.setVisible(false);
@@ -62,6 +68,7 @@ public class Frame extends javax.swing.JFrame {
         panelEvaluacion.setVisible(false);
         panelRegistrarSorteo.setVisible(false);
         panelRealizarSorteo.setVisible(false);
+        panelEvaluaciones.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")

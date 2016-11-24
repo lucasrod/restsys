@@ -12,16 +12,18 @@ public class PanelMenuCliente extends javax.swing.JPanel {
     private PanelMenuPrincipal panelMenuPrincipal;
     private PanelRegistrarCliente panelRegistrarCliente;
     private PanelEvaluar panelEvaluacion;
+    private PanelEvaluaciones panelEvaluaciones;
     private Sistema sistema;
 
     public PanelMenuCliente() {
         initComponents();
     }
 
-    public PanelMenuCliente(PanelRegistrarCliente panelRegistrarCliente, PanelEvaluar panelEvaluacion, Sistema sistema){
+    public PanelMenuCliente(PanelRegistrarCliente panelRegistrarCliente, PanelEvaluar panelEvaluacion, PanelEvaluaciones panelEvaluaciones, Sistema sistema){
         initComponents();
         this.panelRegistrarCliente = panelRegistrarCliente;
         this.panelEvaluacion = panelEvaluacion;
+        this.panelEvaluaciones = panelEvaluaciones;
         this.sistema = sistema;
     }
     
@@ -229,7 +231,10 @@ public class PanelMenuCliente extends javax.swing.JPanel {
     }//GEN-LAST:event_botonEvaluarActionPerformed
 
     private void botonVerEvaluacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVerEvaluacionesActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        panelEvaluaciones.setPredecesor(this);
+        panelEvaluaciones.setPredecesorEsRestaurante(false);
+        panelEvaluaciones.setVisible(true);
     }//GEN-LAST:event_botonVerEvaluacionesActionPerformed
 
     private void botonAnonimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAnonimoActionPerformed
