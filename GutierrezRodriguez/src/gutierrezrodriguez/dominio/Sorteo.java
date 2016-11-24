@@ -47,47 +47,49 @@ public final class Sorteo {
     public void setPremio(String premio) {
         this.premio = premio;
     }
-    
+
     //PRE: -
     //POS: Retorna true sii el sorteo fue realizado.
-    public boolean sorteoFueRealizado(){
+    public boolean sorteoFueRealizado() {
         return this.realizado;
     }
 
     //PRE: El sorteo fue realizado 
     //POS: Retorna un ArrayList<Evaluaciones> que representan los ganadores del sorteo
-    public ArrayList<Evaluacion> getGanadores(){
+    public ArrayList<Evaluacion> getGanadores() {
         return this.ganadores;
     }
-    
+
     public ArrayList<Evaluacion> realizarSorteo() {
         ArrayList<Evaluacion> retorno = new ArrayList<Evaluacion>();
-        ArrayList<Evaluacion> sorteables = restaurante.getEvaluacionesSorteables();
-        ArrayList<Integer> elegidos = new ArrayList<Integer>();
-        int numeroSorteado = 0;
+        if (!this.realizado) {
+            ArrayList<Evaluacion> sorteables = restaurante.getEvaluacionesSorteables();
+            ArrayList<Integer> elegidos = new ArrayList<Integer>();
+            int numeroSorteado = 0;
 
-        //Si el numero de ganadores supera el de las evaluaciones sorteables se iguala para hacerlo posible
-        if (numeroDeGanadores > sorteables.size()) {
-            numeroDeGanadores = sorteables.size();
+            //Si el numero de ganadores supera el de las evaluaciones sorteables se iguala para hacerlo posible
+            if (numeroDeGanadores > sorteables.size()) {
+                numeroDeGanadores = sorteables.size();
+            }
+
+            //for que se utiliza para elegir la cantidad de ganadores correspondiente
+            for (int i = 0; i < numeroDeGanadores; i++) {
+
+                //Se busca un numero aleatorio hasata que sea diferente a los que salieron previamente
+                do {
+                    Random random = new Random();
+                    numeroSorteado = random.nextInt(sorteables.size());
+                } while (elegidos.contains(numeroSorteado));
+
+                //Se agrega el nuevo ganador al retorno
+                retorno.add(sorteables.get(numeroSorteado));
+
+                //Se agrega el numero ganador a la lista de los que ya salieron para evitar que se repita
+                elegidos.add(numeroSorteado);
+            }
+            this.realizado = true;
+            this.ganadores = retorno;
         }
-
-        //for que se utiliza para elegir la cantidad de ganadores correspondiente
-        for (int i = 0; i < numeroDeGanadores; i++) {
-
-            //Se busca un numero aleatorio hasata que sea diferente a los que salieron previamente
-            do {
-                Random random = new Random();
-                numeroSorteado = random.nextInt(sorteables.size());
-            } while (elegidos.contains(numeroSorteado));
-
-            //Se agrega el nuevo ganador al retorno
-            retorno.add(sorteables.get(numeroSorteado));
-
-            //Se agrega el numero ganador a la lista de los que ya salieron para evitar que se repita
-            elegidos.add(numeroSorteado);
-        }
-        this.realizado = true;
-        this.ganadores = retorno;
         return retorno;
     }
 }
