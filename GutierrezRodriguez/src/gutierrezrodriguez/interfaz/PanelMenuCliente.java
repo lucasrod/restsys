@@ -157,12 +157,11 @@ public class PanelMenuCliente extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
         this.setVisible(false);
         panelmenuprincipal.setVisible(true);
     }//GEN-LAST:event_botonVolverActionPerformed
-=======
+
     private void botonRegistrarmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarmeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botonRegistrarmeActionPerformed
@@ -174,7 +173,7 @@ public class PanelMenuCliente extends javax.swing.JPanel {
     private void botonEvaluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEvaluarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botonEvaluarActionPerformed
->>>>>>> 2f706b3fa9d78223f888d99684df9568415cb056
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
