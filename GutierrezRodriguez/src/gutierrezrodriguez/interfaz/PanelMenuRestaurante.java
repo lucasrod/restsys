@@ -55,6 +55,7 @@ public class PanelMenuRestaurante extends javax.swing.JPanel {
 
         labelRestaurante.setText("Rol: Restaurante");
 
+        botonRegistrarSorteo.setBackground(new java.awt.Color(255, 255, 255));
         botonRegistrarSorteo.setText("Registrar sorteo");
         botonRegistrarSorteo.setMaximumSize(new java.awt.Dimension(210, 50));
         botonRegistrarSorteo.setMinimumSize(new java.awt.Dimension(210, 50));
@@ -65,6 +66,7 @@ public class PanelMenuRestaurante extends javax.swing.JPanel {
             }
         });
 
+        botonRealizarSorteo.setBackground(new java.awt.Color(255, 255, 255));
         botonRealizarSorteo.setText("Sortear");
         botonRealizarSorteo.setMaximumSize(new java.awt.Dimension(210, 50));
         botonRealizarSorteo.setMinimumSize(new java.awt.Dimension(210, 50));
@@ -75,6 +77,7 @@ public class PanelMenuRestaurante extends javax.swing.JPanel {
             }
         });
 
+        botonVolver.setBackground(new java.awt.Color(255, 255, 255));
         botonVolver.setText("Volver");
         botonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +85,7 @@ public class PanelMenuRestaurante extends javax.swing.JPanel {
             }
         });
 
+        botonVerEvaluaciones.setBackground(new java.awt.Color(255, 255, 255));
         botonVerEvaluaciones.setText("Ver evaluaciones");
         botonVerEvaluaciones.setMaximumSize(new java.awt.Dimension(210, 50));
         botonVerEvaluaciones.setMinimumSize(new java.awt.Dimension(210, 50));
@@ -92,6 +96,7 @@ public class PanelMenuRestaurante extends javax.swing.JPanel {
             }
         });
 
+        botonEditarFicha.setBackground(new java.awt.Color(255, 255, 255));
         botonEditarFicha.setText("Editar Ficha");
         botonEditarFicha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

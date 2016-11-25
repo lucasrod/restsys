@@ -54,11 +54,11 @@
     </Component>
     <Component class="javax.swing.JLabel" name="labelPuntuacion">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Puntuacion [&#x2b50;]"/>
+        <Property name="text" type="java.lang.String" value="Puntuacion [&#x22c6;]"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="12" y="87" width="-1" height="-1"/>
+          <AbsoluteConstraints x="10" y="70" width="-1" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -116,7 +116,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="140" y="80" width="50" height="-1"/>
+          <AbsoluteConstraints x="140" y="70" width="50" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
