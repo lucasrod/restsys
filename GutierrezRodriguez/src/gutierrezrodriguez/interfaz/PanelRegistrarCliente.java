@@ -50,10 +50,10 @@ public class PanelRegistrarCliente extends javax.swing.JPanel {
         add(botonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 12, -1, -1));
 
         labelNombre.setText("Nombre");
-        add(labelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 97, -1, -1));
+        add(labelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, -1, -1));
 
         labelEmail.setText("Email");
-        add(labelEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 141, -1, -1));
+        add(labelEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, -1));
 
         botonRegistrarse.setBackground(new java.awt.Color(255, 255, 255));
         botonRegistrarse.setText("Registrarse");
