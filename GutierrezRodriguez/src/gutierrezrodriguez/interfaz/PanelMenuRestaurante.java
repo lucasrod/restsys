@@ -2,6 +2,7 @@
 package gutierrezrodriguez.interfaz;
 
 import gutierrezrodriguez.dominio.Sistema;
+import javax.swing.JOptionPane;
 
 public class PanelMenuRestaurante extends javax.swing.JPanel {
     
@@ -147,8 +148,12 @@ public class PanelMenuRestaurante extends javax.swing.JPanel {
 
     private void botonRealizarSorteoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRealizarSorteoActionPerformed
         this.panelRealizarSorteo.actualizarListaSorteos();
-        this.setVisible(false);
-        this.panelRealizarSorteo.setVisible(true);
+        if(this.panelRealizarSorteo.haySorteos()){
+            this.setVisible(false);
+            this.panelRealizarSorteo.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null, "No hay sorteos disponibles", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_botonRealizarSorteoActionPerformed
 
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
