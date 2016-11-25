@@ -51,9 +51,13 @@ public class PanelMenuRestaurante extends javax.swing.JPanel {
             }
         });
 
+        setMinimumSize(new java.awt.Dimension(500, 300));
+        setName(""); // NOI18N
         setPreferredSize(new java.awt.Dimension(500, 300));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         labelRestaurante.setText("Rol: Restaurante");
+        add(labelRestaurante, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, -1, -1));
 
         botonRegistrarSorteo.setBackground(new java.awt.Color(255, 255, 255));
         botonRegistrarSorteo.setText("Registrar sorteo");
@@ -65,6 +69,7 @@ public class PanelMenuRestaurante extends javax.swing.JPanel {
                 botonRegistrarSorteoActionPerformed(evt);
             }
         });
+        add(botonRegistrarSorteo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 51, -1, 40));
 
         botonRealizarSorteo.setBackground(new java.awt.Color(255, 255, 255));
         botonRealizarSorteo.setText("Sortear");
@@ -76,6 +81,7 @@ public class PanelMenuRestaurante extends javax.swing.JPanel {
                 botonRealizarSorteoActionPerformed(evt);
             }
         });
+        add(botonRealizarSorteo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 109, -1, 40));
 
         botonVolver.setBackground(new java.awt.Color(255, 255, 255));
         botonVolver.setText("Volver");
@@ -84,6 +90,7 @@ public class PanelMenuRestaurante extends javax.swing.JPanel {
                 botonVolverActionPerformed(evt);
             }
         });
+        add(botonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 12, -1, -1));
 
         botonVerEvaluaciones.setBackground(new java.awt.Color(255, 255, 255));
         botonVerEvaluaciones.setText("Ver evaluaciones");
@@ -95,54 +102,19 @@ public class PanelMenuRestaurante extends javax.swing.JPanel {
                 botonVerEvaluacionesActionPerformed(evt);
             }
         });
+        add(botonVerEvaluaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 167, -1, 40));
 
         botonEditarFicha.setBackground(new java.awt.Color(255, 255, 255));
-        botonEditarFicha.setText("Editar Ficha");
+        botonEditarFicha.setText("Editar ficha");
+        botonEditarFicha.setMaximumSize(new java.awt.Dimension(210, 50));
+        botonEditarFicha.setMinimumSize(new java.awt.Dimension(210, 50));
+        botonEditarFicha.setPreferredSize(new java.awt.Dimension(210, 50));
         botonEditarFicha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonEditarFichaActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(labelRestaurante)
-                    .addComponent(botonEditarFicha))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botonVolver))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(botonRegistrarSorteo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botonRealizarSorteo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botonVerEvaluaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 85, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelRestaurante)
-                    .addComponent(botonVolver))
-                .addGap(22, 22, 22)
-                .addComponent(botonRegistrarSorteo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonEditarFicha)
-                    .addComponent(botonRealizarSorteo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(botonVerEvaluaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
-        );
+        add(botonEditarFicha, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 225, -1, 40));
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonRegistrarSorteoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarSorteoActionPerformed
@@ -174,6 +146,7 @@ public class PanelMenuRestaurante extends javax.swing.JPanel {
     }//GEN-LAST:event_botonVerEvaluaciones1ActionPerformed
 
     private void botonEditarFichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEditarFichaActionPerformed
+        panelFichaRestaurante.actualizarDatos();
         this.setVisible(false);
         panelFichaRestaurante.setVisible(true);
     }//GEN-LAST:event_botonEditarFichaActionPerformed

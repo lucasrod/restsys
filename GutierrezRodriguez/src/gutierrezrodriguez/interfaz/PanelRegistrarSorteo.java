@@ -38,77 +38,42 @@ public class PanelRegistrarSorteo extends javax.swing.JPanel {
 
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setPreferredSize(new java.awt.Dimension(500, 300));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         labelRegistrarSorteo.setText("Registrar sorteo");
+        add(labelRegistrarSorteo, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, -1, -1));
 
         spinnerGanadores.setModel(new javax.swing.SpinnerNumberModel(1, 1, 100, 1));
+        add(spinnerGanadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(412, 92, -1, -1));
 
         labelCantidadGanadores.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         labelCantidadGanadores.setText("Cantidad de ganadores");
+        add(labelCantidadGanadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 91, -1, -1));
 
         labelPremio.setFont(new java.awt.Font("Ubuntu", 0, 24)); // NOI18N
         labelPremio.setText("Premio");
+        add(labelPremio, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 142, -1, -1));
 
         textFieldPremio.setText("TV 55\"");
+        add(textFieldPremio, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 143, 379, -1));
 
+        botonRegistrar.setBackground(new java.awt.Color(255, 255, 255));
         botonRegistrar.setText("Registrar");
         botonRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonRegistrarActionPerformed(evt);
             }
         });
+        add(botonRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 255, -1, -1));
 
+        botonVolver.setBackground(new java.awt.Color(255, 255, 255));
         botonVolver.setText("Volver");
         botonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonVolverActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelPremio)
-                        .addGap(18, 18, 18)
-                        .addComponent(textFieldPremio))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelRegistrarSorteo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botonVolver))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelCantidadGanadores)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
-                        .addComponent(spinnerGanadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(196, 196, 196)
-                .addComponent(botonRegistrar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelRegistrarSorteo)
-                    .addComponent(botonVolver))
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(spinnerGanadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelCantidadGanadores))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelPremio)
-                    .addComponent(textFieldPremio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
-                .addComponent(botonRegistrar)
-                .addContainerGap())
-        );
+        add(botonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 12, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarActionPerformed

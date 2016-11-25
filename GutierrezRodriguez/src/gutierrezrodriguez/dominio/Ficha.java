@@ -4,7 +4,7 @@ public class Ficha {
 
     private String nombre;
     private String direccion;
-    String[] horarios;
+    private String[] horarios;
 
     //PRE: -
     //POS: Retorna true sii el día está entre 1 y 7
@@ -21,6 +21,7 @@ public class Ficha {
     public Ficha(String nombre, String direccion) {
         this.nombre = nombre;
         this.direccion = direccion;
+        this.horarios = new String[8];
     }
 
     public Ficha(String nombre, String direccion, String[] horarios) {
@@ -52,5 +53,13 @@ public class Ficha {
             horarios[dia] = horarioDelDia;
         }
         return esDia(dia);
+    }
+
+    public String[] getHorarios() {
+        String[] retorno = new String[7];
+        for(int i = 0; i < 7; i++){
+            retorno[i]=horarios[i+1];
+        }
+        return retorno;
     }
 }

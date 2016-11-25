@@ -42,9 +42,14 @@ public class PanelRealizarSorteo extends javax.swing.JPanel {
         botonRealizarSorteo = new javax.swing.JButton();
         botonVolver = new javax.swing.JButton();
 
+        setMinimumSize(new java.awt.Dimension(500, 300));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         labelRealizarSorteo.setText("Realizar sorteo");
+        add(labelRealizarSorteo, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, -1, -1));
 
         labelElegirSorteo.setText("Elegir sorteo");
+        add(labelElegirSorteo, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 63, -1, -1));
 
         listaSorteos.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -53,56 +58,25 @@ public class PanelRealizarSorteo extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(listaSorteos);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 90, 476, 100));
+
+        botonRealizarSorteo.setBackground(new java.awt.Color(255, 255, 255));
         botonRealizarSorteo.setText("Realizar sorteo");
         botonRealizarSorteo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonRealizarSorteoActionPerformed(evt);
             }
         });
+        add(botonRealizarSorteo, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 255, -1, -1));
 
+        botonVolver.setBackground(new java.awt.Color(255, 255, 255));
         botonVolver.setText("Volver");
         botonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonVolverActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelElegirSorteo)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelRealizarSorteo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botonVolver)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(176, Short.MAX_VALUE)
-                .addComponent(botonRealizarSorteo)
-                .addGap(195, 195, 195))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelRealizarSorteo)
-                    .addComponent(botonVolver))
-                .addGap(18, 18, 18)
-                .addComponent(labelElegirSorteo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
-                .addComponent(botonRealizarSorteo)
-                .addContainerGap())
-        );
+        add(botonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 12, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonRealizarSorteoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRealizarSorteoActionPerformed
