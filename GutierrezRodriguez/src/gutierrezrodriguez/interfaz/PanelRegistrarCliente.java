@@ -34,74 +34,37 @@ public class PanelRegistrarCliente extends javax.swing.JPanel {
         textFieldNombre = new javax.swing.JTextField();
         textFieldEmail = new javax.swing.JTextField();
 
-        labelRegistrarse.setText("Registrarse como cliente");
+        setMinimumSize(new java.awt.Dimension(500, 300));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        labelRegistrarse.setText("Registrarse como cliente");
+        add(labelRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, -1, -1));
+
+        botonVolver.setBackground(new java.awt.Color(255, 255, 255));
         botonVolver.setText("Volver");
         botonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonVolverActionPerformed(evt);
             }
         });
+        add(botonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 12, -1, -1));
 
         labelNombre.setText("Nombre");
+        add(labelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 97, -1, -1));
 
         labelEmail.setText("Email");
+        add(labelEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 141, -1, -1));
 
+        botonRegistrarse.setBackground(new java.awt.Color(255, 255, 255));
         botonRegistrarse.setText("Registrarse");
         botonRegistrarse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonRegistrarseActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(labelRegistrarse)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botonVolver))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(210, 210, 210)
-                                .addComponent(botonRegistrarse))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(67, 67, 67)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(labelNombre)
-                                    .addComponent(labelEmail))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(textFieldNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
-                                    .addComponent(textFieldEmail))))
-                        .addGap(0, 106, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(botonVolver)
-                            .addComponent(labelRegistrarse))
-                        .addGap(52, 52, 52)
-                        .addComponent(labelNombre))
-                    .addComponent(textFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelEmail)
-                    .addComponent(textFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
-                .addComponent(botonRegistrarse)
-                .addContainerGap())
-        );
+        add(botonRegistrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 255, -1, -1));
+        add(textFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 87, 233, -1));
+        add(textFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 136, 233, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed

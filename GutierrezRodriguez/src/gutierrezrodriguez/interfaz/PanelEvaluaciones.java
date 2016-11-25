@@ -1,7 +1,11 @@
 
 package gutierrezrodriguez.interfaz;
 
+import gutierrezrodriguez.dominio.Evaluacion;
 import gutierrezrodriguez.dominio.Sistema;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 public class PanelEvaluaciones extends javax.swing.JPanel {
     
@@ -30,63 +34,68 @@ public class PanelEvaluaciones extends javax.swing.JPanel {
     public void setPredecesorEsRestaurante(boolean esRestaurante){
         this.predecesorEsRestaurante = esRestaurante;
     }
+    
+    public void actualizarEvaluaciones(){
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("Cliente");
+        modelo.addColumn("Puntuacion");
+        modelo.addColumn("Reseña");
+        ArrayList<Evaluacion> evaluaciones = sistema.getRestaurante().getEvaluaciones();
+        for(int i = 0; i < evaluaciones.size() ; i++){
+            Evaluacion evaluacion = evaluaciones.get(i);
+            modelo.addRow(new Object[]{evaluacion.getCliente(), evaluacion.getEstrellas(), evaluacion.getResena()});
+            
+        }
+        tablaEvaluaciones.setModel(modelo);
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         botonVolver = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        labelEvaluaciones = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaEvaluaciones = new javax.swing.JTable();
 
+        setMinimumSize(new java.awt.Dimension(500, 300));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        botonVolver.setBackground(new java.awt.Color(255, 255, 255));
         botonVolver.setText("Volver");
         botonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonVolverActionPerformed(evt);
             }
         });
+        add(botonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 12, -1, -1));
 
-        jLabel1.setText("Evaluaciones");
+        labelEvaluaciones.setText("Evaluaciones");
+        add(labelEvaluaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaEvaluaciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Cliente", "Puntuacion", "Reseña"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Integer.class, java.lang.String.class
+            };
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 476, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botonVolver)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(botonVolver))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        tablaEvaluaciones.setEnabled(false);
+        jScrollPane1.setViewportView(tablaEvaluaciones);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 63, 476, 225));
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
@@ -101,8 +110,8 @@ public class PanelEvaluaciones extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonVolver;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel labelEvaluaciones;
+    private javax.swing.JTable tablaEvaluaciones;
     // End of variables declaration//GEN-END:variables
 }

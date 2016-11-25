@@ -157,6 +157,7 @@ public class PanelMenuRestaurante extends javax.swing.JPanel {
     }//GEN-LAST:event_botonVolverActionPerformed
 
     private void botonVerEvaluacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVerEvaluacionesActionPerformed
+        panelEvaluaciones.actualizarEvaluaciones();
         this.setVisible(false);
         panelEvaluaciones.setPredecesor(this);
         panelEvaluaciones.setPredecesorEsRestaurante(true);
