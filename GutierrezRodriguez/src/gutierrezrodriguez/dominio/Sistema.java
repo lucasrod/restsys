@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Sistema {
 
     private Restaurante restaurante;
-    private ArrayList<Cliente> clientes;
+    private final ArrayList<Cliente> clientes;
 
     public Sistema() {
         this.restaurante = new Restaurante();

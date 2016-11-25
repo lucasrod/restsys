@@ -5,7 +5,6 @@ import gutierrezrodriguez.dominio.Evaluacion;
 import gutierrezrodriguez.dominio.Sistema;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 
 public class PanelEvaluaciones extends javax.swing.JPanel {
     
@@ -48,7 +47,7 @@ public class PanelEvaluaciones extends javax.swing.JPanel {
         }
         tablaEvaluaciones.setModel(modelo);
     }
-
+        
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -106,7 +105,6 @@ public class PanelEvaluaciones extends javax.swing.JPanel {
             this.panelmenucliente.setVisible(true);
         }
     }//GEN-LAST:event_botonVolverActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonVolver;
