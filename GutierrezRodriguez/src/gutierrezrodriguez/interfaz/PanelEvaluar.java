@@ -52,8 +52,8 @@ public class PanelEvaluar extends javax.swing.JPanel {
         });
         add(botonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, -1, -1));
 
-        labelPuntuacion.setText("Puntuacion [⭐]");
-        add(labelPuntuacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 87, -1, -1));
+        labelPuntuacion.setText("Puntuacion [⋆]");
+        add(labelPuntuacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 30));
 
         labelResena.setText("Reseña");
         add(labelResena, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 170, -1, -1));
@@ -74,7 +74,7 @@ public class PanelEvaluar extends javax.swing.JPanel {
         add(botonEvaluar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 255, -1, -1));
 
         spinnerPuntuacion.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
-        add(spinnerPuntuacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 50, -1));
+        add(spinnerPuntuacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 50, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed

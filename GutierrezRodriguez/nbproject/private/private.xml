@@ -12,6 +12,7 @@
             <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/src/gutierrezrodriguez/interfaz/PanelMenuRestaurante.java</file>
             <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/src/gutierrezrodriguez/interfaz/PanelRealizarSorteo.java</file>
             <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/src/gutierrezrodriguez/dominio/Sorteo.java</file>
+            <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/build.xml</file>
             <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/src/gutierrezrodriguez/interfaz/Frame.java</file>
             <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/src/gutierrezrodriguez/interfaz/PanelRegistrarSorteo.java</file>
             <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/test/gutierrezrodriguez/dominio/evaluacion/EvaluacionEsSorteableTest.java</file>
@@ -21,13 +22,6 @@
             <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/src/gutierrezrodriguez/dominio/Ficha.java</file>
             <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/src/gutierrezrodriguez/dominio/Restaurante.java</file>
             <file>file:/C:/Users/Matías/Documents/NetBeansProjects/restsys/GutierrezRodriguez/src/gutierrezrodriguez/interfaz/PanelRegistrarCliente.java</file>
-            <file>file:/home/lucasrod/coso/restsys/GutierrezRodriguez/src/gutierrezrodriguez/dominio/Restaurante.java</file>
-            <file>file:/home/lucasrod/coso/restsys/GutierrezRodriguez/src/gutierrezrodriguez/interfaz/PanelRealizarSorteo.java</file>
-            <file>file:/home/lucasrod/coso/restsys/GutierrezRodriguez/src/gutierrezrodriguez/interfaz/PanelMenuRestaurante.java</file>
-            <file>file:/home/lucasrod/coso/restsys/GutierrezRodriguez/src/gutierrezrodriguez/dominio/Evaluacion.java</file>
-            <file>file:/home/lucasrod/coso/restsys/GutierrezRodriguez/src/gutierrezrodriguez/interfaz/PanelEvaluar.java</file>
-            <file>file:/home/lucasrod/coso/restsys/GutierrezRodriguez/src/gutierrezrodriguez/interfaz/PanelMenuCliente.java</file>
-            <file>file:/home/lucasrod/coso/restsys/GutierrezRodriguez/src/gutierrezrodriguez/interfaz/PanelRegistrarCliente.java</file>
         </group>
     </open-files>
 </project-private>
